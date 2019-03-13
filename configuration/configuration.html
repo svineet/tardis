@@ -221,7 +221,7 @@
 <p>TARDIS uses the <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML markup language</a>
 for its configuration files. There are several sections which allow different
 settings for the different aspects of the TARDIS calculation. An example
-configuration file (with a small subset of the options that can be specified) can be downloaded <a class="reference download internal" download="" href="../_downloads/6a9e98898d909ffa422ebbb4045adf11/tardis_example.yml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+configuration file (with a small subset of the options that can be specified) can be downloaded <a class="reference download internal" download="" href="../_downloads/fd9d194c1d58f6e71001ab587978b5c5/tardis_example.yml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">One should note that currently floats in YAML need to be specified in a special format:
@@ -902,12 +902,24 @@ normal operations.</p>
 </td>
 <td><span class="xref std std-ref">#/definitions/convergence_strategy/custom</span></td>
 </tr>
-<tr class="row-even"><td>additionalProperties</td>
+<tr class="row-even"><td rowspan="3"><ul class="first last simple">
+<li>enable_full_relativity</li>
+</ul>
+</td>
+<td colspan="3">Enables a more complete treatment of relativitic effects. This includes angle aberration as well as use of the fully general Doppler formula.</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td colspan="2"><em>boolean</em></td>
+</tr>
+<tr class="row-even"><td>default</td>
+<td colspan="2">False</td>
+</tr>
+<tr class="row-odd"><td>additionalProperties</td>
 <td colspan="3">False</td>
 </tr>
-<tr class="row-odd"><td colspan="4">definitions</td>
+<tr class="row-even"><td colspan="4">definitions</td>
 </tr>
-<tr class="row-even"><td colspan="4"><ul class="first last simple">
+<tr class="row-odd"><td colspan="4"><ul class="first last simple">
 <li>convergence_strategy</li>
 </ul>
 </td>
