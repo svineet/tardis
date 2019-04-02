@@ -212,12 +212,12 @@ Anaconda. If you encounter problems, consult the
 installed TARDIS, check out <span class="xref std std-doc">running</span> for instructions of how to perform
 simple TARDIS calculations.</p>
 <div class="admonition warning" id="requirements-label">
-<p class="first admonition-title">Warning</p>
-<p class="last">TARDIS is currently only compatbile with Python 2.7.</p>
+<p class="admonition-title">Warning</p>
+<p>TARDIS is currently only compatbile with Python 2.7.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">We strongly recommond to install TARDIS within an Anaconda environment and
+<p class="admonition-title">Note</p>
+<p>We strongly recommond to install TARDIS within an Anaconda environment and
 to always use the lastest github development version.</p>
 </div>
 <div class="section" id="requirements">
@@ -264,9 +264,10 @@ TARDIS is used.</p>
 </div>
 <p>Alternatively, you can manually clone our repository and install TARDIS by</p>
 <blockquote>
-<div>git clone <a class="reference external" href="https://github.com/tardis-sn/tardis.git">https://github.com/tardis-sn/tardis.git</a>
+<div><p>git clone <a class="reference external" href="https://github.com/tardis-sn/tardis.git">https://github.com/tardis-sn/tardis.git</a>
 cd tardis
-python setup.py install</div></blockquote>
+python setup.py install</p>
+</div></blockquote>
 <p>Manually, cloning the repository enables other options such as running the code in parallel (enabling OpenMP).
 In general we encourage to download the compilers from <cite>conda</cite> as we then can ensure that they work with TARDIS.
 Within the TARDIS conda environment do:</p>
@@ -283,7 +284,8 @@ Within the TARDIS conda environment do:</p>
 </div>
 <p>To compile TARDIS for parallel execution:</p>
 <blockquote>
-<div>python setup.py install –with-openmp</div></blockquote>
+<div><p>python setup.py install –with-openmp</p>
+</div></blockquote>
 </div>
 <div class="section" id="installation-troubles-faq">
 <span id="troubleshooting-inst-label"></span><h2>Installation Troubles (FAQ)<a class="headerlink" href="#installation-troubles-faq" title="Permalink to this headline">¶</a></h2>
@@ -308,7 +310,8 @@ This will often clean this problem. If it still persists:</p>
 from tardis/_compiler.c:1: /Users/yssavo/miniconda2/envs/tardis-show2/lib/gcc/x86_64-apple-darwin13.4.0/5.2.0/include-fixed/limits.h:168:61: fatal error: limits.h: No such file or directory</p>
 <p><strong>Solution:</strong> Run on terminal:</p>
 <blockquote>
-<div>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg</div></blockquote>
+<div><p>open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg</p>
+</div></blockquote>
 <p><strong>Problem:</strong> Symbol not found: _GOMP_parallel when compiling with <cite>–with-openmp</cite></p>
 <p><strong>Solution:</strong> Install gcc8 from macports and then install with these flags: <cite>link_args = [‘-fopenmp’,’-Wl,-rpath,/opt/local/lib/gcc8/’]</cite></p>
 <p><strong>Problem:</strong> While building tardis(via python 2.7) via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span></code> build you
@@ -319,13 +322,13 @@ may encounter the following error:</p>
 <span class="n">Command</span> <span class="s2">&quot;python setup.py egg_info&quot;</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">error</span> <span class="n">code</span> <span class="mi">1</span> <span class="ow">in</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pip</span><span class="o">-</span><span class="n">req</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">wPB39p</span><span class="o">/</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt><strong>Solution:</strong> The cause for this problem is sphinx , or sphinx version . It can be easily solved by installing sphinx 1.5.6.</dt>
-<dd><blockquote class="first">
-<div>The command for the same is :</div></blockquote>
+<dl>
+<dt><strong>Solution:</strong> The cause for this problem is sphinx , or sphinx version . It can be easily solved by installing sphinx 1.5.6.</dt><dd><blockquote>
+<div><p>The command for the same is :</p>
+</div></blockquote>
 <p>pip install sphinx==1.5.6</p>
 <p>or</p>
-<p class="last">conda install sphinx==1.5.6</p>
+<p>conda install sphinx==1.5.6</p>
 </dd>
 </dl>
 <p>Then, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build</span> <span class="pre">install</span></code> should run without problems.</p>

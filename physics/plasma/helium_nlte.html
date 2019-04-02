@@ -222,12 +222,11 @@
 </style>
 <div class="section" id="helium-nlte">
 <h1>Helium NLTE<a class="headerlink" href="#helium-nlte" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>The <cite>helium_treatment</cite> setting in the Tardis config. file will accept one of three options:</dt>
-<dd><ul class="first last simple">
-<li><cite>none</cite>: The default setting. Populate helium in the same way as the other elements.</li>
-<li><cite>recomb-nlte</cite>: Treats helium in NLTE using the analytical approximation outlined in an upcoming paper.</li>
-<li><cite>numerical-nlte</cite>: To be implemented. Will allow the use of a separate module (not distributed with Tardis) to perform helium NLTE calculations numerically.</li>
+<dl class="simple">
+<dt>The <cite>helium_treatment</cite> setting in the Tardis config. file will accept one of three options:</dt><dd><ul class="simple">
+<li><p><cite>none</cite>: The default setting. Populate helium in the same way as the other elements.</p></li>
+<li><p><cite>recomb-nlte</cite>: Treats helium in NLTE using the analytical approximation outlined in an upcoming paper.</p></li>
+<li><p><cite>numerical-nlte</cite>: To be implemented. Will allow the use of a separate module (not distributed with Tardis) to perform helium NLTE calculations numerically.</p></li>
 </ul>
 </dd>
 </dl>
@@ -235,17 +234,16 @@
 <h2>Recombination He NLTE<a class="headerlink" href="#recombination-he-nlte" title="Permalink to this headline">¶</a></h2>
 <p>Paper version:</p>
 <p>This section will summarise the equations used in the calculation of the helium state for the <cite>recomb-NLTE</cite> approximation in Tardis. A full physical justification for these equations will be provided in an upcoming paper. All of the level populations are given as a function of the He II ground state population (<span class="math notranslate nohighlight">\(n_{2,1,0}\)</span>), and the values are then normalised using the helium number density to give the correct level number densities.</p>
-<dl class="docutils">
-<dt>Symbols/Indexing:</dt>
-<dd><ul class="first simple">
-<li><span class="math notranslate nohighlight">\(N_{i,j}\)</span>: Ion Number Density</li>
-<li><span class="math notranslate nohighlight">\(n_{i,j,k}\)</span>: Level Number Density</li>
+<dl>
+<dt>Symbols/Indexing:</dt><dd><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N_{i,j}\)</span>: Ion Number Density</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_{i,j,k}\)</span>: Level Number Density</p></li>
 </ul>
-<blockquote class="last">
+<blockquote>
 <div><ul class="simple">
-<li>i: atomic number</li>
-<li>j: ion number</li>
-<li>k: level number</li>
+<li><p>i: atomic number</p></li>
+<li><p>j: ion number</p></li>
+<li><p>k: level number</p></li>
 </ul>
 </div></blockquote>
 </dd>

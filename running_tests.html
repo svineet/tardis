@@ -280,8 +280,16 @@ The <code class="docutils literal notranslate"><span class="pre">--less-packets<
 use very few packets to generate the references and thus make the process much
 faster - THIS IS ONLY FOR DEBUGGING PURPOSES. The <code class="docutils literal notranslate"><span class="pre">-s</span></code> option ensures that
 TARDIS prints out the progress:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s2">&quot;--integration=integration.yml -m integration</span>
+<span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">reference</span> <span class="o">--</span><span class="n">less</span><span class="o">-</span><span class="n">packets</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
 <p>To run the test after having run the <code class="docutils literal notranslate"><span class="pre">--generate-references</span></code> all that is
 needed is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span> <span class="o">--</span><span class="n">args</span><span class="o">=</span><span class="s2">&quot;--integration=integration.yml -m integration</span>
+<span class="o">--</span><span class="n">less</span><span class="o">-</span><span class="n">packets</span><span class="s2">&quot; --remote-data</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setting-up-the-dokuwiki-report">
 <h2>Setting up the Dokuwiki report<a class="headerlink" href="#setting-up-the-dokuwiki-report" title="Permalink to this headline">¶</a></h2>

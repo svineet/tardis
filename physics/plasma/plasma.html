@@ -200,18 +200,18 @@
 <div class="section" id="plasma">
 <span id="plasmas"></span><h1>Plasma<a class="headerlink" href="#plasma" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This information (particularly code examples) is not up-to-date.</p>
+<p class="admonition-title">Warning</p>
+<p>This information (particularly code examples) is not up-to-date.</p>
 </div>
 <p>This module calculates the ionization balance and level populations in BasePlasma, give a abundance fraction, temperature
 and density. After calculating the state of the plasma, these classes are able to calculate <span class="math notranslate nohighlight">\(\tau_\textrm{sobolev}\)</span>
 for the supernova radiative transfer. The simplest BasePlasma (<code class="xref py py-class docutils literal notranslate"><span class="pre">BasePlasma</span></code>) only calculates the atom number densities, but serves
-as a base for all BasePlasma classes.&nbsp;The next more complex class is <cite>LTEPlasma</cite> which will calculate the aforementioned quantities in
+as a base for all BasePlasma classes. The next more complex class is <cite>LTEPlasma</cite> which will calculate the aforementioned quantities in
 Local Thermal Equilibrium conditions (LTE). The <code class="xref py py-class docutils literal notranslate"><span class="pre">NebularPlasma</span></code>-class inherits from <cite>LTEPlasma</cite> and uses a more complex
 description of the BasePlasma (for details see <span class="xref std std-ref">nebular_plasma</span>).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In this documentation we use the indices <span class="math notranslate nohighlight">\(i, j, k\)</span> to mean atomic number, ion number and level number respectively.</p>
+<p class="admonition-title">Note</p>
+<p>In this documentation we use the indices <span class="math notranslate nohighlight">\(i, j, k\)</span> to mean atomic number, ion number and level number respectively.</p>
 </div>
 <p>All plasma calculations follow the same basic procedure in calculating the plasma state.
 This is always accomplished with the function <code class="docutils literal notranslate"><span class="pre">update_radiationfield</span></code>. This block diagram shows the basic procedure</p>

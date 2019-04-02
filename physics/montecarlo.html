@@ -234,14 +234,14 @@ energy that is <span class="math notranslate nohighlight">\(1/n\)</span>.</p>
 outcomes for each packet.</p>
 <blockquote>
 <div><ul class="simple">
-<li><dl class="first docutils">
-<dt><strong>packet leaves the simulation through the outer bound</strong> and count towards the</dt>
-<dd>spectrum</dd>
+<li><dl class="simple">
+<dt><strong>packet leaves the simulation through the outer bound</strong> and count towards the</dt><dd><p>spectrum</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>packet leaves the simulation through the inner boundary</strong> and are lost</dt>
-<dd>(reabsorbed)</dd>
+<li><dl class="simple">
+<dt><strong>packet leaves the simulation through the inner boundary</strong> and are lost</dt><dd><p>(reabsorbed)</p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -259,7 +259,7 @@ d_\textrm{rest \rightarrow comoving} = 1 - \mu_\textrm{out} v(r) / c \\
 E_\textrm{after scatter} = E_\textrm{before scatter} \times \frac{1 - \mu_\textrm{in} v(r) / c}{1 - \mu_\textrm{out} v(r) / c}\end{split}\]</div>
 <p>This way the montecarlo packets can gain or loose energy in the simulation:</p>
 <p>(<a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.py">Source code</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.png">png</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.hires.png">hires.png</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.pdf">pdf</a>)</p>
-<div class="figure">
+<div class="figure align-center">
 <img alt="../_images/plot_mu_in_out_packet.png" src="../_images/plot_mu_in_out_packet.png" />
 </div>
 <p>The spectrum is then generated as a weighted histogram. For each bin with edges
@@ -268,9 +268,9 @@ the outer boundary and add up their remaining energies.</p>
 </div>
 <div class="section" id="montecarlo-geometry">
 <h2>Montecarlo Geometry<a class="headerlink" href="#montecarlo-geometry" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Before any packet action is performed we calculate four different distances</dt>
-<dd>( <span class="math notranslate nohighlight">\(d_\textrm{inner}, d_\textrm{outer}, d_\textrm{line}, d_{\textrm{e}^{-}}\)</span> )</dd>
+<dl class="simple">
+<dt>Before any packet action is performed we calculate four different distances</dt><dd><p>( <span class="math notranslate nohighlight">\(d_\textrm{inner}, d_\textrm{outer}, d_\textrm{line}, d_{\textrm{e}^{-}}\)</span> )</p>
+</dd>
 </dl>
 <p>The calculations for the distance to the outer boundary:</p>
 <a class="reference internal image-reference" href="../_images/d_outer.png"><img alt="../_images/d_outer.png" src="../_images/d_outer.png" style="width: 400px;" /></a>
@@ -285,7 +285,7 @@ the outer boundary and add up their remaining energies.</p>
 \bar{\nu}_\textrm{estimator} &amp;=  \sum{\epsilon \nu l},\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon, \nu\)</span> are comoving energy and comoving frequency of a packet respectively.</p>
 <p>To calculate the temperature and dilution factor we first calculate the mean intensity in each cell
-( <span class="math notranslate nohighlight">\(J = \frac{1}{4\pi\, \Delta t\, V} J_\textrm{estimator}\)</span> )., [2003A&amp;A...403..261L].</p>
+( <span class="math notranslate nohighlight">\(J = \frac{1}{4\pi\, \Delta t\, V} J_\textrm{estimator}\)</span> )., <span>[2003A&amp;A…403..261L]</span>.</p>
 <p>The weighted mean frequency is used to obtain the radiation temperature. Specifically, the radiation temperature is chosen as the
 temperature of a black body that has the same weighted mean frequency as has been computed in the simulation. Accordingly,</p>
 <div class="math notranslate nohighlight">

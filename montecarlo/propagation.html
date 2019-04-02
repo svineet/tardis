@@ -251,7 +251,7 @@ Random number generator which provides uniformly distributed numbers <span class
 on the interval <span class="math notranslate nohighlight">\([0,1]\)</span>. The frequency assignment is more involved than
 selecting an initial propagation direction, since the Planck function has to be
 sampled. TARDIS uses the technique described in <a class="reference internal" href="../zreferences.html#carter1975" id="id1">[CarterCashwell75]</a> and
-summarized in [Bjorkmann1999] for this purpose.</p>
+summarized in <span>[Bjorkmann1999]</span> for this purpose.</p>
 </div>
 <div class="section" id="propagation-in-a-spherical-domain">
 <h2>Propagation in a spherical domain<a class="headerlink" href="#propagation-in-a-spherical-domain" title="Permalink to this headline">¶</a></h2>
@@ -259,8 +259,8 @@ summarized in [Bjorkmann1999] for this purpose.</p>
 commences. Without interacting, a packet, like a photon, will propagate on a
 straight trajectory.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since TARDIS is designed for systems for which the Newtonian limit may be
+<p class="admonition-title">Note</p>
+<p>Since TARDIS is designed for systems for which the Newtonian limit may be
 safely applied, no general relatistic effects which would force photons on
 curved trajectories are included.</p>
 </div>
@@ -398,8 +398,8 @@ energy after the line interaction event is determined. The important difference
 is the assignment of the post interaction frequency. This depends on the
 selected line interaction mode (see <a class="reference internal" href="lineinteraction.html"><span class="doc">Line Interaction Modes</span></a>).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Note that the inclusion of special relativistic effects in TARDIS is at
+<p class="admonition-title">Note</p>
+<p>Note that the inclusion of special relativistic effects in TARDIS is at
 best to first order in <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
 </div>
 </div>
@@ -409,24 +409,22 @@ best to first order in <span class="math notranslate nohighlight">\(\beta\)</spa
 TARDIS consists of successively processing all packets with represent the
 radiation field emitted by the photosphere in the following way:</p>
 <ul class="simple">
-<li>initialize the packet: assign initial energy, direction and frequency</li>
-<li>launch the packet: now the propagation of this packet is followed until one of the termination events is triggered</li>
-<li><dl class="first docutils">
-<dt>follow the propagation:</dt>
-<dd><ul class="first last">
-<li>calculate the distance to the next shell and determine the distance to the next physical interaction</li>
-<li><dl class="first docutils">
-<dt>the packet covers the shorter of these two distances:</dt>
-<dd><ul class="first last">
-<li>if the new shell is reached first, propagate into the shell and recalculate both distances</li>
-<li>if the packet has crossed through the inner domain boundary (photosphere), terminate propagation</li>
-<li>likewise in case the packet escapes through outer boundary (ejecta surface): account for contribution to emergent spectrum and terminate propagation</li>
-<li>if the interaction location is reached first, propagated to this location, perform interaction and recalculate both distances</li>
+<li><p>initialize the packet: assign initial energy, direction and frequency</p></li>
+<li><p>launch the packet: now the propagation of this packet is followed until one of the termination events is triggered</p></li>
+<li><dl class="simple">
+<dt>follow the propagation:</dt><dd><ul>
+<li><p>calculate the distance to the next shell and determine the distance to the next physical interaction</p></li>
+<li><dl class="simple">
+<dt>the packet covers the shorter of these two distances:</dt><dd><ul>
+<li><p>if the new shell is reached first, propagate into the shell and recalculate both distances</p></li>
+<li><p>if the packet has crossed through the inner domain boundary (photosphere), terminate propagation</p></li>
+<li><p>likewise in case the packet escapes through outer boundary (ejecta surface): account for contribution to emergent spectrum and terminate propagation</p></li>
+<li><p>if the interaction location is reached first, propagated to this location, perform interaction and recalculate both distances</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>repeat this procedure until one of the two termination events occurs</li>
+<li><p>repeat this procedure until one of the two termination events occurs</p></li>
 </ul>
 </dd>
 </dl>

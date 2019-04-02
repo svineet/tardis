@@ -221,168 +221,168 @@
 <p>TARDIS uses the <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML markup language</a>
 for its configuration files. There are several sections which allow different
 settings for the different aspects of the TARDIS calculation. An example
-configuration file (with a small subset of the options that can be specified) can be downloaded <a class="reference download internal" download="" href="../_downloads/6a9e98898d909ffa422ebbb4045adf11/tardis_example.yml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+configuration file (with a small subset of the options that can be specified) can be downloaded <a class="reference download internal" download="" href="../_downloads/fd9d194c1d58f6e71001ab587978b5c5/tardis_example.yml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">One should note that currently floats in YAML need to be specified in a special format:
+<p class="admonition-title">Warning</p>
+<p>One should note that currently floats in YAML need to be specified in a special format:
 any pure floats need to have a +/- after the e e.g. 2e+5</p>
 </div>
 <p>The TARDIS configuration consists of multiple sections that pertain to certain parts of the code. We will use the
 schemas to show what options are available. Our schema mark-up defines names in bold-fat as required.
 can be seen here:</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The following shows all the options (and their default settings) that are available for TARDIS. No other options
+<p class="admonition-title">Note</p>
+<p>The following shows all the options (and their default settings) that are available for TARDIS. No other options
 are allowed or available</p>
 </div>
 <div class="section" id="configuration-schema">
 <h2>Configuration Schema<a class="headerlink" href="#configuration-schema" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-center">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="3">properties</td>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li><strong>tardis_config_version</strong></li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p><strong>tardis_config_version</strong></p></li>
 </ul>
 </td>
-<td colspan="2">Version of the configuration file. The current version is 1.0 and no other versions are allowed</td>
+<td colspan="2"><p>Version of the configuration file. The current version is 1.0 and no other versions are allowed</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>string</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>supernova</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>supernova</p></li>
 </ul>
 </td>
-<td colspan="2">a section pertaining to observations of the supernova</td>
+<td colspan="2"><p>a section pertaining to observations of the supernova</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><a class="reference internal" href="#supernova.yml"><span class="std std-ref">supernova.yml</span></a></td>
+<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#supernova.yml"><span class="std std-ref">supernova.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li><strong>atom_data</strong></li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p><strong>atom_data</strong></p></li>
 </ul>
 </td>
-<td colspan="2">path or filename to the Atomic Data HDF5 file</td>
+<td colspan="2"><p>path or filename to the Atomic Data HDF5 file</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>string</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>plasma</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>plasma</p></li>
 </ul>
 </td>
-<td colspan="2">configuration of the plasma microphysics</td>
+<td colspan="2"><p>configuration of the plasma microphysics</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><a class="reference internal" href="#plasma.yml"><span class="std std-ref">plasma.yml</span></a></td>
+<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#plasma.yml"><span class="std std-ref">plasma.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>model</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>model</p></li>
 </ul>
 </td>
-<td colspan="2">defining the model</td>
+<td colspan="2"><p>defining the model</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></td>
+<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>montecarlo</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>montecarlo</p></li>
 </ul>
 </td>
-<td colspan="2">configuring the physics of the monte carlo radiative transfer</td>
+<td colspan="2"><p>configuring the physics of the monte carlo radiative transfer</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><a class="reference internal" href="#montecarlo.yml"><span class="std std-ref">montecarlo.yml</span></a></td>
+<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#montecarlo.yml"><span class="std std-ref">montecarlo.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li><strong>spectrum</strong></li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p><strong>spectrum</strong></p></li>
 </ul>
 </td>
-<td colspan="2">Final spectrum sampling</td>
+<td colspan="2"><p>Final spectrum sampling</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></td>
+<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>additionalProperties</td>
-<td colspan="2">False</td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
 </tbody>
 </table>
 <p>The base schema links to several other configuration parts</p>
 <div class="section" id="supernova">
 <h3>Supernova<a class="headerlink" href="#supernova" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils" id="supernova.yml">
+<table class="docutils align-center" id="supernova.yml">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="3">properties</td>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li><strong>luminosity_requested</strong></li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p><strong>luminosity_requested</strong></p></li>
 </ul>
 </td>
-<td colspan="2">requested output luminosity for simulation</td>
+<td colspan="2"><p>requested output luminosity for simulation</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>quantity</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td>1 solLum</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>1 solLum</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="first last simple">
-<li><strong>time_explosion</strong></li>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p><strong>time_explosion</strong></p></li>
 </ul>
 </td>
-<td colspan="2">time since explosion</td>
+<td colspan="2"><p>time since explosion</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>quantity</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="first last simple">
-<li>distance</li>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>distance</p></li>
 </ul>
 </td>
-<td colspan="2">distance to supernova - <strong>THIS IS DEPRECATED AND NOT IN USE</strong></td>
+<td colspan="2"><p>distance to supernova - <strong>THIS IS DEPRECATED AND NOT IN USE</strong></p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>quantity</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>luminosity_wavelength_start</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>luminosity_wavelength_start</p></li>
 </ul>
 </td>
-<td colspan="2">start of the integral needed for getting the luminosity right</td>
+<td colspan="2"><p>start of the integral needed for getting the luminosity right</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>quantity</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>0 angstrom</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>0 angstrom</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>luminosity_wavelength_end</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>luminosity_wavelength_end</p></li>
 </ul>
 </td>
-<td colspan="2">start of the integral needed for getting the luminosity right</td>
+<td colspan="2"><p>start of the integral needed for getting the luminosity right</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>quantity</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td>inf angstrom</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>inf angstrom</p></td>
 </tr>
-<tr class="row-even"><td>additionalProperties</td>
-<td colspan="2">False</td>
+<tr class="row-even"><td><p>additionalProperties</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
 </tbody>
 </table>
@@ -392,70 +392,70 @@ are allowed or available</p>
 <p>The next sections, describing the model, are very hierarchical. The base level is <code class="docutils literal notranslate"><span class="pre">model</span></code> and contains two subsections:
 <code class="docutils literal notranslate"><span class="pre">structure</span></code> and <code class="docutils literal notranslate"><span class="pre">abundances</span></code>. Both sections can either contain a <code class="docutils literal notranslate"><span class="pre">file</span></code> subsection which specifies a file and
 file type where the information is stored or a number of other sections.</p>
-<table border="1" class="docutils" id="model.yml">
+<table class="docutils align-center" id="model.yml">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="3"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="4">properties</td>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>structure</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>structure</p></li>
 </ul>
 </td>
-<td rowspan="2">oneOf</td>
-<td><ul class="first last simple">
+<td rowspan="2"><p>oneOf</p></td>
+<td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/structure/file</span></td>
+<td><p><span class="xref std std-ref">#/definitions/structure/file</span></p></td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
+<tr class="row-even"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/structure/specific</span></td>
+<td><p><span class="xref std std-ref">#/definitions/structure/specific</span></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>abundances</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>abundances</p></li>
 </ul>
 </td>
-<td rowspan="2">oneOf</td>
-<td><ul class="first last simple">
+<td rowspan="2"><p>oneOf</p></td>
+<td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/abundances/file</span></td>
+<td><p><span class="xref std std-ref">#/definitions/abundances/file</span></p></td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
+<tr class="row-even"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/abundances/uniform</span></td>
+<td><p><span class="xref std std-ref">#/definitions/abundances/uniform</span></p></td>
 </tr>
-<tr class="row-odd"><td>additionalProperties</td>
-<td colspan="3">False</td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="3"><p>False</p></td>
 </tr>
-<tr class="row-even"><td colspan="4">definitions</td>
+<tr class="row-even"><td colspan="4"><p>definitions</p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="first last simple">
-<li>density</li>
+<tr class="row-odd"><td colspan="4"><ul class="simple">
+<li><p>density</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td colspan="4"><ul class="first last simple">
-<li>structure</li>
+<tr class="row-even"><td colspan="4"><ul class="simple">
+<li><p>structure</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="first last simple">
-<li>abundances</li>
+<tr class="row-odd"><td colspan="4"><ul class="simple">
+<li><p>abundances</p></li>
 </ul>
 </td>
 </tr>
@@ -467,17 +467,17 @@ In the <code class="docutils literal notranslate"><span class="pre">structure</s
 <p>If one doesn’t specify a <code class="docutils literal notranslate"><span class="pre">file</span></code> section, the code requires two sections (<code class="docutils literal notranslate"><span class="pre">velocities</span></code> and <code class="docutils literal notranslate"><span class="pre">densities</span></code>) and a
 parameter <code class="docutils literal notranslate"><span class="pre">no_of_shells</span></code>. <code class="docutils literal notranslate"><span class="pre">no_of_shells</span></code> is the requested number of shells for a model. The <code class="docutils literal notranslate"><span class="pre">velocity</span></code> section
 requires a <code class="docutils literal notranslate"><span class="pre">type</span></code>. Currently, only <code class="docutils literal notranslate"><span class="pre">linear</span></code> is supported.</p>
-<dl class="docutils">
-<dt>In the <code class="docutils literal notranslate"><span class="pre">densities</span></code> section the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter again decides on the parameters. The type <code class="docutils literal notranslate"><span class="pre">uniform</span></code> only needs a</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">value</span></code> parameter with a density compatible quantity. The type <code class="docutils literal notranslate"><span class="pre">branch85_w7</span></code> uses a seven order polynomial fit to
+<dl class="simple">
+<dt>In the <code class="docutils literal notranslate"><span class="pre">densities</span></code> section the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter again decides on the parameters. The type <code class="docutils literal notranslate"><span class="pre">uniform</span></code> only needs a</dt><dd><p><code class="docutils literal notranslate"><span class="pre">value</span></code> parameter with a density compatible quantity. The type <code class="docutils literal notranslate"><span class="pre">branch85_w7</span></code> uses a seven order polynomial fit to
 the W7 model and is parametrised by time since explosion. The parameters <code class="docutils literal notranslate"><span class="pre">time_0</span></code> and <code class="docutils literal notranslate"><span class="pre">density_coefficient</span></code> are set
-to sensible defaults and should not be changed.</dd>
+to sensible defaults and should not be changed.</p>
+</dd>
 </dl>
 <p>The <code class="docutils literal notranslate"><span class="pre">abundance</span></code> section again has a possible <code class="docutils literal notranslate"><span class="pre">file</span></code> parameter with <code class="docutils literal notranslate"><span class="pre">type</span></code> (currently only <code class="docutils literal notranslate"><span class="pre">artis</span></code> is allowed)
 and a <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter giving a path to a file containing the abundance information.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">In contrast to the <code class="docutils literal notranslate"><span class="pre">structure</span></code> section, the <code class="docutils literal notranslate"><span class="pre">abundance</span></code> section will not ignore abundances set in the rest of
+<p class="admonition-title">Warning</p>
+<p>In contrast to the <code class="docutils literal notranslate"><span class="pre">structure</span></code> section, the <code class="docutils literal notranslate"><span class="pre">abundance</span></code> section will not ignore abundances set in the rest of
 the section, but merely will overwrite the abundances given in the file section.</p>
 </div>
 <p>The rest of the section can be used to configure uniform abundances for all shells, by giving the atom name and a
@@ -485,204 +485,204 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 </div>
 <div class="section" id="plasma">
 <h3>Plasma<a class="headerlink" href="#plasma" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils" id="plasma.yml">
+<table class="docutils align-center" id="plasma.yml">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="3"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="4">properties</td>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>initial_t_inner</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>initial_t_inner</p></li>
 </ul>
 </td>
-<td colspan="3">initial temperature of the inner boundary black body. If set to -1 K  will result in automatic calculation of boundary</td>
+<td colspan="3"><p>initial temperature of the inner boundary black body. If set to -1 K  will result in automatic calculation of boundary</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>quantity</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td colspan="2">-1 K</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>-1 K</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>initial_t_rad</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>initial_t_rad</p></li>
 </ul>
 </td>
-<td colspan="3">initial radiative temperature in all cells. If set to -1 K will result in automtatic calculation of the initial temperatures</td>
+<td colspan="3"><p>initial radiative temperature in all cells. If set to -1 K will result in automtatic calculation of the initial temperatures</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>quantity</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">-1 K</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>-1 K</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>disable_electron_scattering</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>disable_electron_scattering</p></li>
 </ul>
 </td>
-<td colspan="3">disable electron scattering process in montecarlo part - non-physical only for tests</td>
+<td colspan="3"><p>disable electron scattering process in montecarlo part - non-physical only for tests</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>boolean</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td colspan="2">False</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li><strong>ionization</strong></li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p><strong>ionization</strong></p></li>
 </ul>
 </td>
-<td colspan="3">ionization treatment mode</td>
+<td colspan="3"><p>ionization treatment mode</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td>enum</td>
-<td colspan="2">nebular, lte</td>
+<tr class="row-even"><td><p>enum</p></td>
+<td colspan="2"><p>nebular, lte</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li><strong>excitation</strong></li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p><strong>excitation</strong></p></li>
 </ul>
 </td>
-<td colspan="3">excitation treatment mode</td>
+<td colspan="3"><p>excitation treatment mode</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td>enum</td>
-<td colspan="2">lte, dilute-lte</td>
+<tr class="row-odd"><td><p>enum</p></td>
+<td colspan="2"><p>lte, dilute-lte</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li><strong>radiative_rates_type</strong></li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p><strong>radiative_rates_type</strong></p></li>
 </ul>
 </td>
-<td colspan="3">radiative rates treatment mode</td>
+<td colspan="3"><p>radiative rates treatment mode</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td>enum</td>
-<td colspan="2">dilute-blackbody, detailed, blackbody</td>
+<tr class="row-even"><td><p>enum</p></td>
+<td colspan="2"><p>dilute-blackbody, detailed, blackbody</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li><strong>line_interaction_type</strong></li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p><strong>line_interaction_type</strong></p></li>
 </ul>
 </td>
-<td colspan="3">line interaction mode</td>
+<td colspan="3"><p>line interaction mode</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td>enum</td>
-<td colspan="2">scatter, downbranch, macroatom</td>
+<tr class="row-odd"><td><p>enum</p></td>
+<td colspan="2"><p>scatter, downbranch, macroatom</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>w_epsilon</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>w_epsilon</p></li>
 </ul>
 </td>
-<td colspan="3">w to use when j_blues get numerically 0. - avoids numerical complications</td>
+<td colspan="3"><p>w to use when j_blues get numerically 0. - avoids numerical complications</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">1e-10</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>1e-10</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>delta_treatment</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>delta_treatment</p></li>
 </ul>
 </td>
-<td colspan="3">In the saha calculation set delta equals to the number given in this configuration item. if set to None (default), normal delta treatment (as described in Mazzali &amp; Lucy 1993) will be applied</td>
+<td colspan="3"><p>In the saha calculation set delta equals to the number given in this configuration item. if set to None (default), normal delta treatment (as described in Mazzali &amp; Lucy 1993) will be applied</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="13"><ul class="first last simple">
-<li>nlte</li>
+<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<li><p>nlte</p></li>
 </ul>
 </td>
-<td>type</td>
-<td colspan="2"><em>object</em></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">OrderedDict()</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
 </tr>
-<tr class="row-odd"><td colspan="3">properties</td>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>species</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>species</p></li>
 </ul>
 </td>
-<td colspan="2">Species that are requested to be NLTE treated in the format  [‘Si 2’, ‘Ca 1’, etc.]</td>
+<td colspan="2"><p>Species that are requested to be NLTE treated in the format  [‘Si 2’, ‘Ca 1’, etc.]</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>array</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>array</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>[]</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>[]</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>coronal_approximation</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>coronal_approximation</p></li>
 </ul>
 </td>
-<td colspan="2">set all jblues=0.0</td>
+<td colspan="2"><p>set all jblues=0.0</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>boolean</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td>False</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>False</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>classical_nebular</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>classical_nebular</p></li>
 </ul>
 </td>
-<td colspan="2">sets all beta_sobolevs to 1</td>
+<td colspan="2"><p>sets all beta_sobolevs to 1</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>boolean</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>False</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td>additionalProperties</td>
-<td colspan="2">False</td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-even"><td rowspan="4"><ul class="first last simple">
-<li>helium_treatment</li>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
+<li><p>helium_treatment</p></li>
 </ul>
 </td>
-<td colspan="3">none to treat He as the other elements. recomb-nlte to treat with NLTE approximation.</td>
+<td colspan="3"><p>none to treat He as the other elements. recomb-nlte to treat with NLTE approximation.</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td>enum</td>
-<td colspan="2">none, recomb-nlte, numerical-nlte</td>
+<tr class="row-even"><td><p>enum</p></td>
+<td colspan="2"><p>none, recomb-nlte, numerical-nlte</p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td colspan="2">none</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>none</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>heating_rate_data_file</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>heating_rate_data_file</p></li>
 </ul>
 </td>
-<td colspan="3">Path to file containing heating rate/light curve data.</td>
+<td colspan="3"><p>Path to file containing heating rate/light curve data.</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">none</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>none</p></td>
 </tr>
-<tr class="row-odd"><td>additionalProperties</td>
-<td colspan="3">False</td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="3"><p>False</p></td>
 </tr>
 </tbody>
 </table>
@@ -717,210 +717,210 @@ normal operations.</p>
 <div class="section" id="monte-carlo">
 <h3>Monte Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">montecarlo</span></code> section describes the parameters for the Monte Carlo radiation transport and convergence criteria:</p>
-<table border="1" class="docutils" id="montecarlo.yml">
+<table class="docutils align-center" id="montecarlo.yml">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="3"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="4">properties</td>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="first last simple">
-<li>nthreads</li>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>nthreads</p></li>
 </ul>
 </td>
-<td colspan="3">The number of OpenMP threads. If set to 0, the value stored in the OMP_NUM_THREADS environment variable is used. If this variable is not set, the maximum number of available threads are used.</td>
+<td colspan="3"><p>The number of OpenMP threads. If set to 0, the value stored in the OMP_NUM_THREADS environment variable is used. If this variable is not set, the maximum number of available threads are used.</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-odd"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">0</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="first last simple">
-<li>seed</li>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>seed</p></li>
 </ul>
 </td>
-<td colspan="3">Seed for the random number generator</td>
+<td colspan="3"><p>Seed for the random number generator</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-odd"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">23111963</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>23111963</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li><strong>no_of_packets</strong></li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p><strong>no_of_packets</strong></p></li>
 </ul>
 </td>
-<td colspan="3">Seed for the random number generator</td>
+<td colspan="3"><p>Seed for the random number generator</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-odd"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li><strong>iterations</strong></li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p><strong>iterations</strong></p></li>
 </ul>
 </td>
-<td colspan="3">Number of maximum iterations</td>
+<td colspan="3"><p>Number of maximum iterations</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-even"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="first last simple">
-<li>last_no_of_packets</li>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>last_no_of_packets</p></li>
 </ul>
 </td>
-<td colspan="3">This can set the number of packets for the last run. If set negative it will remain the same as all other runs.</td>
+<td colspan="3"><p>This can set the number of packets for the last run. If set negative it will remain the same as all other runs.</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-odd"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">-1</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>-1</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="first last simple">
-<li>no_of_virtual_packets</li>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>no_of_virtual_packets</p></li>
 </ul>
 </td>
-<td colspan="3">Setting the number of virtual packets for the last iteration.</td>
+<td colspan="3"><p>Setting the number of virtual packets for the last iteration.</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-odd"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">0</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="11"><ul class="first last simple">
-<li>virtual_spectrum_range</li>
+<tr class="row-odd"><td rowspan="11"><ul class="simple">
+<li><p>virtual_spectrum_range</p></li>
 </ul>
 </td>
-<td colspan="3">Limits of virtual packet spectrum (giving maximum and minimum packet frequency)</td>
+<td colspan="3"><p>Limits of virtual packet spectrum (giving maximum and minimum packet frequency)</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>object</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td colspan="2">OrderedDict()</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
 </tr>
-<tr class="row-even"><td colspan="3">properties</td>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>start</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>start</p></li>
 </ul>
 </td>
-<td>type</td>
-<td><em>quantity</em></td>
+<td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>50 angstrom</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>50 angstrom</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>stop</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>stop</p></li>
 </ul>
 </td>
-<td>type</td>
-<td><em>quantity</em></td>
+<td><p>type</p></td>
+<td><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>250000 angstrom</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>250000 angstrom</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>num</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>num</p></li>
 </ul>
 </td>
-<td>type</td>
-<td><em>number</em></td>
+<td><p>type</p></td>
+<td><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td>multipleOf</td>
-<td>1.0</td>
+<tr class="row-even"><td><p>multipleOf</p></td>
+<td><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td>1000000</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>1000000</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>enable_reflective_inner_boundary</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>enable_reflective_inner_boundary</p></li>
 </ul>
 </td>
-<td colspan="3">experimental feature to enable a reflective boundary.</td>
+<td colspan="3"><p>experimental feature to enable a reflective boundary.</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>boolean</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">False</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>inner_boundary_albedo</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>inner_boundary_albedo</p></li>
 </ul>
 </td>
-<td colspan="3">albedo of the reflective boundary</td>
+<td colspan="3"><p>albedo of the reflective boundary</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td colspan="2">0.0</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="first last simple">
-<li>convergence_strategy</li>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
+<li><p>convergence_strategy</p></li>
 </ul>
 </td>
-<td rowspan="2">oneOf</td>
-<td><ul class="first last simple">
+<td rowspan="2"><p>oneOf</p></td>
+<td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/convergence_strategy/damped</span></td>
+<td><p><span class="xref std std-ref">#/definitions/convergence_strategy/damped</span></p></td>
 </tr>
-<tr class="row-odd"><td><ul class="first last simple">
+<tr class="row-odd"><td><ul class="simple">
 <li></li>
 </ul>
 </td>
-<td><span class="xref std std-ref">#/definitions/convergence_strategy/custom</span></td>
+<td><p><span class="xref std std-ref">#/definitions/convergence_strategy/custom</span></p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>enable_full_relativity</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>enable_full_relativity</p></li>
 </ul>
 </td>
-<td colspan="3">Enables a more complete treatment of relativitic effects. This includes angle aberration as well as use of the fully general Doppler formula.</td>
+<td colspan="3"><p>Enables a more complete treatment of relativitic effects. This includes angle aberration as well as use of the fully general Doppler formula.</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td colspan="2"><em>boolean</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">False</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td>additionalProperties</td>
-<td colspan="3">False</td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="3"><p>False</p></td>
 </tr>
-<tr class="row-even"><td colspan="4">definitions</td>
+<tr class="row-even"><td colspan="4"><p>definitions</p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="first last simple">
-<li>convergence_strategy</li>
+<tr class="row-odd"><td colspan="4"><ul class="simple">
+<li><p>convergence_strategy</p></li>
 </ul>
 </td>
 </tr>
@@ -940,105 +940,105 @@ All convergence criteria can be specified separately for the three variables for
 (<code class="docutils literal notranslate"><span class="pre">t_inner</span></code>, <code class="docutils literal notranslate"><span class="pre">t_rad</span></code>, <code class="docutils literal notranslate"><span class="pre">ws</span></code>) by specifying subsections in the <code class="docutils literal notranslate"><span class="pre">convergence_criteria</span></code> of the same name. These
 override then the defaults.</p>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">damped</span></code> only has one parameter <code class="docutils literal notranslate"><span class="pre">damping-constant</span></code> and does not check for convergence. This can be used to fix the</dt>
-<dd>temperature of the inner boundary (by increasing the <code class="docutils literal notranslate"><span class="pre">convergence_criteria</span></code> and</dd>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">damped</span></code> only has one parameter <code class="docutils literal notranslate"><span class="pre">damping-constant</span></code> and does not check for convergence. This can be used to fix the</dt><dd><p>temperature of the inner boundary (by increasing the <code class="docutils literal notranslate"><span class="pre">convergence_criteria</span></code> and</p>
+</dd>
 </dl>
 </li>
 </ol>
 </div>
 <div class="section" id="spectrum">
 <h3>Spectrum<a class="headerlink" href="#spectrum" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils" id="spectrum.yml">
+<table class="docutils align-center" id="spectrum.yml">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>type</td>
-<td colspan="3"><em>object</em></td>
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td colspan="4">properties</td>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td><ul class="first last simple">
-<li>start</li>
+<tr class="row-odd"><td><ul class="simple">
+<li><p>start</p></li>
 </ul>
 </td>
-<td>type</td>
-<td colspan="2"><em>quantity</em></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
-<li>stop</li>
+<tr class="row-even"><td><ul class="simple">
+<li><p>stop</p></li>
 </ul>
 </td>
-<td>type</td>
-<td colspan="2"><em>quantity</em></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>quantity</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="first last simple">
-<li>num</li>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>num</p></li>
 </ul>
 </td>
-<td>type</td>
-<td colspan="2"><em>number</em></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td>multipleOf</td>
-<td colspan="2">1.0</td>
+<tr class="row-even"><td><p>multipleOf</p></td>
+<td colspan="2"><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="first last simple">
-<li>method</li>
+<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<li><p>method</p></li>
 </ul>
 </td>
-<td colspan="3">The method to generate the final spectrum</td>
+<td colspan="3"><p>The method to generate the final spectrum</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td colspan="2"><em>string</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td>enum</td>
-<td colspan="2">integrated, virtual, real</td>
+<tr class="row-odd"><td><p>enum</p></td>
+<td colspan="2"><p>integrated, virtual, real</p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">virtual</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>virtual</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="10"><ul class="first last simple">
-<li>integrated</li>
+<tr class="row-odd"><td rowspan="10"><ul class="simple">
+<li><p>integrated</p></li>
 </ul>
 </td>
-<td>type</td>
-<td colspan="2"><em>object</em></td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td colspan="2">OrderedDict()</td>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
 </tr>
-<tr class="row-odd"><td colspan="3">properties</td>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="first last simple">
-<li>points</li>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>points</p></li>
 </ul>
 </td>
-<td colspan="2">Number of impact parameters p used in the calculation of the integrated spectrum</td>
+<td colspan="2"><p>Number of impact parameters p used in the calculation of the integrated spectrum</p></td>
 </tr>
-<tr class="row-odd"><td>type</td>
-<td><em>number</em></td>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td>default</td>
-<td>1000</td>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>1000</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="first last simple">
-<li>interpolate_shells</li>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>interpolate_shells</p></li>
 </ul>
 </td>
-<td colspan="2">Number of shells on which the formal integral quantities are interpolated</td>
+<td colspan="2"><p>Number of shells on which the formal integral quantities are interpolated</p></td>
 </tr>
-<tr class="row-even"><td>type</td>
-<td><em>number</em></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td>default</td>
-<td>-1</td>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>-1</p></td>
 </tr>
-<tr class="row-even"><td>additionalProperties</td>
-<td colspan="2">False</td>
+<tr class="row-even"><td><p>additionalProperties</p></td>
+<td colspan="2"><p>False</p></td>
 </tr>
 </tbody>
 </table>
@@ -1046,13 +1046,13 @@ override then the defaults.</p>
 frequency space they are switched around if necessary. The number of bins is
 just an integer. Finally, the method option selects the final spectral synthesis mode. Currently, there are three options:</p>
 <ul class="simple">
-<li>real: construct spectrum from the real packet population alone</li>
-<li>virtual: use the <a class="reference internal" href="../montecarlo/virtualpackets.html"><span class="doc">virtual packet scheme</span></a> for spectral synthesis</li>
-<li>integrated: use the <a class="reference internal" href="../montecarlo/sourceintegration.html"><span class="doc">formal integral method</span></a> of Lucy 1999</li>
+<li><p>real: construct spectrum from the real packet population alone</p></li>
+<li><p>virtual: use the <a class="reference internal" href="../montecarlo/virtualpackets.html"><span class="doc">virtual packet scheme</span></a> for spectral synthesis</p></li>
+<li><p>integrated: use the <a class="reference internal" href="../montecarlo/sourceintegration.html"><span class="doc">formal integral method</span></a> of Lucy 1999</p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Currently, the “integrated” mode only works with the downbranching line
+<p class="admonition-title">Warning</p>
+<p>Currently, the “integrated” mode only works with the downbranching line
 interaction mode. Note also the limitations listed at the bottom of the
 dedicated page.</p>
 </div>

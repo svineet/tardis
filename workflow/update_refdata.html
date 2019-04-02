@@ -212,37 +212,33 @@
 <p>We asume that you have added the necessary changes to TARDIS and have a
 PR open.</p>
 <ol class="arabic">
-<li><dl class="first docutils">
-<dt>clone tardis-refdata (<cite>git clone tardis-refdata</cite>; you need to have git lfs installed) then make a new branch named</dt>
-<dd><p class="first last">the same as your new tardis feature branch.</p>
+<li><dl class="simple">
+<dt>clone tardis-refdata (<cite>git clone tardis-refdata</cite>; you need to have git lfs installed) then make a new branch named</dt><dd><p>the same as your new tardis feature branch.</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">Generate new reference data (in your tardis directory and right branch) offline using</p>
+<li><p>Generate new reference data (in your tardis directory and right branch) offline using</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt; --generate-reference&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Rerun the tests and see if it does not fail using</p>
+<li><p>Rerun the tests and see if it does not fail using</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt;&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Switch to tardis-refdata. Commit the changed ref-data and open a PR on tardis-refdata</p>
-</li>
-<li><dl class="first docutils">
-<dt>Make a copy of the refdata comparer notebook provided in TARDIS-refdata to check if there are</dt>
-<dd><p class="first last">any unexpected changes in the updated reference data and the previous reference data</p>
+<li><p>Switch to tardis-refdata. Commit the changed ref-data and open a PR on tardis-refdata</p></li>
+<li><dl class="simple">
+<dt>Make a copy of the refdata comparer notebook provided in TARDIS-refdata to check if there are</dt><dd><p>any unexpected changes in the updated reference data and the previous reference data</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">Switch back to the TARDIS directory. Open <cite>.travis.yml</cite></p>
-</li>
-<li><p class="first">Change the following lines</p>
+<li><p>Switch back to the TARDIS directory. Open <cite>.travis.yml</cite></p></li>
+<li><p>Change the following lines</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin pull/&lt;your TARDIS-refdata PR number; not the TARDIS PR number&gt;/head:&lt;some descriptive name&gt;; fi
 - if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout &lt;some descriptive name&gt;; fi```
@@ -250,13 +246,10 @@ PR open.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Commit the <cite>.travis.yml</cite> to your Pull request</p>
-</li>
-<li><p class="first">Make sure that your TARDIS PR now passes on TRAVIS.</p>
-</li>
-<li><p class="first">Then merge the PR on tardis-refdata.</p>
-</li>
-<li><p class="first">Then change <cite>.travis.yml</cite> to</p>
+<li><p>Commit the <cite>.travis.yml</cite> to your Pull request</p></li>
+<li><p>Make sure that your TARDIS PR now passes on TRAVIS.</p></li>
+<li><p>Then merge the PR on tardis-refdata.</p></li>
+<li><p>Then change <cite>.travis.yml</cite> to</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin; fi
 - if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout origin/master; fi```
@@ -264,12 +257,9 @@ PR open.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Then make sure that your TARDIS PR passes again.</p>
-</li>
-<li><p class="first">Then merge your PR to TARDIS master</p>
-</li>
-<li><p class="first">Congratulations - you updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan)</p>
-</li>
+<li><p>Then make sure that your TARDIS PR passes again.</p></li>
+<li><p>Then merge your PR to TARDIS master</p></li>
+<li><p>Congratulations - you updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan)</p></li>
 </ol>
 </div>
 

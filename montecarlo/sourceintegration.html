@@ -229,8 +229,8 @@ inherent to Monte Carlo calculations still affect the determination of the
 source functions and thus indirectly introduce an uncertainty in the spectral
 synthesis process.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The current implementation of the formal integral has several limitations.
+<p class="admonition-title">Warning</p>
+<p>The current implementation of the formal integral has several limitations.
 Please consult the corresponding section below to ensure that these
 limitations do not apply to your application.</p>
 </div>
@@ -341,12 +341,12 @@ intensity.</p>
 <h2>Current Limitations<a class="headerlink" href="#current-limitations" title="Permalink to this headline">¶</a></h2>
 <p>The current implementation of the formal integral has some limitations:</p>
 <ul class="simple">
-<li>once electron scattering is included, the scheme only produces accurate
+<li><p>once electron scattering is included, the scheme only produces accurate
 results when multiple resonances occur on the rays. This is simply because
 otherwise the <span class="math notranslate nohighlight">\(J^b\)</span> and <span class="math notranslate nohighlight">\(J^r\)</span> do not provide an accurate
 representation of the diffuse radiation field at the current location on the
 ray. Also, <span class="math notranslate nohighlight">\(d\tau\)</span> can become large which can create unphysical,
-negative intensities</li>
+negative intensities</p></li>
 </ul>
 <p>It is always advised to check the results of the formal integration against the
 spectrum constructed from the emerging Monte Carlo packets.</p>

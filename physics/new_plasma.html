@@ -230,31 +230,28 @@ After the calculation of the plasma state, the <span class="math notranslate noh
 for generating a plasma from the information provided by <cite>model</cite>. A variety of different plasmas can be generated
 depending on the options selected in the plasma section of the Tardis config. file. The options currently considered
 by the Legacy Plasma when creating the plasma calculation structure include:</p>
-<dl class="docutils">
-<dt>plasma:</dt>
-<dd><ul class="first last simple">
-<li>ionization: lte/nebular</li>
-<li>excitation: lte/dilute-lte</li>
-<li>line_interaction_type: scatter/downbranch/macroatom</li>
-<li>helium_treatment: dilute-lte/recomb-nlte</li>
-<li>nlte: [can provide list of ion species to be treated in NLTE, as well as specifying the use of the coronal_approximation/classical_nebular settings.</li>
+<dl class="simple">
+<dt>plasma:</dt><dd><ul class="simple">
+<li><p>ionization: lte/nebular</p></li>
+<li><p>excitation: lte/dilute-lte</p></li>
+<li><p>line_interaction_type: scatter/downbranch/macroatom</p></li>
+<li><p>helium_treatment: dilute-lte/recomb-nlte</p></li>
+<li><p>nlte: [can provide list of ion species to be treated in NLTE, as well as specifying the use of the coronal_approximation/classical_nebular settings.</p></li>
 </ul>
 </dd>
 </dl>
 <p><cite>LegacyPlasmaArray</cite> uses these options to construct a map of the necessary plasma parameters that demonstrates how these parameters are dependent on one another (using networkx). Each time a particular parameter of the plasma is updated, all of the parameters dependent (directly or indirectly) on that particular one can be easily updated automatically, without requiring that all the plasma calculations are repeated.</p>
 <div class="section" id="properties-inputs-and-outputs">
 <h2>Properties, Inputs and Outputs<a class="headerlink" href="#properties-inputs-and-outputs" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Each Tardis plasma possesses an array of plasma properties, which are used to calculate plasma parameter values. Most plasma properties have a single output, e.g.</dt>
-<dd><ul class="first last simple">
-<li><cite>GElectron</cite>: (<cite>g_electron</cite>,)</li>
-<li><cite>HeliumNLTE</cite>: (<cite>helium_population</cite>,)</li>
+<dl class="simple">
+<dt>Each Tardis plasma possesses an array of plasma properties, which are used to calculate plasma parameter values. Most plasma properties have a single output, e.g.</dt><dd><ul class="simple">
+<li><p><cite>GElectron</cite>: (<cite>g_electron</cite>,)</p></li>
+<li><p><cite>HeliumNLTE</cite>: (<cite>helium_population</cite>,)</p></li>
 </ul>
 </dd>
-<dt>but some have two or more, e.g.</dt>
-<dd><ul class="first last simple">
-<li><cite>IonNumberDensity</cite>: (<cite>ion_number_density</cite>, <cite>electron_densities</cite>)</li>
-<li><cite>Levels</cite>: (<cite>levels</cite>, <cite>excitation_energy</cite>, <cite>metastability</cite>, <cite>g</cite>)</li>
+<dt>but some have two or more, e.g.</dt><dd><ul class="simple">
+<li><p><cite>IonNumberDensity</cite>: (<cite>ion_number_density</cite>, <cite>electron_densities</cite>)</p></li>
+<li><p><cite>Levels</cite>: (<cite>levels</cite>, <cite>excitation_energy</cite>, <cite>metastability</cite>, <cite>g</cite>)</p></li>
 </ul>
 </dd>
 </dl>

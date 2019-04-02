@@ -242,9 +242,9 @@ work on a mesh with ten cells should be formatted like this:</p>
 </div>
 <p>In this file:</p>
 <ul class="simple">
-<li>there should be the same number of rows as there are cells specified in the velocity/density structure part of the TARDIS setup</li>
-<li>each row contains 31 numbers, the first of which is the index (i.e. matching the zone to the density profile file)</li>
-<li>the remaining 30 entries in each row give the set of elemental abundances for atomic number Z=1 to Z=30 (in order)</li>
+<li><p>there should be the same number of rows as there are cells specified in the velocity/density structure part of the TARDIS setup</p></li>
+<li><p>each row contains 31 numbers, the first of which is the index (i.e. matching the zone to the density profile file)</p></li>
+<li><p>the remaining 30 entries in each row give the set of elemental abundances for atomic number Z=1 to Z=30 (in order)</p></li>
 </ul>
 <p>The abundances are specified as mass fractions (i.e. the sum of columns 1 to 30
 in each row should be 1.0).  TARDIS does not currently include any elements
@@ -254,19 +254,19 @@ simulation you may need to calculate the state of any radioactive decay chains
 at the correct epoch.</p>
 <p>The example file shown here has three simple layers:</p>
 <ul class="simple">
-<li>an innermost region (indices 0 to 2) that is composed of Si (Z=14), S (Z=16), Ar (Z=18), Ca (Z=20), Fe (Z=26), Co (Z=27) and Ni (Z=28)</li>
-<li>a middle region (indices 3 to 7) that is composed of O (Z=8), Mg (Z=12), Si, S, Ar and Ca</li>
-<li>an outer region (indices 8 and 9) that is composed of C (Z=6) and O.</li>
+<li><p>an innermost region (indices 0 to 2) that is composed of Si (Z=14), S (Z=16), Ar (Z=18), Ca (Z=20), Fe (Z=26), Co (Z=27) and Ni (Z=28)</p></li>
+<li><p>a middle region (indices 3 to 7) that is composed of O (Z=8), Mg (Z=12), Si, S, Ar and Ca</p></li>
+<li><p>an outer region (indices 8 and 9) that is composed of C (Z=6) and O.</p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The example given here is to show the format only. It is not a
+<p class="admonition-title">Warning</p>
+<p>The example given here is to show the format only. It is not a
 realistic model. In any real calculation better resolution
 (i.e. more grid points) should be used.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The calculation can be no better / more complete than the atomic
+<p class="admonition-title">Warning</p>
+<p>The calculation can be no better / more complete than the atomic
 data set. For further information on the atomic database -
 including details of how to develop your own dataset to suit your
 needs, please contact us.</p>
@@ -304,45 +304,45 @@ work on a mesh with ten cells should be formatted like this:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The file should always contain the cell index as a running index in the
+<p class="admonition-title">Note</p>
+<p>The file should always contain the cell index as a running index in the
 first column.</p>
 </div>
 <div class="admonition danger">
-<p class="first admonition-title">Danger</p>
-<p class="last">The header line for the isotopic abundance structure can under no
+<p class="admonition-title">Danger</p>
+<p>The header line for the isotopic abundance structure can under no
 circumstances start with a ‘#’</p>
 </div>
 <p>In this file:</p>
 <ul class="simple">
-<li>Header row contains element and isotopes symbol</li>
-<li>the remaining entries in each row give the set of elemental and isotopic abundances.</li>
-<li>the first column contains a running index</li>
+<li><p>Header row contains element and isotopes symbol</p></li>
+<li><p>the remaining entries in each row give the set of elemental and isotopic abundances.</p></li>
+<li><p>the first column contains a running index</p></li>
 </ul>
 <p>The abundances are specified as mass fractions (i.e. the sum of columns
 in each row should be 1.0). The mass fractions specified will be adopted directly in
 the TARDIS calculations.</p>
 <p>The example file shown here has three simple layers:</p>
 <ul class="simple">
-<li>an innermost region that is composed of Si and two Nickel Isotopes Ni56 and Ni58</li>
-<li>a middle region that is composed of O and Mg</li>
-<li>an outer region that is composed of C and O.</li>
+<li><p>an innermost region that is composed of Si and two Nickel Isotopes Ni56 and Ni58</p></li>
+<li><p>a middle region that is composed of O and Mg</p></li>
+<li><p>an outer region that is composed of C and O.</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Suppose you specify Elemental and Isotopic abundances for the same element. For ex-
+<p class="admonition-title">Note</p>
+<p>Suppose you specify Elemental and Isotopic abundances for the same element. For ex-
 <code class="code docutils literal notranslate"><span class="pre">Ni</span></code> and <code class="code docutils literal notranslate"><span class="pre">Ni56</span></code>.
 Here, Ni will refer to the stable Nickel, i.e. (Z=26, A=58).</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">As with the custom density file, the first row will be ignored. It is
+<p class="admonition-title">Note</p>
+<p>As with the custom density file, the first row will be ignored. It is
 supposed to give the composition below the photosphere. Thus, the first row
 (after the header) can be filled with dummy values</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The example given here is to show the format only. It is not a
+<p class="admonition-title">Warning</p>
+<p>The example given here is to show the format only. It is not a
 realistic model. In any real calculation better resolution
 (i.e. more grid points) should be used.</p>
 </div>

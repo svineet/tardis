@@ -243,18 +243,18 @@ repository.</p>
 <p>In most cases we try to break down big features into small, quantifiable goals
 which are then acted upon.</p>
 <ul class="simple">
-<li>Document feature to be added in an issue and maybe ask the mailing
-list if this feature exists</li>
-<li>Write a test that demonstrates what feature will be added.</li>
-<li>Run the test to verify that it fails in the way you think it should.</li>
-<li>If it fails in an unexpected way, your test may be wrong. This is a
-great time to ask the group for guidance</li>
-<li>If it passes, you are done! You just added test coverage to an
-already existing feature, and that is great! (unlikely)</li>
-<li>Add the feature (also known as “a simple matter of programming”).</li>
-<li>Run the test to verify that it passes.</li>
-<li>Write documentation about your feature.</li>
-<li>close issue/partial PR and add to changelog.</li>
+<li><p>Document feature to be added in an issue and maybe ask the mailing
+list if this feature exists</p></li>
+<li><p>Write a test that demonstrates what feature will be added.</p></li>
+<li><p>Run the test to verify that it fails in the way you think it should.</p></li>
+<li><p>If it fails in an unexpected way, your test may be wrong. This is a
+great time to ask the group for guidance</p></li>
+<li><p>If it passes, you are done! You just added test coverage to an
+already existing feature, and that is great! (unlikely)</p></li>
+<li><p>Add the feature (also known as “a simple matter of programming”).</p></li>
+<li><p>Run the test to verify that it passes.</p></li>
+<li><p>Write documentation about your feature.</p></li>
+<li><p>close issue/partial PR and add to changelog.</p></li>
 </ul>
 </div>
 <div class="section" id="preparation-and-working-with-git">
@@ -280,11 +280,9 @@ the <a class="reference external" href="http://help.github.com/articles/generati
 <p>The following example shows how to fork the core <code class="docutils literal notranslate"><span class="pre">astropy</span></code> repository, but
 the same applies to other packages:</p>
 <ol class="arabic">
-<li><p class="first">Log into your <a class="reference external" href="http://github.com">GitHub</a> account.</p>
-</li>
-<li><p class="first">Go to the <a class="reference external" href="http://github.com/tardis-sn/tardis">TARDIS GitHub</a> home page.</p>
-</li>
-<li><p class="first">Click on the <em>fork</em> button:</p>
+<li><p>Log into your <a class="reference external" href="http://github.com">GitHub</a> account.</p></li>
+<li><p>Go to the <a class="reference external" href="http://github.com/tardis-sn/tardis">TARDIS GitHub</a> home page.</p></li>
+<li><p>Click on the <em>fork</em> button:</p>
 <img alt="../_images/Bootcamp-Fork.png" src="../_images/Bootcamp-Fork.png" />
 <p>After a short pause and an animation of Octocat scanning a book on a flatbed
 scanner, you should find yourself at the home page for your own forked copy
@@ -306,12 +304,12 @@ of <a class="reference external" href="http://tardis.readthedocs.org">TARDIS</a>
 <div class="section" id="in-detail">
 <h3>In detail<a class="headerlink" href="#in-detail" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Clone your fork to the local computer:</p>
+<li><p>Clone your fork to the local computer:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">tardis</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Change directory to your new repo:</p>
+<li><p>Change directory to your new repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tardis</span>
 </pre></div>
 </div>
@@ -361,7 +359,7 @@ something like:</p>
 tree by using <a href="#id1"><span class="problematic" id="id2">``</span></a>import `` when running Python in the source of an
 TARDIS repository clone.</p>
 <ol class="arabic">
-<li><p class="first">Install <a class="reference external" href="http://tardis.readthedocs.org">TARDIS</a> in develop mode:</p>
+<li><p>Install <a class="reference external" href="http://tardis.readthedocs.org">TARDIS</a> in develop mode:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python setup.py develop
 </pre></div>
 </div>
@@ -379,29 +377,29 @@ interpreter and <code class="docutils literal notranslate"><span class="pre">imp
 successfully forked the repository. The details for each of these steps are
 given in the following sections.</p>
 <ul class="simple">
-<li>Don’t use your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch for anything.  Consider deleting it.</li>
-<li>When you are starting a new set of changes, fetch any changes from the
+<li><p>Don’t use your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch for anything.  Consider deleting it.</p></li>
+<li><p>When you are starting a new set of changes, fetch any changes from the
 trunk, then start a <strong>new</strong> <em>feature branch</em> from that (do not base your
-branch on your changes).</li>
-<li>Make a new branch for each separable set of changes — “one task, one
-branch” (<a class="reference external" href="http://mail.scipy.org/pipermail/ipython-dev/2010-October/006746.html">ipython git workflow</a>).</li>
-<li>Name your branch for the purpose of the changes, for example
-<code class="docutils literal notranslate"><span class="pre">bugfix-for-issue-14</span></code> or <code class="docutils literal notranslate"><span class="pre">refactor-database-code</span></code>.</li>
-<li>If you can possibly avoid it, don’t merge the trunk or any other branches into
-your feature branch while you are working.</li>
-<li>If you do find yourself merging from the trunk, consider
-<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.0.3)"><span>Rebasing on trunk</span></a></li>
-<li>Ask on the <a class="reference external" href="https://groups.google.com/forum/#!forum/tardis-sn-dev">tardis-sn-dev mailing list</a> if you get stuck.</li>
-<li>Once your code is nearing completion, run the test suite to ensure
+branch on your changes).</p></li>
+<li><p>Make a new branch for each separable set of changes — “one task, one
+branch” (<a class="reference external" href="http://mail.scipy.org/pipermail/ipython-dev/2010-October/006746.html">ipython git workflow</a>).</p></li>
+<li><p>Name your branch for the purpose of the changes, for example
+<code class="docutils literal notranslate"><span class="pre">bugfix-for-issue-14</span></code> or <code class="docutils literal notranslate"><span class="pre">refactor-database-code</span></code>.</p></li>
+<li><p>If you can possibly avoid it, don’t merge the trunk or any other branches into
+your feature branch while you are working.</p></li>
+<li><p>If you do find yourself merging from the trunk, consider
+<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.0.3)"><span>Rebasing on trunk</span></a></p></li>
+<li><p>Ask on the <a class="reference external" href="https://groups.google.com/forum/#!forum/tardis-sn-dev">tardis-sn-dev mailing list</a> if you get stuck.</p></li>
+<li><p>Once your code is nearing completion, run the test suite to ensure
 you have not accidentally caused regressions, and add new tests to ensure
-your contribution behaves correctly (see <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/testing.html#testing-guidelines" title="(in NumPy v1.16)"><span>Testing Guidelines</span></a>).</li>
-<li>Issue a pull request on github!</li>
-<li>As the code is converging to a final state, ensure your
-documentation follows the guidelines (see <a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v3.1.2)"><span>Writing Documentation</span></a>).</li>
-<li>Once your code is ready to be accepted, please add an entry to the changelog
+your contribution behaves correctly (see <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/testing.html#testing-guidelines" title="(in NumPy v1.16)"><span>Testing Guidelines</span></a>).</p></li>
+<li><p>Issue a pull request on github!</p></li>
+<li><p>As the code is converging to a final state, ensure your
+documentation follows the guidelines (see <a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v3.1.2)"><span>Writing Documentation</span></a>).</p></li>
+<li><p>Once your code is ready to be accepted, please add an entry to the changelog
 (see <a class="reference external" href="http://docs.astropy.org/en/stable/development/workflow/maintainer_workflow.html#changelog-format" title="(in Astropy v3.1.2)"><span>Updating and Maintaining the Changelog</span></a>).  If you’re sure where to put this, please at
 least suggest a brief (one or two sentence) description of your change so
-that another developer can add it to the changelog.</li>
+that another developer can add it to the changelog.</p></li>
 </ul>
 <p>This way of working helps to keep work well organized, with readable history.
 This in turn makes it easier for project maintainers (that might be you) to
@@ -472,9 +470,8 @@ push up to your own repo on GitHub with:</p>
 <div class="section" id="in-more-detail">
 <h3>In more detail<a class="headerlink" href="#in-more-detail" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Make some changes</p>
-</li>
-<li><p class="first">Once you are a bit further along, test your changes do not lead to
+<li><p>Make some changes</p></li>
+<li><p>Once you are a bit further along, test your changes do not lead to
 regressions, and add new tests (see the Astropy <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/testing.html#testing-guidelines" title="(in NumPy v1.16)"><span>Testing Guidelines</span></a> we follow).:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
 </pre></div>
@@ -488,7 +485,7 @@ builds and looks correct:</p>
 any warnings.  (For more details, see the Astropy
 <a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v3.1.2)"><span>Writing Documentation</span></a> we follow.)</p>
 </li>
-<li><p class="first">See which files have changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-status.html">git status</a>).
+<li><p>See which files have changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-status.html">git status</a>).
 You’ll see a listing like this one:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># On branch ny-new-feature</span>
 <span class="c1"># Changed but not updated:</span>
@@ -505,15 +502,12 @@ You’ll see a listing like this one:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Check what the actual changes are with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-diff.html">git diff</a>).</p>
-</li>
-<li><p class="first">Add any new files to version control with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">new_file_name</span></code> (see
-<a class="reference external" href="http://schacon.github.com/git/git-add.html">git add</a>).</p>
-</li>
-<li><p class="first">Add any modified files that you want to commit using
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">modified_file_name</span></code>  (see <a class="reference external" href="http://schacon.github.com/git/git-add.html">git add</a>).</p>
-</li>
-<li><p class="first">Once you are ready to commit, check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> which files are
+<li><p>Check what the actual changes are with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-diff.html">git diff</a>).</p></li>
+<li><p>Add any new files to version control with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">new_file_name</span></code> (see
+<a class="reference external" href="http://schacon.github.com/git/git-add.html">git add</a>).</p></li>
+<li><p>Add any modified files that you want to commit using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">modified_file_name</span></code>  (see <a class="reference external" href="http://schacon.github.com/git/git-add.html">git add</a>).</p></li>
+<li><p>Once you are ready to commit, check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> which files are
 about to be committed:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Changes to be committed:</span>
 <span class="c1">#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
@@ -525,9 +519,8 @@ about to be committed:</p>
 signals that you’re going to type a message on the command line. The <a class="reference external" href="http://schacon.github.com/git/git-commit.html">git
 commit</a> manual page might also be useful.</p>
 </li>
-<li><p class="first">Push the changes up to your forked repo on GitHub with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> (see
-<a class="reference external" href="http://schacon.github.com/git/git-push.html">git push</a>).</p>
-</li>
+<li><p>Push the changes up to your forked repo on GitHub with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> (see
+<a class="reference external" href="http://schacon.github.com/git/git-push.html">git push</a>).</p></li>
 </ol>
 </div>
 </div>
@@ -535,14 +528,13 @@ commit</a> manual page might also be useful.</p>
 <h2>Asking for your changes to be reviewed and/or merged<a class="headerlink" href="#asking-for-your-changes-to-be-reviewed-and-or-merged" title="Permalink to this headline">¶</a></h2>
 <p>When you are ready to ask for someone to review your code and consider a merge:</p>
 <ol class="arabic">
-<li><p class="first">Go to the URL of your forked repo, e.g.,
-<code class="docutils literal notranslate"><span class="pre">http://github.com/your-user-name/tardis</span></code>.</p>
-</li>
-<li><p class="first">Use the ‘Switch Branches’ dropdown menu near the top left of the page to
+<li><p>Go to the URL of your forked repo, e.g.,
+<code class="docutils literal notranslate"><span class="pre">http://github.com/your-user-name/tardis</span></code>.</p></li>
+<li><p>Use the ‘Switch Branches’ dropdown menu near the top left of the page to
 select the branch with your changes:</p>
 <img alt="../_images/branch_dropdown.png" src="../_images/branch_dropdown.png" />
 </li>
-<li><p class="first">Click on the ‘Pull request’ button:</p>
+<li><p>Click on the ‘Pull request’ button:</p>
 <img alt="../_images/pull_button.png" src="../_images/pull_button.png" />
 <p>Enter a title for the set of changes, and some explanation of what you’ve
 done. If there is anything you’d like particular attention for, like a

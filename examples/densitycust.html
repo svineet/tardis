@@ -244,9 +244,9 @@ ascii file that should look something like this:</p>
 </div>
 <p>In this file:</p>
 <ul class="simple">
-<li>the first line gives the reference time (see below)</li>
-<li>(the second line in our example is a comment)</li>
-<li>the remaining lines (ten in our example) give an indexed table of points that specify mass density (g / cm^3) as a function of velocity (km /s).</li>
+<li><p>the first line gives the reference time (see below)</p></li>
+<li><p>(the second line in our example is a comment)</p></li>
+<li><p>the remaining lines (ten in our example) give an indexed table of points that specify mass density (g / cm^3) as a function of velocity (km /s).</p></li>
 </ul>
 <p>TARDIS will use this table of density versus velocity to specify the density
 distribution in the ejecta.  For the calculation, TARDIS will use the reference
@@ -258,15 +258,15 @@ requested by assuming homologous expansion:</p>
 <div class="math notranslate nohighlight">
 \[\rho \propto v^{-5}\]</div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The grid of points specified in the input file is interpreted by
+<p class="admonition-title">Note</p>
+<p>The grid of points specified in the input file is interpreted by
 TARDIS as defining a grid in which the tabulated velocities are
 taken as the outer boundaries of grid cells and the density is
 assumed to be uniform with each cell.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The example given here is to show the format only. It is not a
+<p class="admonition-title">Warning</p>
+<p>The example given here is to show the format only. It is not a
 realistic model. In any real calculation better resolution
 (i.e. more grid points) should be used.</p>
 </div>
@@ -287,8 +287,8 @@ the model section of the yaml file:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The specifications for the velocities of the inner and outer boundary values can be neglected
+<p class="admonition-title">Note</p>
+<p>The specifications for the velocities of the inner and outer boundary values can be neglected
 (in which case TARDIS will default to using the full velocity range specified in the density.txt file).
 Values for the boundary velocities that lie outside the range covered by density.txt will not be accepted.</p>
 </div>

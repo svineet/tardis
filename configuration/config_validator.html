@@ -223,12 +223,11 @@
 - Main_level:</p>
 <blockquote>
 <div><ul class="simple">
-<li><dl class="first docutils">
-<dt>Second_level:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Third_level:</dt>
-<dd>…</dd>
+<li><dl class="simple">
+<dt>Second_level:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Third_level:</dt><dd><p>…</p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -241,10 +240,10 @@
 - item:</p>
 <blockquote>
 <div><ul class="simple">
-<li>property_type: int</li>
-<li>default: 1</li>
-<li>mandatory: True</li>
-<li>help:  ‘This is a doc string.’</li>
+<li><p>property_type: int</p></li>
+<li><p>default: 1</p></li>
+<li><p>mandatory: True</p></li>
+<li><p>help:  ‘This is a doc string.’</p></li>
 </ul>
 </div></blockquote>
 <p>This contains always  the keywords help, default, mandatory, and property_type. The keyword help is  a doc-string which describes the corresponding item. Default specifies the default value which is used in case that no value for this item is specified in the corresponding user configuration item.  If the keyword mandatory is True, the item has to be specified in the user configuration.  The keyword property_type is used to specify the type of the item. At the moment, the config parser knows the following types:
@@ -263,50 +262,45 @@ If the type declaration for this container is finished you can specify all conta
 - container_example:</p>
 <blockquote>
 <div><ul class="simple">
-<li>property_type: container-property</li>
-<li><dl class="first docutils">
-<dt>type:</dt>
-<dd><ul class="first last">
-<li>property_type: container-declaration</li>
-<li>containers: [‘one’, ‘two’, ‘three’]</li>
-<li>_one: [‘one_one’, ‘one_two’]</li>
-<li>_two: [‘two_one’]</li>
+<li><p>property_type: container-property</p></li>
+<li><dl class="simple">
+<dt>type:</dt><dd><ul>
+<li><p>property_type: container-declaration</p></li>
+<li><p>containers: [‘one’, ‘two’, ‘three’]</p></li>
+<li><p>_one: [‘one_one’, ‘one_two’]</p></li>
+<li><p>_two: [‘two_one’]</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>one_one:</dt>
-<dd><ul class="first last">
-<li>property_type: string</li>
-<li>default: ‘This is a container item’</li>
-<li>mandatory: False</li>
-<li>help: This is a container item from the container one.</li>
+<li><dl class="simple">
+<dt>one_one:</dt><dd><ul>
+<li><p>property_type: string</p></li>
+<li><p>default: ‘This is a container item’</p></li>
+<li><p>mandatory: False</p></li>
+<li><p>help: This is a container item from the container one.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>one_two:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>sub_one_two_one:</dt>
-<dd><ul class="first last">
-<li>property_type: string</li>
-<li>default: ‘This is a container item’</li>
-<li>mandatory: False</li>
-<li>help: This is a container item from the container one.</li>
+<li><dl class="simple">
+<dt>one_two:</dt><dd><ul>
+<li><dl class="simple">
+<dt>sub_one_two_one:</dt><dd><ul>
+<li><p>property_type: string</p></li>
+<li><p>default: ‘This is a container item’</p></li>
+<li><p>mandatory: False</p></li>
+<li><p>help: This is a container item from the container one.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>sub_one_two_two:</dt>
-<dd><ul class="first last">
-<li>property_type: string</li>
-<li>default: ‘This is a container item’</li>
-<li>mandatory: False</li>
-<li>help: This is a container item from the container one.</li>
+<li><dl class="simple">
+<dt>sub_one_two_two:</dt><dd><ul>
+<li><p>property_type: string</p></li>
+<li><p>default: ‘This is a container item’</p></li>
+<li><p>mandatory: False</p></li>
+<li><p>help: This is a container item from the container one.</p></li>
 </ul>
 </dd>
 </dl>
@@ -315,16 +309,14 @@ If the type declaration for this container is finished you can specify all conta
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>two_one:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>quantity_range:</dt>
-<dd><ul class="first last">
-<li>property_type: quantity_range</li>
-<li>default: [1 m,10 cm] #[Start,End]</li>
-<li>mandatory: False</li>
-<li>help:  Like property type range but with quantities as start and stop. The consistency of the units is checked.</li>
+<li><dl class="simple">
+<dt>two_one:</dt><dd><ul>
+<li><dl class="simple">
+<dt>quantity_range:</dt><dd><ul>
+<li><p>property_type: quantity_range</p></li>
+<li><p>default: [1 m,10 cm] #[Start,End]</p></li>
+<li><p>mandatory: False</p></li>
+<li><p>help:  Like property type range but with quantities as start and stop. The consistency of the units is checked.</p></li>
 </ul>
 </dd>
 </dl>
