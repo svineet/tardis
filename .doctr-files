@@ -1,4 +1,4 @@
-./_downloads/6a9e98898d909ffa422ebbb4045adf11/tardis_example.yml
+./_downloads/fd9d194c1d58f6e71001ab587978b5c5/tardis_example.yml
 ./_images/Bootcamp-Fork.png
 ./_images/LineInfo.png
 ./_images/OpeningScreen.png
@@ -33,6 +33,7 @@
 ./_sources/examples/examples.rst.txt
 ./_sources/examples/index.rst.txt
 ./_sources/examples/modelconfig.rst.txt
+./_sources/examples/stella_to_tardis.ipynb.txt
 ./_sources/examples/tardis_example.rst.txt
 ./_sources/gui.rst.txt
 ./_sources/index.rst.txt
@@ -148,6 +149,7 @@
 ./examples/examples.html
 ./examples/index.html
 ./examples/modelconfig.html
+./examples/stella_to_tardis.html
 ./examples/tardis_example.html
 ./genindex.html
 ./gui.html
