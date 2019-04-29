@@ -1,3 +1,4 @@
+./CHANGELOG.html
 ./_downloads/fd9d194c1d58f6e71001ab587978b5c5/tardis_example.yml
 ./_images/Bootcamp-Fork.png
 ./_images/LineInfo.png
@@ -15,10 +16,10 @@
 ./_images/pull_button.png
 ./_images/scatter_downbranch_ma.png
 ./_images/spherical_symmetry.png
+./_sources/CHANGELOG.md.txt
 ./_sources/atomic/atomic_data.rst.txt
 ./_sources/atomic/atomic_data_description.rst.txt
 ./_sources/atomic/current_public_table.rst.txt
-./_sources/changelog.rst.txt
 ./_sources/configuration/config_validator.rst.txt
 ./_sources/configuration/configuration.rst.txt
 ./_sources/configuration/index.rst.txt
@@ -134,7 +135,6 @@
 ./atomic/atomic_data.html
 ./atomic/atomic_data_description.html
 ./atomic/current_public_table.html
-./changelog.html
 ./configuration/config_validator.html
 ./configuration/configuration.html
 ./configuration/index.html
