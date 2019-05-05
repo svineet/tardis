@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2019/04/30 21:15 +00:00)
+### upcoming (2019/05/05 13:19 +00:00)
+- [#918](https://github.com/tardis-sn/tardis/pull/918) Density docs (#918) (@marxwillia)
+- [#926](https://github.com/tardis-sn/tardis/pull/926) Adding a TARDIS data repo (#926) (@wkerzendorf)
 - [#924](https://github.com/tardis-sn/tardis/pull/924) Migrate beta_sobolev calculation from cython to numba (#924) (@chvogl)
 - [#925](https://github.com/tardis-sn/tardis/pull/925) Docs/fix changelog (@wkerzendorf)
 - [#923](https://github.com/tardis-sn/tardis/pull/923) Fix nlte normalization (@livnehra)

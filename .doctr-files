@@ -27,6 +27,7 @@
 ./_sources/configuration/read_configuration.ipynb.txt
 ./_sources/credits.rst.txt
 ./_sources/developer_faq.rst.txt
+./_sources/examples/Custom_Density_And_Boundary_Velocities.ipynb.txt
 ./_sources/examples/abundancecust.rst.txt
 ./_sources/examples/abundanceuni.rst.txt
 ./_sources/examples/densitycust.rst.txt
@@ -36,6 +37,7 @@
 ./_sources/examples/index.rst.txt
 ./_sources/examples/integrator.ipynb.txt
 ./_sources/examples/modelconfig.rst.txt
+./_sources/examples/run_simple_example.ipynb.txt
 ./_sources/examples/stella_to_tardis.ipynb.txt
 ./_sources/examples/tardis_example.rst.txt
 ./_sources/gui.rst.txt
@@ -52,6 +54,7 @@
 ./_sources/montecarlo/sourceintegration.rst.txt
 ./_sources/montecarlo/virtualpackets.rst.txt
 ./_sources/news.rst.txt
+./_sources/notebooks/Custom_TARDIS_Model_Tutorial.ipynb.txt
 ./_sources/notebooks/hdf_writer.ipynb.txt
 ./_sources/notebooks/to_hdf.ipynb.txt
 ./_sources/physics/index.rst.txt
@@ -142,6 +145,7 @@
 ./configuration/read_configuration.html
 ./credits.html
 ./developer_faq.html
+./examples/Custom_Density_And_Boundary_Velocities.html
 ./examples/abundancecust.html
 ./examples/abundanceuni.html
 ./examples/densitycust.html
@@ -151,6 +155,7 @@
 ./examples/index.html
 ./examples/integrator.html
 ./examples/modelconfig.html
+./examples/run_simple_example.html
 ./examples/stella_to_tardis.html
 ./examples/tardis_example.html
 ./genindex.html
@@ -168,6 +173,7 @@
 ./montecarlo/sourceintegration.html
 ./montecarlo/virtualpackets.html
 ./news.html
+./notebooks/Custom_TARDIS_Model_Tutorial.html
 ./notebooks/hdf_writer.html
 ./notebooks/to_hdf.html
 ./objects.inv
