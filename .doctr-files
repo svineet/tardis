@@ -81,6 +81,7 @@
 ./_sources/running_tests.rst.txt
 ./_sources/scripts/cmfgen.rst.txt
 ./_sources/scripts/index.rst.txt
+./_sources/team.rst.txt
 ./_sources/to_hdf.rst.txt
 ./_sources/workflow/development_workflow.rst.txt
 ./_sources/workflow/git_workflow.rst.txt
@@ -210,6 +211,7 @@
 ./scripts/index.html
 ./search.html
 ./searchindex.js
+./team.html
 ./to_hdf.html
 ./workflow/development_workflow.html
 ./workflow/git_workflow.html
