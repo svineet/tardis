@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2019/05/06 21:19 +00:00)
+### v3.0-alpha.3 (2019/05/13 22:05 +00:00)
+- [#930](https://github.com/tardis-sn/tardis/pull/930) Fix for conda-forge package (#930) (@epassaro)
 - [#918](https://github.com/tardis-sn/tardis/pull/918) Density docs (#918) (@marxwillia)
 - [#926](https://github.com/tardis-sn/tardis/pull/926) Adding a TARDIS data repo (#926) (@wkerzendorf)
 - [#924](https://github.com/tardis-sn/tardis/pull/924) Migrate beta_sobolev calculation from cython to numba (#924) (@chvogl)
