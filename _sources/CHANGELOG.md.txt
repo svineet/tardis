@@ -1,5 +1,8 @@
 ## Change Log
 
+### upcoming (2019/05/22 15:22 +00:00)
+- [#934](https://github.com/tardis-sn/tardis/pull/934) Relocated the azure_pipelines.yml into a new directory called pipelines, and renamed it as pipeline_A (#934) (@Youssef15015)
+
 ### v3.0-alpha.3 (2019/05/13 22:05 +00:00)
 - [#930](https://github.com/tardis-sn/tardis/pull/930) Fix for conda-forge package (#930) (@epassaro)
 - [#918](https://github.com/tardis-sn/tardis/pull/918) Density docs (#918) (@marxwillia)
