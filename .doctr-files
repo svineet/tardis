@@ -55,6 +55,7 @@
 ./_sources/montecarlo/virtualpackets.rst.txt
 ./_sources/news.rst.txt
 ./_sources/notebooks/Custom_TARDIS_Model_Tutorial.ipynb.txt
+./_sources/notebooks/csvy_test.ipynb.txt
 ./_sources/notebooks/hdf_writer.ipynb.txt
 ./_sources/notebooks/to_hdf.ipynb.txt
 ./_sources/physics/index.rst.txt
@@ -175,6 +176,7 @@
 ./montecarlo/virtualpackets.html
 ./news.html
 ./notebooks/Custom_TARDIS_Model_Tutorial.html
+./notebooks/csvy_test.html
 ./notebooks/hdf_writer.html
 ./notebooks/to_hdf.html
 ./objects.inv
