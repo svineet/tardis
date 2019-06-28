@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Radiative Monte Carlo &mdash; TARDIS v3.0.dev172</title>
+  <title>Radiative Monte Carlo &mdash; TARDIS v</title>
   
 
   
@@ -65,10 +65,6 @@
 
           
             
-            
-              <div class="version">
-                3.0.dev172
-              </div>
             
           
 
@@ -261,7 +257,7 @@ d_\textrm{rest \rightarrow comoving} = 1 - \mu_\textrm{out} v(r) / c \\
 E_\textrm{after scatter} = E_\textrm{before scatter} \times \frac{1 - \mu_\textrm{in} v(r) / c}{1 - \mu_\textrm{out} v(r) / c}\end{split}\]</div>
 <p>This way the montecarlo packets can gain or loose energy in the simulation:</p>
 <p>(<a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.py">Source code</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.png">png</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.hires.png">hires.png</a>, <a class="reference external" href="../physics/pyplot/plot_mu_in_out_packet.pdf">pdf</a>)</p>
-<div class="figure align-center">
+<div class="figure align-default">
 <img alt="../_images/plot_mu_in_out_packet.png" src="../_images/plot_mu_in_out_packet.png" />
 </div>
 <p>The spectrum is then generated as a weighted histogram. For each bin with edges
@@ -287,7 +283,7 @@ the outer boundary and add up their remaining energies.</p>
 \bar{\nu}_\textrm{estimator} &amp;=  \sum{\epsilon \nu l},\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon, \nu\)</span> are comoving energy and comoving frequency of a packet respectively.</p>
 <p>To calculate the temperature and dilution factor we first calculate the mean intensity in each cell
-( <span class="math notranslate nohighlight">\(J = \frac{1}{4\pi\, \Delta t\, V} J_\textrm{estimator}\)</span> )., <span>[2003A&amp;A…403..261L]</span>.</p>
+( <span class="math notranslate nohighlight">\(J = \frac{1}{4\pi\, \Delta t\, V} J_\textrm{estimator}\)</span> )., <span id="id1">[2003A&amp;A…403..261L]</span>.</p>
 <p>The weighted mean frequency is used to obtain the radiation temperature. Specifically, the radiation temperature is chosen as the
 temperature of a black body that has the same weighted mean frequency as has been computed in the simulation. Accordingly,</p>
 <div class="math notranslate nohighlight">

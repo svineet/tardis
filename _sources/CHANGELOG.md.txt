@@ -1,22 +1,6 @@
 ## Change Log
 
-### upcoming (2019/06/17 16:09 +00:00)
-- [#940](https://github.com/tardis-sn/tardis/pull/940) Correct index script spelling (#940) (@Youssef15015)
-- [#928](https://github.com/tardis-sn/tardis/pull/928) Added csvy parser (#928) (@marxwillia)
-- [#933](https://github.com/tardis-sn/tardis/pull/933) Radiative recombination (#933) (@chvogl)
-- [#934](https://github.com/tardis-sn/tardis/pull/934) Relocated the azure_pipelines.yml into a new directory called pipelines, and renamed it as pipeline_A (#934) (@Youssef15015)
-
-### v3.0-alpha.3 (2019/05/13 22:05 +00:00)
-- [#930](https://github.com/tardis-sn/tardis/pull/930) Fix for conda-forge package (#930) (@epassaro)
-- [#918](https://github.com/tardis-sn/tardis/pull/918) Density docs (#918) (@marxwillia)
-- [#926](https://github.com/tardis-sn/tardis/pull/926) Adding a TARDIS data repo (#926) (@wkerzendorf)
-- [#924](https://github.com/tardis-sn/tardis/pull/924) Migrate beta_sobolev calculation from cython to numba (#924) (@chvogl)
-- [#925](https://github.com/tardis-sn/tardis/pull/925) Docs/fix changelog (@wkerzendorf)
-- [#923](https://github.com/tardis-sn/tardis/pull/923) Fix nlte normalization (@livnehra)
-- [#920](https://github.com/tardis-sn/tardis/pull/920) Revert "Fix nlte normalization  (#920)" (#922) (@wkerzendorf)
-- [#920](https://github.com/tardis-sn/tardis/pull/920) Fix nlte normalization  (#920) (@wkerzendorf)
-- [#921](https://github.com/tardis-sn/tardis/pull/921) add changes builder to travis process (#921) (@wkerzendorf)
-- [#919](https://github.com/tardis-sn/tardis/pull/919) Add possibility to bias vpacket emission based on optical depth (#919) (@chvogl)
+### upcoming (2019/04/29 20:48 +00:00)
 - [#914](https://github.com/tardis-sn/tardis/pull/914) make python3 compatible (#914) (@wkerzendorf)
 - [#902](https://github.com/tardis-sn/tardis/pull/902) general overhaul of the docs for 3.0 (#902) (@wkerzendorf)
 - [#916](https://github.com/tardis-sn/tardis/pull/916) make python3 compatible (#916) (@wkerzendorf)
