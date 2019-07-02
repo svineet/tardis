@@ -124,6 +124,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-azure-services">Setting up Azure services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#adding-the-key-to-azure-s-secure-files">Adding the key to Azure’s secure files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setting-up-the-yaml-file-to-deploy">Setting up the YAML file to deploy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-and-running-a-self-hosted-agent">Installing and running a self hosted agent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#additional-references">Additional references</a></li>
 </ul>
 </li>
@@ -406,6 +407,59 @@ use the vm_Images: Ubuntu 16.04 and macOs-10.13.</p>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="installing-and-running-a-self-hosted-agent">
+<h3>Installing and running a self hosted agent<a class="headerlink" href="#installing-and-running-a-self-hosted-agent" title="Permalink to this headline">¶</a></h3>
+<p>Microsoft supplies multiple hosted agents for running virtual machines, but it is useful to create a self hosted
+agent for incremental builds and the dependancy on local environments.</p>
+<p>To add a new agent or agent pool, you must have administrator priveledges. See <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/about-security-roles?view=azure-devops#agent-pool-security-roles-project-level">agent pool security roles</a> to add a new administrator to an agent pool or for all the agent pools.</p>
+<p>You can view your current lists of agents for each agent pool from: <a class="reference external" href="https://dev.azure.com">https://dev.azure.com</a>/{your_organization}/_settings/agentpools.</p>
+<p>First decide if you will add your agent to an already exiting agent pool, or if you wish to add a new pool, by clicking on Add pool.
+If you choose to add a new pool, make sure to click on securtiy and add permissions to your team/self (you cannot directly add your own account), as well as granting access permission to all pipelines, or a specific pipeline.
+The first pool “Default” is owned by azure pipelines, and you cannot add pools to it without having even further permissions.</p>
+<dl class="simple">
+<dt>To give someone all security privileges:</dt><dd><ul class="simple">
+<li><p>Go to <a class="reference external" href="http://dev.azure.com">http://dev.azure.com</a>/{your_organization}/_settings/permissions</p></li>
+<li><p>Click on {your_organization}Project Collection Administrators</p></li>
+<li><p>Click on Members</p></li>
+<li><p>Click Add members on the top right.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Then, you must generate a <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops">personal access token PAT</a>, to add any downloaded self agents.</p>
+<p>For the scope, make sure to select: Agent Pools (read, manage).</p>
+<p>To download the latest available agents, see <a class="reference external" href="https://github.com/Microsoft/azure-pipelines-agent/releases">Azure pipelines agent releases</a>.</p>
+<p>Create the agent (for Linux and Mac_OS):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/$ mkdir myagent &amp;&amp; cd myagent
+~/myagent$ tar zxvf ~/Downloads/download_agent.tar.gz
+</pre></div>
+</div>
+<p>and configure it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/myagent$ ./config.sh
+</pre></div>
+</div>
+<p>Here, you will input your organization name (<a class="reference external" href="https://dev.azure.com">https://dev.azure.com</a>/{your_organization}), your generated PAT, agent pool name, and agent name.</p>
+<p>To run the session interactively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/myagent$ ./run.sh
+</pre></div>
+</div>
+<p>To run, stop, or check the status non-interactively, create the service file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/myagent$ sudo ./svc install
+</pre></div>
+</div>
+<p>Manage it through:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/myagent$ sudo ./svc start
+~/myagent$ sudo ./svc stop
+~/myagent$ sudo ./svc status
+</pre></div>
+</div>
+<p>To uninstall</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~/myagent$ sudo ./svc uninstall
+</pre></div>
+</div>
+<p>For adding environmental variables or editing the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#service-files">service file</a>,
+see <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#run-as-a-systemd-service">self agent services</a></p>
+<p>For more details, see <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops#install">Azure self hosted agents</a></p>
 </div>
 <div class="section" id="additional-references">
 <h3>Additional references<a class="headerlink" href="#additional-references" title="Permalink to this headline">¶</a></h3>
