@@ -122,9 +122,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-azure-services">Setting up Azure services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-pipeline-on-azure-devops">Adding a pipeline on Azure Devops</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-the-key-to-azure-s-secure-files">Adding the key to Azure’s secure files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setting-up-the-yaml-file-to-deploy">Setting up the YAML file to deploy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#installing-and-running-a-self-hosted-agent">Installing and running a self hosted agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#carsus">Carsus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging">Debugging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#additional-references">Additional references</a></li>
 </ul>
 </li>
@@ -289,22 +292,34 @@ for more information.</p>
 </div>
 <div class="section" id="adding-your-key-locally-and-copying-the-known-host-name">
 <h3>Adding your key locally and copying the known host name<a class="headerlink" href="#adding-your-key-locally-and-copying-the-known-host-name" title="Permalink to this headline">¶</a></h3>
-<p>If you wish to deploy the documentation locally to gh-pages, you must add the generated key on your computer:</p>
+<p><strong>Instead of the method recommended by azure, you can add all the github hosts by copying this output, starting from: github.com ssh-rs…</strong>
+[Default option suggested by wk]:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keyscan</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>If you wish to deploy the documentation locally to gh-pages, you must add the generated key on your computer and clone your repository:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ eval &quot;$(ssh-agent -s)&quot;
 $ ssh-add ~/.ssh/id_rsa (Or whatever you called your key)
 $ ssh-agent -k
+$ git clone git@github.com:myOrganizationName/myRepositoryName.git
 </pre></div>
 </div>
-<p>Copy the saved known host, as we will need it for installing the key on Azure.
-It should look something like (should look something like [1]As3..=ssh-rsa ..) and will be the last line added to:</p>
+<p>Accept the warning to add github and copy the saved known host, as we will need it for installing the key on Azure.
+It should look something like (should look something like [1]As3…=ssh-rsa ..) and will be the last line added to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">known_hosts</span>
 </pre></div>
 </div>
+<p>It is generally advisable to leave a comment at the end of your added known host line to be able to identify it later, by simply inputting it at the end
+of the known host, such as: ([1]As3…=ssh-rsa AAA.. comment). If you already have it added from before, the portion after ssh-rsa should always start with AAAAB3NzaC1yc2EAAAABIwAAAQ…</p>
 </div>
 </div>
 <div class="section" id="setting-up-azure-services">
 <h2>Setting up Azure services<a class="headerlink" href="#setting-up-azure-services" title="Permalink to this headline">¶</a></h2>
 <p>The first step is to visit <a class="reference external" href="http://azure.microsoft.com/en-us/services/devops/?nav=mi">Azure Devops</a> and create an account.</p>
+<div class="section" id="adding-a-pipeline-on-azure-devops">
+<h3>Adding a pipeline on Azure Devops<a class="headerlink" href="#adding-a-pipeline-on-azure-devops" title="Permalink to this headline">¶</a></h3>
+<p>Follow this <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops&amp;tabs=tfs-2018-2">Azure tutorial</a> to generate your first test pipeline. This shows you how to add a YAML file for your pipeline.</p>
+</div>
 <div class="section" id="adding-the-key-to-azure-s-secure-files">
 <h3>Adding the key to Azure’s secure files<a class="headerlink" href="#adding-the-key-to-azure-s-secure-files" title="Permalink to this headline">¶</a></h3>
 <p>Upload the secure key to Azure’s library to download it in the script.</p>
@@ -331,6 +346,7 @@ and/or applicable for pull requests. Otherwise, it triggers all of them:</p>
 <span class="o">-</span> <span class="n">branch_name</span>
 </pre></div>
 </div>
+<p><strong>Alternatively, you can input:- none, to not trigger anything.</strong></p>
 <p>It follows the following hierarchy:</p>
 <div class="section" id="pipeline-hierarchy">
 <h4>Pipeline hierarchy<a class="headerlink" href="#pipeline-hierarchy" title="Permalink to this headline">¶</a></h4>
@@ -357,7 +373,7 @@ A task is a predefined script with a definitive purpose, such as downloading the
 <p>Download a secure file to a temporary location in the virtual machine:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- task: InstallSSHKey@0
   inputs:
-    hostName: $(gh_host)
+    knownHostsEntry: $(gh_host)
     sshPublicKey: $(public_key)
     #sshPassphrase: # Optional - leave empty if it was left empty while generating the key.
     sshKeySecureFile: &#39;id_azure_rsa&#39;
@@ -377,7 +393,7 @@ selecting the three dots on the top right while editing that pipeline, as seen h
 <blockquote>
 <div><img alt="../_images/variables.png" src="../_images/variables.png" />
 </div></blockquote>
-<p>After defining the variable, one can encrypt it using this lock symbol:</p>
+<p>After defining the variable, one could optionally encrypt it using this lock symbol:</p>
 <blockquote>
 <div><img alt="../_images/lock.png" src="../_images/lock.png" />
 </div></blockquote>
@@ -394,18 +410,23 @@ use the vm_Images: Ubuntu 16.04 and macOs-10.13.</p>
   <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;agent_pool_name&quot;</span>
 </pre></div>
 </div>
-<p>Or if you prefer to use multiple virtual machines and specity the maximum that can run at the same time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strategy</span><span class="p">:</span>
-  <span class="n">matrix</span><span class="p">:</span>
-    <span class="n">linux</span><span class="p">:</span>
-      <span class="n">vmImage</span><span class="p">:</span> <span class="s2">&quot;Ubuntu 16.04&quot;</span>
-      <span class="n">conda</span><span class="p">:</span> <span class="s1">&#39;/usr/share/miniconda&#39;</span>
-    <span class="n">mac</span><span class="p">:</span>
-      <span class="n">vm_Image</span><span class="p">:</span> <span class="s1">&#39;macOS-10.13&#39;</span>
-      <span class="n">miniconda</span><span class="o">.</span><span class="n">url</span><span class="p">:</span> <span class="s1">&#39;http://repo.continuum.io/miniconda/Miniconda2-latest-mac-x86_64.sh&#39;</span>
-  <span class="n">maxParallel</span><span class="p">:</span> <span class="mi">4</span>
+<p>Or if you prefer to use multiple virtual machines and specity the maximum that can run at the same time, in
+addition to specifying variables as key value pairs such as conda and miniconda.url below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>strategy:
+  matrix:
+    linux:
+      vmImage: &quot;Ubuntu 16.04&quot;
+      conda: &#39;/usr/share/miniconda&#39;
+    mac:
+      vm_Image: &#39;macOS-10.13&#39;
+      miniconda.url: &#39;http://repo.continuum.io/miniconda/Miniconda2-latest-mac-x86_64.sh&#39;
+  maxParallel: 2
+pool:
+  vmImage: $(imageName)
 </pre></div>
 </div>
+<p>This trick is also convenient for specying different variable builds for the same vmImage. As one can keep the vm_Image
+constant, and change the key value pair for each job in the matrix.</p>
 </div>
 </div>
 <div class="section" id="installing-and-running-a-self-hosted-agent">
@@ -460,6 +481,16 @@ The first pool “Default” is owned by azure pipelines, and you cannot add poo
 <p>For adding environmental variables or editing the <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#service-files">service file</a>,
 see <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops#run-as-a-systemd-service">self agent services</a></p>
 <p>For more details, see <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops#install">Azure self hosted agents</a></p>
+</div>
+<div class="section" id="carsus">
+<h3>Carsus<a class="headerlink" href="#carsus" title="Permalink to this headline">¶</a></h3>
+<p>“Carsus is a TARDIS support package for creating and working with atomic datasets” (<a class="reference external" href="https://tardis-sn.github.io/carsus/">Carsus</a>)</p>
+<p>Azure services are also set up on Carsus for automatic debugging. In addition to everything mentioned, the pipelines for
+Carsus also use <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/conditions?view=azure-devops&amp;tabs=yaml">Azure condition statements</a>, for activating a job, step, or stage upon a specific environment or case.</p>
+</div>
+<div class="section" id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes inputs are required using single citation marks ‘’ instead of double ones “”, and alternatively no citation marks at all.</p>
 </div>
 <div class="section" id="additional-references">
 <h3>Additional references<a class="headerlink" href="#additional-references" title="Permalink to this headline">¶</a></h3>
