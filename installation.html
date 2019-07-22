@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Change Log" href="CHANGELOG.html" />
+    <link rel="next" title="Quickstart" href="quickstart/quickstart.html" />
     <link rel="prev" title="Tardis Core Package Documentation" href="index.html" />
     <link href="_static/tardis.css" rel="stylesheet" type="text/css">
 
@@ -90,28 +90,44 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-tardis-with-anaconda">Installing TARDIS with Anaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-tardis-with-anaconda">Installing TARDIS with Anaconda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-parallel-execution-with-openmp">Enabling parallel execution with OpenMP</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#installation-troubles-faq">Installation Troubles (FAQ)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running/index.html">Running Tardis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Example Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">Helper Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="team.html">TARDIS Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/plasma/index.html">Overview of plasma calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/montecarlo/index.html">Monte Carlo Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits &amp; Publication Policies</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Developers Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="atomic/atomic_data.html">Atomic Data for TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics/index.html">Behind the scenes: Physics of TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="montecarlo/index.html">Monte Carlo Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">Change Log</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Reporting Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow/development_workflow.html">Developer Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running_tests.html">Running tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">tardis</a></li>
 </ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">TARDIS Papers and useful References</a></li>
 </ul>
@@ -211,18 +227,18 @@ installed TARDIS, check out <span class="xref std std-doc">running</span> for in
 simple TARDIS calculations.</p>
 <div class="admonition warning" id="requirements-label">
 <p class="admonition-title">Warning</p>
-<p>TARDIS is currently only compatbile with Python 2.7.</p>
+<p>TARDIS is only compatbile with Python &gt;3.6</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We strongly recommond to install TARDIS within an Anaconda environment and
+<p>We strongly recommend to install TARDIS within an Anaconda environment and
 to always use the lastest github development version.</p>
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>You can see a list of all the requirements of TARDIS in the <a class="reference external" href="https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis_env27.yml">environment definition file</a>.</p>
-<p>TARDIS is using astropy’s excellent installation helpers and thus uses similar
-instructions to astropy.</p>
+<p>You can see a list of all the requirements of TARDIS in the <a class="reference external" href="https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis_env3.yml">environment definition file</a>.</p>
+<p>TARDIS is using Astropy’s excellent installation helpers and thus uses similar
+instructions to Astropy.</p>
 </div>
 <div class="section" id="installing-tardis-with-anaconda">
 <span id="anaconda-inst-label"></span><h2>Installing TARDIS with Anaconda<a class="headerlink" href="#installing-tardis-with-anaconda" title="Permalink to this headline">¶</a></h2>
@@ -234,12 +250,12 @@ where <code class="docutils literal notranslate"><span class="pre">root</span></
 machine. The next step is to create an environment for TARDIS that contains all
 of the necessary packages (this ensures that TARDIS requirements won’t clash
 with any other python installs on disc:</p>
-<p>First, download the <a class="reference external" href="https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis_env27.yml">environment definition file</a> from:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tardis</span><span class="o">-</span><span class="n">sn</span><span class="o">/</span><span class="n">tardis</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">tardis_env27</span><span class="o">.</span><span class="n">yml</span>
+<p>First, download the <a class="reference external" href="https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis_env3.yml">environment definition file</a> from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tardis</span><span class="o">-</span><span class="n">sn</span><span class="o">/</span><span class="n">tardis</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">tardis_env3</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
 <p>To create the environment, change to the directory that you downloaded the environment definition file and run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">tardis_env27</span><span class="o">.</span><span class="n">yml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">tardis_env3</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
 <p>Then to activate this environment simply do:</p>
@@ -256,7 +272,8 @@ with any other python installs on disc:</p>
 </div>
 <p>One does not need to recreate the environment, but simply activate it every time
 TARDIS is used.</p>
-<p>Since TARDIS has reached a mature state, we recommend always installing the latest development version:</p>
+<p>Since TARDIS has reached a mature state, we recommend always installing the
+latest development version:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tardis</span><span class="o">-</span><span class="n">sn</span><span class="o">/</span><span class="n">tardis</span>
 </pre></div>
 </div>
@@ -266,6 +283,8 @@ TARDIS is used.</p>
 cd tardis
 python setup.py install</p>
 </div></blockquote>
+<div class="section" id="enabling-parallel-execution-with-openmp">
+<h3>Enabling parallel execution with OpenMP<a class="headerlink" href="#enabling-parallel-execution-with-openmp" title="Permalink to this headline">¶</a></h3>
 <p>Manually, cloning the repository enables other options such as running the code in parallel (enabling OpenMP).
 In general we encourage to download the compilers from <cite>conda</cite> as we then can ensure that they work with TARDIS.
 Within the TARDIS conda environment do:</p>
@@ -281,12 +300,13 @@ Within the TARDIS conda environment do:</p>
 </pre></div>
 </div>
 <p>To compile TARDIS for parallel execution:</p>
-<blockquote>
-<div><p>python setup.py install –with-openmp</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">openmp</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="installation-troubles-faq">
-<span id="troubleshooting-inst-label"></span><h2>Installation Troubles (FAQ)<a class="headerlink" href="#installation-troubles-faq" title="Permalink to this headline">¶</a></h2>
+<h2>Installation Troubles (FAQ)<a class="headerlink" href="#installation-troubles-faq" title="Permalink to this headline">¶</a></h2>
 <p>We highly encourage with any installation problems to try the recommended install
 method because this often fix problems. Here are some common problems when
 installing and their fixes:</p>
@@ -341,7 +361,7 @@ may encounter the following error:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="CHANGELOG.html" class="btn btn-neutral float-right" title="Change Log" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="quickstart/quickstart.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Tardis Core Package Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -353,7 +373,7 @@ may encounter the following error:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2013, TARDIS team
+        &copy; Copyright 2013, TARDIS collaboration
 
     </p>
   </div>

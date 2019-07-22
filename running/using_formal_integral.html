@@ -40,8 +40,6 @@
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example Models" href="../examples/index.html" />
-    <link rel="prev" title="Access information about individual iterations" href="access_iterations.html" />
     <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -87,34 +85,39 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Running Tardis</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access.html">Accessing Physical Information</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Spectral Synthesis with the Formal Integral Method</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-the-formal-integral-method">Using the Formal Integral Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
 </ul>
-</li>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Running TARDIS</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Example Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Helper Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../team.html">TARDIS Team</a></li>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Developers Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data for TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Behind the scenes: Physics of TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../montecarlo/index.html">Monte Carlo Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../issues.html">Reporting Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/development_workflow.html">Developer Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../running_tests.html">Running tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">tardis</a></li>
 </ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
 </ul>
@@ -161,8 +164,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">Running Tardis</a> &raquo;</li>
         
       <li>Spectral Synthesis with the Formal Integral Method</li>
     
@@ -211,9 +212,9 @@
 <h1>Spectral Synthesis with the Formal Integral Method<a class="headerlink" href="#spectral-synthesis-with-the-formal-integral-method" title="Permalink to this headline">¶</a></h1>
 <p>In addition to generating the final Monte Carlo spectrum from the population of
 Monte Carlo packets and the implemented variant of the “peeling-off” technique
-(see <a class="reference internal" href="../montecarlo/virtualpackets.html"><span class="doc">Spectrum Generation with Virtual Packets</span></a>), TARDIS supports spectral synthesis with
+(see <a class="reference internal" href="../physics/montecarlo/virtualpackets.html#virtual-packets"><span class="std std-ref">Spectrum Generation with Virtual Packets</span></a>), TARDIS supports spectral synthesis with
 so-called formal integral method by <a class="reference internal" href="../zreferences.html#lucy1999a" id="id1">[Lucy99b]</a> (see a detailed
-description of the method at <a class="reference internal" href="../montecarlo/sourceintegration.html"><span class="doc">Direct integration of the radiation field</span></a>)</p>
+description of the method at <a class="reference internal" href="../physics/montecarlo/sourceintegration.html#source-integration"><span class="std std-ref">Direct integration of the radiation field</span></a>)</p>
 <div class="section" id="using-the-formal-integral-method">
 <h2>Using the Formal Integral Method<a class="headerlink" href="#using-the-formal-integral-method" title="Permalink to this headline">¶</a></h2>
 <p>The formal integral spectral synthesis mode is activated by setting the</p>
@@ -225,7 +226,7 @@ description of the method at <a class="reference internal" href="../montecarlo/s
 is a lazy property so it will be only generated (and then cached) once it is
 accessed. The spectrum integration routine is Open-MP parallelized, so this
 process may be significantly sped-up if TARDIS is built with the
-<code class="docutils literal notranslate"><span class="pre">--with-openmp</span></code> option and more then one threas is used.</p>
+<code class="docutils literal notranslate"><span class="pre">--with-openmp</span></code> option and more then one thread is used.</p>
 </div>
 </div>
 
@@ -235,21 +236,12 @@ process may be significantly sped-up if TARDIS is built with the
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Example Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="access_iterations.html" class="btn btn-neutral float-left" title="Access information about individual iterations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2013, TARDIS team
+        &copy; Copyright 2013, TARDIS collaboration
 
     </p>
   </div>

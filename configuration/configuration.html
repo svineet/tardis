@@ -87,11 +87,14 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../running/index.html">Running Tardis</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../running/index.html">Running TARDIS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Model</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration File</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#configuration-schema">Configuration Schema</a></li>
@@ -101,25 +104,39 @@
 <li class="toctree-l3"><a class="reference internal" href="read_configuration.html">Reading the Configuration Files</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../running/access.html">Accessing Physical Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../running/using_formal_integral.html">Spectral Synthesis with the Formal Integral Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/commandline.html">Running TARDIS in the commandline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/interaction/index.html">Interacting with TARDIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/converters/index.html">Converters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Example Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Helper Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../team.html">TARDIS Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Developers Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data for TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Behind the scenes: Physics of TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../montecarlo/index.html">Monte Carlo Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../issues.html">Reporting Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/development_workflow.html">Developer Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../running_tests.html">Running tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">tardis</a></li>
 </ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
 </ul>
@@ -167,7 +184,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../running/index.html">Running Tardis</a> &raquo;</li>
+          <li><a href="../running/index.html">Running TARDIS</a> &raquo;</li>
         
           <li><a href="index.html">Configuration</a> &raquo;</li>
         
@@ -219,7 +236,7 @@
 <p>TARDIS uses the <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML markup language</a>
 for its configuration files. There are several sections which allow different
 settings for the different aspects of the TARDIS calculation. An example
-configuration file (with a small subset of the options that can be specified) can be downloaded <a class="reference download internal" download="" href="../_downloads/231bddd2ae462b73d9034402f5f0fa5b/tardis_example.yml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+configuration file (with a small subset of the options that can be specified) can be downloaded at <a class="reference external" href="https://github.com/tardis-sn/tardis-setups/blob/master/2014/2014_kerzendorf_sim/appendix_A1/tardis_example.yml">example_yml</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>One should note that currently floats in YAML need to be specified in a special format:
@@ -233,8 +250,26 @@ can be seen here:</p>
 <p>The following shows all the options (and their default settings) that are available for TARDIS. No other options
 are allowed or available</p>
 </div>
+<div class="contents local topic" id="overview">
+<p class="topic-title first">Overview</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#configuration-schema" id="id1">Configuration Schema</a></p>
+<ul>
+<li><p><a class="reference internal" href="#supernova" id="id2">Supernova</a></p></li>
+<li><p><a class="reference internal" href="#model" id="id3">Model</a></p></li>
+<li><p><a class="reference internal" href="#plasma" id="id4">Plasma</a></p>
+<ul>
+<li><p><a class="reference internal" href="#nlte" id="id5">NLTE</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#monte-carlo" id="id6">Monte Carlo</a></p></li>
+<li><p><a class="reference internal" href="#spectrum" id="id7">Spectrum</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="configuration-schema">
-<h2>Configuration Schema<a class="headerlink" href="#configuration-schema" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Configuration Schema</a><a class="headerlink" href="#configuration-schema" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
@@ -252,15 +287,6 @@ are allowed or available</p>
 </ul>
 </td>
 <td colspan="2"><p>Version of the configuration file. The current version is 1.0 and no other versions are allowed</p></td>
-</tr>
-<tr class="row-even"><td><p>type</p></td>
-<td><p><em>string</em></p></td>
-</tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
-<li><p>csvy_model</p></li>
-</ul>
-</td>
-<td colspan="2"><p>Path to the csvy model file.</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
 <td><p><em>string</em></p></td>
@@ -290,38 +316,49 @@ are allowed or available</p>
 </tr>
 <tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#plasma.yml"><span class="std std-ref">plasma.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>csvy_model</p></li>
+</ul>
+</td>
+<td colspan="2"><p>defining the model using csvy format</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p><span class="xref std std-ref">csvy_model.yml</span></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p>model</p></li>
 </ul>
 </td>
-<td colspan="2"><p>defining the model</p></td>
+<td colspan="2"><p>defining the model in the config yaml file</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></p></td>
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p>montecarlo</p></li>
 </ul>
 </td>
 <td colspan="2"><p>configuring the physics of the monte carlo radiative transfer</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#montecarlo.yml"><span class="std std-ref">montecarlo.yml</span></a></p></td>
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#montecarlo.yml"><span class="std std-ref">montecarlo.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p><strong>spectrum</strong></p></li>
 </ul>
 </td>
 <td colspan="2"><p>Final spectrum sampling</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></p></td>
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
+<tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
 </tbody>
 </table>
 <p>The base schema links to several other configuration parts</p>
 <div class="section" id="supernova">
-<h3>Supernova<a class="headerlink" href="#supernova" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">Supernova</a><a class="headerlink" href="#supernova" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default" id="supernova.yml">
 <colgroup>
 <col style="width: 33%" />
@@ -395,7 +432,7 @@ are allowed or available</p>
 </table>
 </div>
 <div class="section" id="model">
-<h3>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Model</a><a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
 <p>The next sections, describing the model, are very hierarchical. The base level is <code class="docutils literal notranslate"><span class="pre">model</span></code> and contains two subsections:
 <code class="docutils literal notranslate"><span class="pre">structure</span></code> and <code class="docutils literal notranslate"><span class="pre">abundances</span></code>. Both sections can either contain a <code class="docutils literal notranslate"><span class="pre">file</span></code> subsection which specifies a file and
 file type where the information is stored or a number of other sections.</p>
@@ -491,7 +528,7 @@ the section, but merely will overwrite the abundances given in the file section.
 relative abundance fraction. If it does not add up to 1., TARDIS will warn - but normalize the numbers.</p>
 </div>
 <div class="section" id="plasma">
-<h3>Plasma<a class="headerlink" href="#plasma" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Plasma</a><a class="headerlink" href="#plasma" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default" id="plasma.yml">
 <colgroup>
 <col style="width: 25%" />
@@ -736,7 +773,7 @@ version of <code class="docutils literal notranslate"><span class="pre">macroato
 <p>Finally, <code class="docutils literal notranslate"><span class="pre">w_epsilon</span></code> describes the dilution factor to use to calculate <span class="math notranslate nohighlight">\(J_\textrm{blue}\)</span> that are 0, which
 causes problem with the code (so <span class="math notranslate nohighlight">\(J_\textrm{blue}\)</span> are set to a very small number).</p>
 <div class="section" id="nlte">
-<h4>NLTE<a class="headerlink" href="#nlte" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id5">NLTE</a><a class="headerlink" href="#nlte" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nlte</span><span class="p">:</span>
     <span class="nt">coronal_approximation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
     <span class="nt">classical_nebular</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
@@ -749,7 +786,7 @@ normal operations.</p>
 </div>
 </div>
 <div class="section" id="monte-carlo">
-<h3>Monte Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Monte Carlo</a><a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">montecarlo</span></code> section describes the parameters for the Monte Carlo radiation transport and convergence criteria:</p>
 <table class="docutils align-default" id="montecarlo.yml">
 <colgroup>
@@ -982,7 +1019,7 @@ override then the defaults.</p>
 </ol>
 </div>
 <div class="section" id="spectrum">
-<h3>Spectrum<a class="headerlink" href="#spectrum" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Spectrum</a><a class="headerlink" href="#spectrum" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default" id="spectrum.yml">
 <colgroup>
 <col style="width: 25%" />
@@ -1132,8 +1169,8 @@ frequency space they are switched around if necessary. The number of bins is
 just an integer. Finally, the method option selects the final spectral synthesis mode. Currently, there are three options:</p>
 <ul class="simple">
 <li><p>real: construct spectrum from the real packet population alone</p></li>
-<li><p>virtual: use the <a class="reference internal" href="../montecarlo/virtualpackets.html"><span class="doc">virtual packet scheme</span></a> for spectral synthesis</p></li>
-<li><p>integrated: use the <a class="reference internal" href="../montecarlo/sourceintegration.html"><span class="doc">formal integral method</span></a> of Lucy 1999</p></li>
+<li><p>virtual: use the <span class="xref std std-doc">virtual packet scheme</span> for spectral synthesis</p></li>
+<li><p>integrated: use the <span class="xref std std-doc">formal integral method</span> of Lucy 1999</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1165,7 +1202,7 @@ dedicated page.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2013, TARDIS team
+        &copy; Copyright 2013, TARDIS collaboration
 
     </p>
   </div>

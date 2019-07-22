@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running Tardis &mdash; TARDIS v</title>
+  <title>Running TARDIS &mdash; TARDIS v</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Configuration" href="../configuration/index.html" />
-    <link rel="prev" title="Simple Jupyter TARDIS Example" href="../examples/run_simple_example.html" />
+    <link rel="next" title="Model" href="../models/index.html" />
+    <link rel="prev" title="Quickstart" href="../quickstart/quickstart.html" />
     <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -87,31 +87,48 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Tardis</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running TARDIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="access.html">Accessing Physical Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_formal_integral.html">Spectral Synthesis with the Formal Integral Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commandline.html">Running TARDIS in the commandline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interaction/index.html">Interacting with TARDIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converters/index.html">Converters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Example Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Helper Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../team.html">TARDIS Team</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/montecarlo/index.html">Monte Carlo Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Developers Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data for TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Behind the scenes: Physics of TARDIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../montecarlo/index.html">Monte Carlo Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../issues.html">Reporting Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/development_workflow.html">Developer Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../running_tests.html">Running tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">tardis</a></li>
 </ul>
+<p class="caption"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
 </ul>
@@ -159,7 +176,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Running Tardis</li>
+      <li>Running TARDIS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,39 +220,34 @@
 }
 </style>
 <div class="section" id="running-tardis">
-<h1>Running Tardis<a class="headerlink" href="#running-tardis" title="Permalink to this headline">¶</a></h1>
-<p>Information regarding running and operating Tardis.</p>
+<h1>Running TARDIS<a class="headerlink" href="#running-tardis" title="Permalink to this headline">¶</a></h1>
+<p>The TARDIS code needs three components to calculate spectra:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/configuration.html">Configuration File</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../configuration/configuration.html#configuration-schema">Configuration Schema</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/configuration.html#supernova">Supernova</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/configuration.html#model">Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/configuration.html#plasma">Plasma</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../configuration/configuration.html#nlte">NLTE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data</a></li>
+</ul>
+</div>
+<p>A quick start guide to run TARDIS can be found
+<a class="reference internal" href="../quickstart/quickstart.html"><span class="doc">here</span></a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Running TARDIS and interactivity</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Running TARDIS in the commandline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">Graphical User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#running-instructions">Running Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html#gui-layout-and-features">GUI Layout and Features</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/configuration.html#monte-carlo">Monte Carlo</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../configuration/configuration.html#spectrum">Spectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interaction/index.html">Interacting with TARDIS</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/config_validator.html">Configuration Validator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../configuration/config_validator.html#container">Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../configuration/config_validator.html#how-to-use">How to use</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/read_configuration.html">Reading the Configuration Files</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="access.html">Accessing Physical Information</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="access_iterations.html">Access information about individual iterations</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="using_formal_integral.html">Spectral Synthesis with the Formal Integral Method</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="using_formal_integral.html#using-the-formal-integral-method">Using the Formal Integral Method</a></li>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="converters/index.html">Converters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="converters/stella_to_tardis.html">STELLA Files to TARDIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converters/cmfgen.html">Convert CMFGEN files to TARDIS file format</a></li>
 </ul>
 </li>
 </ul>
@@ -250,10 +262,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../configuration/index.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../models/index.html" class="btn btn-neutral float-right" title="Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../examples/run_simple_example.html" class="btn btn-neutral float-left" title="Simple Jupyter TARDIS Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../quickstart/quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -262,7 +274,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2013, TARDIS team
+        &copy; Copyright 2013, TARDIS collaboration
 
     </p>
   </div>
