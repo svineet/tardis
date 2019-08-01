@@ -6,6 +6,7 @@ Submodules
 
 .. toctree::
 
+   tardis.io.parsers.blondin_toymodel
    tardis.io.parsers.csvy
    tardis.io.parsers.stella
 

@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.io.parsers.blondin_toymodel &mdash; TARDIS v</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/montecarlo/index.html">Monte Carlo Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../credits.html">Credits &amp; Publication Policies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developers Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CHANGELOG.html">Change Log</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.io.parsers.blondin_toymodel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.io.parsers.blondin_toymodel</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+
+<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="k">import</span> <span class="n">parse_quantity</span>
+
+
+
+<span class="n">PATTERN_REMOVE_BRACKET</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;\[.+\]&#39;</span><span class="p">)</span>
+<span class="n">T0_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;tend = (.+)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="read_blondin_toymodel"><a class="viewcode-back" href="../../../../api/tardis.io.parsers.blondin_toymodel.html#tardis.io.parsers.blondin_toymodel.read_blondin_toymodel">[docs]</a><span class="k">def</span> <span class="nf">read_blondin_toymodel</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reading the Blondin toy-model format and returns a dictionary and a</span>
+<span class="sd">    dataframe</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fname: str</span>
+<span class="sd">        path or filename to blondin toymodel</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    blondin_dict: dict</span>
+<span class="sd">        dictionary containing most of the meta data of the model</span>
+
+<span class="sd">    blondin_csv: pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the csv part of the toymodel</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#idx&quot;</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;File </span><span class="si">{0}</span><span class="s1"> does not conform to Toy Model format as it does &#39;</span>
+                <span class="s1">&#39;not contain #idx&#39;</span><span class="p">)</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">PATTERN_REMOVE_BRACKET</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span>
+               <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+
+    <span class="n">raw_blondin_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">,</span>
+                                  <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">raw_blondin_csv</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">blondin_csv</span> <span class="o">=</span> <span class="n">raw_blondin_csv</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span>
+                  <span class="p">[</span><span class="s1">&#39;vel&#39;</span><span class="p">,</span> <span class="s1">&#39;dens&#39;</span><span class="p">,</span> <span class="s1">&#39;temp&#39;</span><span class="p">,</span> <span class="s1">&#39;X_56Ni0&#39;</span><span class="p">,</span> <span class="s1">&#39;X_Ti&#39;</span><span class="p">,</span> <span class="s1">&#39;X_Ca&#39;</span><span class="p">,</span> <span class="s1">&#39;X_S&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;X_Si&#39;</span><span class="p">,</span> <span class="s1">&#39;X_O&#39;</span><span class="p">,</span> <span class="s1">&#39;X_C&#39;</span><span class="p">]]</span>
+    <span class="n">rename_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;vel&#39;</span><span class="p">:</span> <span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;dens&#39;</span><span class="p">:</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;temp&#39;</span><span class="p">:</span> <span class="s1">&#39;t_electron&#39;</span><span class="p">}</span>
+    <span class="n">rename_col_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">blondin_csv</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">3</span><span class="p">:]})</span>
+    <span class="n">rename_col_dict</span><span class="p">[</span><span class="s1">&#39;X_56Ni0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Ni56&#39;</span>
+    <span class="n">blondin_csv</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">rename_col_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">blondin_csv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="n">blondin_csv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span>
+        <span class="n">blondin_csv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># changing velocities to outer boundary</span>
+    <span class="n">new_velocities</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">blondin_csv</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+                            <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">+</span> <span class="n">blondin_csv</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">new_velocities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">new_velocities</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">new_velocities</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_velocities</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]]))</span>
+    <span class="n">blondin_csv</span><span class="p">[</span><span class="s1">&#39;velocity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_velocities</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">t0_string</span> <span class="o">=</span> <span class="n">T0_PATTERN</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">parse_quantity</span><span class="p">(</span><span class="n">t0_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;DAYS&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">))</span>
+    <span class="n">blondin_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;model_density_time_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Converted </span><span class="si">{0}</span><span class="s1"> to csvy format&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;tardis_model_config_version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;v1.0&#39;</span>
+    <span class="n">blondin_dict_fields</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;km/s&#39;</span><span class="p">,</span>
+                                <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;velocities of shell outer bounderies.&#39;</span><span class="p">)]</span>
+    <span class="n">blondin_dict_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;g/cm^3&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;mean density of shell.&#39;</span><span class="p">))</span>
+    <span class="n">blondin_dict_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;t_electron&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;electron temperature.&#39;</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">abund</span> <span class="ow">in</span> <span class="n">blondin_csv</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">3</span><span class="p">:]:</span>
+        <span class="n">blondin_dict_fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">abund</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Fraction </span><span class="si">{0}</span><span class="s1"> abundance&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abund</span><span class="p">)))</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;datatype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fields&#39;</span><span class="p">:</span> <span class="n">blondin_dict_fields</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">blondin_dict</span><span class="p">,</span> <span class="n">blondin_csv</span></div>
+
+
+<div class="viewcode-block" id="convert_blondin_toymodel"><a class="viewcode-back" href="../../../../api/tardis.io.parsers.blondin_toymodel.html#tardis.io.parsers.blondin_toymodel.convert_blondin_toymodel">[docs]</a><span class="k">def</span> <span class="nf">convert_blondin_toymodel</span><span class="p">(</span><span class="n">in_fname</span><span class="p">,</span> <span class="n">out_fname</span><span class="p">,</span> <span class="n">v_inner</span><span class="p">,</span> <span class="n">v_outer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    in_fname</span>
+<span class="sd">    out_fname</span>
+<span class="sd">    v_inner</span>
+<span class="sd">    v_outer</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">blondin_dict</span><span class="p">,</span> <span class="n">blondin_csv</span> <span class="o">=</span> <span class="n">read_blondin_toymodel</span><span class="p">(</span><span class="n">in_fname</span><span class="p">)</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">v_inner</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">blondin_dict</span><span class="p">[</span><span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">v_outer</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
+
+    <span class="n">csvy_file</span> <span class="o">=</span> <span class="s1">&#39;---</span><span class="se">\n</span><span class="si">{0}</span><span class="se">\n</span><span class="s1">---</span><span class="se">\n</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">blondin_dict</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="n">blondin_csv</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">csvy_file</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
