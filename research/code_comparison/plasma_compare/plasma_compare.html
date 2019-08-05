@@ -428,8 +428,8 @@ div.rendered_html tbody tr:hover {
 —-</p>
 <div class="section" id="Plasma-comparison">
 <h1>Plasma comparison<a class="headerlink" href="#Plasma-comparison" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -438,6 +438,28 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">FileLinks</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/Users/wkerzend/miniconda/envs/tardis3/lib/python3.6/site-packages/tqdm/autonotebook/__init__.py:14: TqdmExperimentalWarning: Using `tqdm.autonotebook.tqdm` in notebook mode. Use `tqdm.tqdm` instead to force console mode (e.g. in jupyter console)
+  &#34; (e.g. in jupyter console)&#34;, TqdmExperimentalWarning)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /Users/wkerzend/miniconda/envs/tardis3/lib/python3.6/importlib/_bootstrap.py:219: QAWarning: pyne.data is not yet QA compliant.
+  return f(*args, **kwds)
+ (<span class="ansi-bold">warnings.py</span>:99)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /Users/wkerzend/miniconda/envs/tardis3/lib/python3.6/importlib/_bootstrap.py:219: QAWarning: pyne.material is not yet QA compliant.
+  return f(*args, **kwds)
+ (<span class="ansi-bold">warnings.py</span>:99)
+</pre></div></div>
 </div>
 <p><strong>The example tardis_example can be downloaded here</strong></p>
 <p><a class="reference external" href="tardis_example.yml">tardis_example.yml</a></p>
@@ -719,6 +741,312 @@ Name: (14, 1), dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sim</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">density</span><span class="o">=</span><span class="p">[</span><span class="mf">1e-13</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sim</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">ion_number_density</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>atomic_number</th>
+      <th>ion_number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="9" valign="top">8</th>
+      <th>0</th>
+      <td>1.288175e+04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.151416e+08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.598774e+03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6.741210e-14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th rowspan="13" valign="top">12</th>
+      <th>0</th>
+      <td>3.800017e-05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.545794e+03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.432405e+07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">14</th>
+      <th>0</th>
+      <td>3.172104e-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.332867e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.113664e+09</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.601707e+04</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.800053e-08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">18</th>
+      <th>10</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th rowspan="21" valign="top">20</th>
+      <th>0</th>
+      <td>2.144981e-07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.601330e+02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.507800e+07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.833649e-06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+<p>94 rows × 1 columns</p>
+</div></div>
+</div>
 </div>
 <div class="section" id="Updating-the-plasma-state">
 <h2>Updating the plasma state<a class="headerlink" href="#Updating-the-plasma-state" title="Permalink to this headline">¶</a></h2>
@@ -790,7 +1118,7 @@ Populating the interactive namespace from numpy and matplotlib
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/research_code_comparison_plasma_compare_plasma_compare_10_2.png" src="../../../_images/research_code_comparison_plasma_compare_plasma_compare_10_2.png" />
+<img alt="../../../_images/research_code_comparison_plasma_compare_plasma_compare_12_2.png" src="../../../_images/research_code_comparison_plasma_compare_plasma_compare_12_2.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">
