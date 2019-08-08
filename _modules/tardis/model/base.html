@@ -199,6 +199,7 @@
 <span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="k">import</span> <span class="n">HDFWriterMixin</span>
 <span class="kn">from</span> <span class="nn">tardis.io.decay</span> <span class="k">import</span> <span class="n">IsotopeAbundances</span>
 <span class="kn">from</span> <span class="nn">tardis.model.density</span> <span class="k">import</span> <span class="n">HomologousDensity</span>
+<span class="kn">from</span> <span class="nn">pyne</span> <span class="k">import</span> <span class="n">nucname</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -683,6 +684,9 @@
 <span class="sd">        Radial1DModel</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">CSVY_SUPPORTED_COLUMNS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;t_rad&#39;</span><span class="p">,</span> <span class="s1">&#39;dilution_factor&#39;</span><span class="p">}</span>
+
+
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">csvy_model</span><span class="p">):</span>
             <span class="n">csvy_model_fname</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">csvy_model</span>
         <span class="k">else</span><span class="p">:</span>
@@ -692,8 +696,22 @@
         <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
         <span class="n">schema_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;io&#39;</span><span class="p">,</span> <span class="s1">&#39;schemas&#39;</span><span class="p">)</span>
         <span class="n">csvy_schema_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">schema_dir</span><span class="p">,</span> <span class="s1">&#39;csvy_model.yml&#39;</span><span class="p">)</span>
-        <span class="n">csvy_model_config</span>  <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">validate_dict</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> 
+        <span class="n">csvy_model_config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">validate_dict</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span>
                                            <span class="n">schemapath</span><span class="o">=</span><span class="n">csvy_schema_file</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">,</span> <span class="s1">&#39;columns&#39;</span><span class="p">):</span>
+            <span class="n">abund_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span>
+                           <span class="k">if</span> <span class="n">nucname</span><span class="o">.</span><span class="n">iselement</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nucname</span><span class="o">.</span><span class="n">isnuclide</span><span class="p">(</span><span class="n">name</span><span class="p">)])</span>
+            <span class="n">unsupported_columns</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="n">abund_names</span> <span class="o">-</span> <span class="n">CSVY_SUPPORTED_COLUMNS</span>
+
+            <span class="n">field_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="n">field_names</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(),</span>\
+                <span class="s1">&#39;CSVY columns exist without field descriptions&#39;</span>
+            <span class="k">assert</span> <span class="n">field_names</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(),</span>\
+                <span class="s1">&#39;CSVY field descriptions exist without corresponding csv data&#39;</span>
+            <span class="k">if</span> <span class="n">unsupported_columns</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">():</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The following columns are specified in the csvy&quot;</span>
+                               <span class="s2">&quot;model file, but are IGNORED by TARDIS: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">unsupported_columns</span><span class="p">)))</span>
 
         <span class="n">time_explosion</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">time_explosion</span><span class="o">.</span><span class="n">cgs</span>
 
@@ -747,8 +765,8 @@
 
         <span class="n">dilution_factor</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">,</span> <span class="s1">&#39;columns&#39;</span><span class="p">):</span>
-            <span class="k">if</span> <span class="s1">&#39;w&#39;</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-                <span class="n">dilution_factor</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;w&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s1">&#39;dilution_factor&#39;</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">dilution_factor</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;dilution_factor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 
         <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">:</span>
             <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_shells</span><span class="p">)</span> <span class="o">*</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span>
