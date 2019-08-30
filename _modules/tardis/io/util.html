@@ -366,6 +366,11 @@
 
 
 <div class="viewcode-block" id="HDFWriterMixin"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.HDFWriterMixin">[docs]</a><span class="k">class</span> <span class="nc">HDFWriterMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">HDFWriterMixin</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">optional_hdf_properties</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">instance</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">instance</span>
 
 <div class="viewcode-block" id="HDFWriterMixin.to_hdf_util"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.HDFWriterMixin.to_hdf_util">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">to_hdf_util</span><span class="p">(</span><span class="n">path_or_buf</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">complevel</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">complib</span><span class="o">=</span><span class="s1">&#39;blosc&#39;</span><span class="p">):</span>
@@ -455,8 +460,12 @@
             <span class="n">buf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="HDFWriterMixin.get_properties"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.HDFWriterMixin.get_properties">[docs]</a>    <span class="k">def</span> <span class="nf">get_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf_properties</span><span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_hdf_properties</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">full_hdf_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">optional_hdf_properties</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdf_properties</span>
 
 <div class="viewcode-block" id="HDFWriterMixin.convert_to_snake_case"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.HDFWriterMixin.convert_to_snake_case">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">convert_to_snake_case</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>

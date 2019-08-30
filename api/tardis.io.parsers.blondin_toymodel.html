@@ -241,14 +241,21 @@
 <span id="tardis-io-parsers-blondin-toymodel-module"></span><h1>tardis.io.parsers.blondin_toymodel module<a class="headerlink" href="#module-tardis.io.parsers.blondin_toymodel" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="tardis.io.parsers.blondin_toymodel.convert_blondin_toymodel">
-<code class="sig-prename descclassname">tardis.io.parsers.blondin_toymodel.</code><code class="sig-name descname">convert_blondin_toymodel</code><span class="sig-paren">(</span><em class="sig-param">in_fname</em>, <em class="sig-param">out_fname</em>, <em class="sig-param">v_inner</em>, <em class="sig-param">v_outer</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/blondin_toymodel.html#convert_blondin_toymodel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.io.parsers.blondin_toymodel.convert_blondin_toymodel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">tardis.io.parsers.blondin_toymodel.</code><code class="sig-name descname">convert_blondin_toymodel</code><span class="sig-paren">(</span><em class="sig-param">in_fname</em>, <em class="sig-param">out_fname</em>, <em class="sig-param">v_inner</em>, <em class="sig-param">v_outer</em>, <em class="sig-param">conversion_t_electron_rad=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/io/parsers/blondin_toymodel.html#convert_blondin_toymodel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.io.parsers.blondin_toymodel.convert_blondin_toymodel" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>in_fname</strong></dt><dd></dd>
-<dt><strong>out_fname</strong></dt><dd></dd>
-<dt><strong>v_inner</strong></dt><dd></dd>
-<dt><strong>v_outer</strong></dt><dd></dd>
+<dt><strong>in_fname: str</strong></dt><dd><p>input toymodel file</p>
+</dd>
+<dt><strong>out_fname: str</strong></dt><dd><p>output csvy file</p>
+</dd>
+<dt><strong>conversion_t_electron_rad: float or None</strong></dt><dd><p>multiplicative conversion factor from t_electron to t_rad.
+if <cite>None</cite> t_rad is not calculated</p>
+</dd>
+<dt><strong>v_inner: float or astropy.unit.Quantity</strong></dt><dd><p>inner boundary velocity. If float will be interpreted as km/s</p>
+</dd>
+<dt><strong>v_outer: float or astropy.unit.Quantity</strong></dt><dd><p>outer boundary velocity. If float will be interpreted as km/s</p>
+</dd>
 </dl>
 </dd>
 </dl>
