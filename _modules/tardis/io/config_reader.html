@@ -192,6 +192,7 @@
 <span class="kn">import</span> <span class="nn">tardis</span>
 <span class="kn">from</span> <span class="nn">tardis.io</span> <span class="k">import</span> <span class="n">config_validator</span>
 <span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="k">import</span> <span class="n">YAMLLoader</span><span class="p">,</span> <span class="n">yaml_load_file</span>
+<span class="kn">from</span> <span class="nn">tardis.io.parsers.csvy</span> <span class="k">import</span> <span class="n">load_yaml_from_csvy</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
@@ -300,6 +301,22 @@
                 <span class="bp">self</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="s1">&#39;expected dict&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;csvy_model&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot specify both model and csvy_model in main config file.&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;csvy_model&#39;</span><span class="p">):</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">csvy_model_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_dirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">csvy_model</span><span class="p">)</span>
+            <span class="n">csvy_yml</span> <span class="o">=</span> <span class="n">load_yaml_from_csvy</span><span class="p">(</span><span class="n">csvy_model_path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;v_inner_boundary&#39;</span> <span class="ow">in</span> <span class="n">csvy_yml</span><span class="p">:</span>
+                <span class="n">model</span><span class="p">[</span><span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">csvy_yml</span><span class="p">[</span><span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;v_outer_boundary&#39;</span> <span class="ow">in</span> <span class="n">csvy_yml</span><span class="p">:</span>
+                <span class="n">model</span><span class="p">[</span><span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">csvy_yml</span><span class="p">[</span><span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
 
     <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span>

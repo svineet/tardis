@@ -718,15 +718,29 @@
         <span class="n">electron_densities</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">temperature</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">):</span>
-            <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">v_inner_boundary</span>
+        <span class="c1">#if hasattr(csvy_model_config, &#39;v_inner_boundary&#39;):</span>
+        <span class="c1">#    v_boundary_inner = csvy_model_config.v_inner_boundary</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    v_boundary_inner = None</span>
+
+        <span class="c1">#if hasattr(csvy_model_config, &#39;v_outer_boundary&#39;):</span>
+        <span class="c1">#    v_boundary_outer = csvy_model_config.v_outer_boundary</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    v_boundary_outer = None</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">):</span>
+                <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">v_inner_boundary</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">):</span>
+                <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">v_outer_boundary</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="kc">None</span>
-
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">):</span>
-            <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">v_outer_boundary</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span> 
+            <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;velocity&#39;</span><span class="p">):</span>
             <span class="n">velocity</span> <span class="o">=</span> <span class="n">quantity_linspace</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
