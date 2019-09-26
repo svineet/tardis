@@ -475,6 +475,8 @@
             <span class="k">raise</span> <span class="n">AtomDataNotPreparedError</span><span class="p">(</span><span class="s2">&quot;AtomData was already prepared&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span> <span class="o">=</span> <span class="n">selected_atomic_numbers</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_selected_atomic_numbers</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span> <span class="o">=</span> <span class="n">nlte_species</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">[</span>
@@ -579,6 +581,25 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;destination_level_idx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">nlte_data</span> <span class="o">=</span> <span class="n">NLTEData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nlte_species</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_selected_atomic_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selected_atomic_numbers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span>
+        <span class="n">available_atomic_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ionization_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">atomic_number_check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">selected_atomic_numbers</span><span class="p">,</span>
+                                      <span class="n">available_atomic_numbers</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">atomic_number_check</span><span class="p">):</span>
+            <span class="n">missing_atom_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">atomic_number_check</span><span class="p">)</span>
+            <span class="n">missing_atomic_numbers</span> <span class="o">=</span> <span class="n">selected_atomic_numbers</span><span class="p">[</span><span class="n">missing_atom_mask</span><span class="p">]</span>
+            <span class="n">missing_numbers_str</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">missing_atomic_numbers</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;For atomic numbers </span><span class="si">{}</span><span class="s2"> there is no atomic data.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">missing_numbers_str</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="n">AtomDataMissingError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;Atomic Data UUID=</span><span class="si">%s</span><span class="s2"> MD5=</span><span class="si">%s</span><span class="s2"> Lines=</span><span class="si">%d</span><span class="s2"> Levels=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> \

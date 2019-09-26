@@ -285,8 +285,8 @@ radial direction)</p>
 Random number generator which provides uniformly distributed numbers <span class="math notranslate nohighlight">\(z\)</span>
 on the interval <span class="math notranslate nohighlight">\([0,1]\)</span>. The frequency assignment is more involved than
 selecting an initial propagation direction, since the Planck function has to be
-sampled. TARDIS uses the technique described in <a class="reference internal" href="../../zreferences.html#carter1975" id="id1">[CarterCashwell75]</a> and
-summarized in <span id="id2">[Bjorkmann1999]</span> for this purpose.</p>
+sampled. TARDIS uses the technique described in <a class="bibtex reference internal" href="../../zreferences.html#carter1975" id="id1">[CarterCashwell75]</a> and
+summarized in <span class="bibtex" id="id2">[Bjorkmann1999]</span> for this purpose.</p>
 </div>
 <div class="section" id="propagation-in-a-spherical-domain">
 <h2>Propagation in a spherical domain<a class="headerlink" href="#propagation-in-a-spherical-domain" title="Permalink to this headline">¶</a></h2>
@@ -300,7 +300,7 @@ safely applied, no general relatistic effects which would force photons on
 curved trajectories are included.</p>
 </div>
 <p>In spherical geometry, this propagation process may be illustrated by the
-following sketch (taken from <a class="reference internal" href="../../zreferences.html#noebauer2014" id="id3">[Noebauer14]</a>):</p>
+following sketch (taken from <a class="bibtex reference internal" href="../../zreferences.html#noebauer2014" id="id3">[Noebauer14]</a>):</p>
 <a class="reference internal image-reference" href="../../_images/spherical_symmetry.png"><img alt="../../_images/spherical_symmetry.png" src="../../_images/spherical_symmetry.png" style="width: 400px;" /></a>
 <p>The packet starts the propagation at <span class="math notranslate nohighlight">\(r_i\)</span> along the direction
 <span class="math notranslate nohighlight">\(\mu_i\)</span>. After covering a distance <span class="math notranslate nohighlight">\(l\)</span>, the packet is now located
@@ -385,7 +385,7 @@ Sobolev point. This effectively reduces the line optical depth determination to
 a pure local problem.</p>
 <p>With these assumptions, the calculation of the optical depth a packet
 accumulates along its trajectory currently adopted in TARDIS proceeds according
-to the following scheme (which was originally introduced by <a class="reference internal" href="../../zreferences.html#mazzali1993" id="id4">[MazzaliLucy93]</a>):
+to the following scheme (which was originally introduced by <a class="bibtex reference internal" href="../../zreferences.html#mazzali1993" id="id4">[MazzaliLucy93]</a>):
 given the current lab-frame frequency of the packet, the distance to the next
 Sobolev point (i.e. to the next line resonance) is calculated</p>
 <p>Until this location, the packet continuously accumulates optical depth due to
@@ -397,8 +397,8 @@ which the accumulated optical depth surpasses the value determined in the
 random number experiment described above (determining the distance to the next
 physical interaction), determines the type of interaction the packet performs
 and at which location in the spatial mesh. The entire process is summarized in
-the sketch below (taken from <a class="reference internal" href="../../zreferences.html#noebauer2014" id="id5">[Noebauer14]</a>, adapted from
-<a class="reference internal" href="../../zreferences.html#mazzali1993" id="id6">[MazzaliLucy93]</a>):</p>
+the sketch below (taken from <a class="bibtex reference internal" href="../../zreferences.html#noebauer2014" id="id5">[Noebauer14]</a>, adapted from
+<a class="bibtex reference internal" href="../../zreferences.html#mazzali1993" id="id6">[MazzaliLucy93]</a>):</p>
 <a class="reference internal image-reference" href="../../_images/optical_depth_summation.png"><img alt="../../_images/optical_depth_summation.png" src="../../_images/optical_depth_summation.png" style="width: 400px;" /></a>
 <p>Three possible cases are highlighted. In the first case, the drawn optical
 depth value is reached on one of the path segments between successive Sobolev
