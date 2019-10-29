@@ -292,28 +292,32 @@ are allowed or available</p>
 <tr class="row-even"><td><p>type</p></td>
 <td><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>supernova</p></li>
 </ul>
 </td>
 <td colspan="2"><p>a section pertaining to observations of the supernova</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#supernova.yml"><span class="std std-ref">supernova.yml</span></a></p></td>
+<tr class="row-even"><td colspan="2"><p>a section pertaining to observations of the supernova</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#supernova.yml"><span class="std std-ref">supernova.yml</span></a></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p><strong>atom_data</strong></p></li>
 </ul>
 </td>
 <td colspan="2"><p>path or filename to the Atomic Data HDF5 file</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>plasma</p></li>
 </ul>
 </td>
 <td colspan="2"><p>configuration of the plasma microphysics</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>configuration of the plasma microphysics</p></td>
 </tr>
 <tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#plasma.yml"><span class="std std-ref">plasma.yml</span></a></p></td>
 </tr>
@@ -326,32 +330,41 @@ are allowed or available</p>
 <tr class="row-even"><td><p>type</p></td>
 <td><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>model</p></li>
 </ul>
 </td>
 <td colspan="2"><p>defining the model in the config yaml file</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></p></td>
+<tr class="row-even"><td colspan="2"><p>defining the model in the config yaml file</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#model.yml"><span class="std std-ref">model.yml</span></a></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>montecarlo</p></li>
 </ul>
 </td>
 <td colspan="2"><p>configuring the physics of the monte carlo radiative transfer</p></td>
 </tr>
+<tr class="row-odd"><td colspan="2"><p>configuring the physics of the monte carlo radiative transfer</p></td>
+</tr>
 <tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#montecarlo.yml"><span class="std std-ref">montecarlo.yml</span></a></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p><strong>spectrum</strong></p></li>
 </ul>
 </td>
 <td colspan="2"><p>Final spectrum sampling</p></td>
 </tr>
-<tr class="row-even"><td colspan="2"><p><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></p></td>
+<tr class="row-even"><td colspan="2"><p>Final spectrum sampling</p></td>
 </tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
+<tr class="row-odd"><td colspan="2"><p><a class="reference internal" href="#spectrum.yml"><span class="std std-ref">spectrum.yml</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -427,6 +440,9 @@ are allowed or available</p>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -485,19 +501,22 @@ file type where the information is stored or a number of other sections.</p>
 <tr class="row-odd"><td><p>additionalProperties</p></td>
 <td colspan="3"><p>False</p></td>
 </tr>
-<tr class="row-even"><td colspan="4"><p>definitions</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="simple">
+<tr class="row-odd"><td colspan="4"><p>definitions</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><ul class="simple">
 <li><p>density</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td colspan="4"><ul class="simple">
+<tr class="row-odd"><td colspan="4"><ul class="simple">
 <li><p>structure</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="simple">
+<tr class="row-even"><td colspan="4"><ul class="simple">
 <li><p>abundances</p></li>
 </ul>
 </td>
@@ -646,7 +665,7 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 <tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<tr class="row-odd"><td rowspan="18"><ul class="simple">
 <li><p>nlte</p></li>
 </ul>
 </td>
@@ -658,7 +677,7 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 </tr>
 <tr class="row-odd"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="6"><ul class="simple">
 <li><p>species</p></li>
 </ul>
 </td>
@@ -670,23 +689,19 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 <tr class="row-even"><td><p>default</p></td>
 <td><p>[]</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-odd"><td colspan="2"><p>Species that are requested to be NLTE treated in the format  [‘Si 2’, ‘Ca 1’, etc.]</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>array</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>[]</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>coronal_approximation</p></li>
 </ul>
 </td>
 <td colspan="2"><p>set all jblues=0.0</p></td>
-</tr>
-<tr class="row-even"><td><p>type</p></td>
-<td><p><em>boolean</em></p></td>
-</tr>
-<tr class="row-odd"><td><p>default</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
-<li><p>classical_nebular</p></li>
-</ul>
-</td>
-<td colspan="2"><p>sets all beta_sobolevs to 1</p></td>
 </tr>
 <tr class="row-odd"><td><p>type</p></td>
 <td><p><em>boolean</em></p></td>
@@ -694,26 +709,52 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 <tr class="row-even"><td><p>default</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>classical_nebular</p></li>
+</ul>
+</td>
+<td colspan="2"><p>sets all beta_sobolevs to 1</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-even"><td rowspan="7"><ul class="simple">
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="12"><ul class="simple">
 <li><p>continuum_interaction</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
 <td colspan="2"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>default</p></td>
+<tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>OrderedDict()</p></td>
 </tr>
-<tr class="row-even"><td colspan="3"><p>properties</p></td>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="6"><ul class="simple">
 <li><p>species</p></li>
 </ul>
 </td>
 <td colspan="2"><p>Species that are requested to be treated with continuum interactios (radiative/collisional ionization and recombination) in the format [‘Si II’, ‘Ca I’, etc.]</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>[]</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>Species that are requested to be treated with continuum interactios (radiative/collisional ionization and recombination) in the format [‘Si II’, ‘Ca I’, etc.]</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
 <td><p><em>array</em></p></td>
@@ -723,6 +764,12 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 </tr>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="4"><ul class="simple">
 <li><p>helium_treatment</p></li>
@@ -753,6 +800,9 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn - but
 </tr>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="3"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -884,7 +934,7 @@ normal operations.</p>
 <tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="11"><ul class="simple">
+<tr class="row-odd"><td rowspan="14"><ul class="simple">
 <li><p>virtual_spectrum_range</p></li>
 </ul>
 </td>
@@ -931,35 +981,46 @@ normal operations.</p>
 <tr class="row-odd"><td><p>default</p></td>
 <td><p>1000000</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td colspan="3"><p>Limits of virtual packet spectrum (giving maximum and minimum packet frequency)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>enable_reflective_inner_boundary</p></li>
 </ul>
 </td>
 <td colspan="3"><p>experimental feature to enable a reflective boundary.</p></td>
 </tr>
-<tr class="row-odd"><td><p>type</p></td>
+<tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>boolean</em></p></td>
 </tr>
-<tr class="row-even"><td><p>default</p></td>
+<tr class="row-odd"><td><p>default</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>inner_boundary_albedo</p></li>
 </ul>
 </td>
 <td colspan="3"><p>albedo of the reflective boundary</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>default</p></td>
+<tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>0.0</p></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>convergence_strategy</p></li>
 </ul>
 </td>
-<td rowspan="2"><p>oneOf</p></td>
+<td><p>default</p></td>
+<td colspan="2"><p>OrderedDict([(‘type’, ‘damped’)])</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>oneOf</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
@@ -987,9 +1048,12 @@ normal operations.</p>
 <tr class="row-odd"><td><p>additionalProperties</p></td>
 <td colspan="3"><p>False</p></td>
 </tr>
-<tr class="row-even"><td colspan="4"><p>definitions</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><ul class="simple">
+<tr class="row-odd"><td colspan="4"><p>definitions</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><ul class="simple">
 <li><p>convergence_strategy</p></li>
 </ul>
 </td>
@@ -1071,7 +1135,7 @@ override then the defaults.</p>
 <tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>virtual</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="10"><ul class="simple">
+<tr class="row-odd"><td rowspan="12"><ul class="simple">
 <li><p>integrated</p></li>
 </ul>
 </td>
@@ -1110,7 +1174,13 @@ override then the defaults.</p>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="15"><ul class="simple">
 <li><p>virtual</p></li>
 </ul>
 </td>
@@ -1160,6 +1230,15 @@ override then the defaults.</p>
 </tr>
 <tr class="row-odd"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>OrderedDict()</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="3"><p><em>object</em></p></td>
 </tr>
 </tbody>
 </table>
