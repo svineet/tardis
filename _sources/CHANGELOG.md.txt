@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2019/10/30 16:09 +00:00)
+### upcoming (2019/11/01 14:19 +00:00)
 - [#971](https://github.com/tardis-sn/tardis/pull/971) Fix formal integral spikes bug (see #970) (#971) (@chvogl)
 - [#968](https://github.com/tardis-sn/tardis/pull/968) Fixed GUI #950 tardis/gui/widgets.py (@jamesgillanders)
 - [#965](https://github.com/tardis-sn/tardis/pull/965) Isotope time0 (#965) (@marxwillia)
