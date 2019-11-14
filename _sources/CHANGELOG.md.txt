@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2019/11/12 20:44 +00:00)
+### upcoming (2019/11/14 18:29 +00:00)
+- [#982](https://github.com/tardis-sn/tardis/pull/982) Pinned `numpy` to v1.15 (#982) (@epassaro)
 - [#978](https://github.com/tardis-sn/tardis/pull/978) Add further fix to quickstart link (#978) (@jreichenbach-msu)
 - [#975](https://github.com/tardis-sn/tardis/pull/975) Add links to Quickstart (#975) (@jreichenbach-msu)
 - [#971](https://github.com/tardis-sn/tardis/pull/971) Fix formal integral spikes bug (see #970) (#971) (@chvogl)
