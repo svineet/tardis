@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2019/11/14 18:29 +00:00)
+### upcoming (2019/11/16 19:09 +00:00)
+- [#983](https://github.com/tardis-sn/tardis/pull/983) Fix git clone rendering in installation (#983) (@jreichenbach-msu)
 - [#982](https://github.com/tardis-sn/tardis/pull/982) Pinned `numpy` to v1.15 (#982) (@epassaro)
 - [#978](https://github.com/tardis-sn/tardis/pull/978) Add further fix to quickstart link (#978) (@jreichenbach-msu)
 - [#975](https://github.com/tardis-sn/tardis/pull/975) Add links to Quickstart (#975) (@jreichenbach-msu)
