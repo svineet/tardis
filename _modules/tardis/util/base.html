@@ -258,6 +258,19 @@
 <span class="p">))</span>
 
 <div class="viewcode-block" id="int_to_roman"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.int_to_roman">[docs]</a><span class="k">def</span> <span class="nf">int_to_roman</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert an integer into its roman numeral representation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    i: int</span>
+<span class="sd">        Integer to be converted into roman numerals</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        : str</span>
+<span class="sd">        Returns roman numeral representation of i in str format.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">integer</span><span class="p">,</span> <span class="n">numeral</span> <span class="ow">in</span> <span class="n">NUMERAL_MAP</span><span class="p">:</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="n">integer</span>
@@ -267,15 +280,17 @@
 
 <div class="viewcode-block" id="roman_to_int"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.roman_to_int">[docs]</a><span class="k">def</span> <span class="nf">roman_to_int</span><span class="p">(</span><span class="n">roman_string</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a roman numeral into its corresponding integer.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    roman_string: str</span>
+<span class="sd">        Roman numeral to be converted into an integer</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        : int</span>
-
+<span class="sd">        Returns integer representation of roman_string</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">NUMERALS_SET</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">NUMERAL_MAP</span><span class="p">))[</span><span class="mi">1</span><span class="p">])</span>
@@ -294,7 +309,33 @@
 
 <div class="viewcode-block" id="calculate_luminosity"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.calculate_luminosity">[docs]</a><span class="k">def</span> <span class="nf">calculate_luminosity</span><span class="p">(</span><span class="n">spec_fname</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">wavelength_column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">wavelength_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">,</span> <span class="n">flux_column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                          <span class="n">flux_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates luminosity of star.</span>
 
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    spec_fname: file or str</span>
+<span class="sd">        File or file name to be read</span>
+<span class="sd">    distance: float</span>
+<span class="sd">        Distance to star</span>
+<span class="sd">    wavelength_column: int, optional(default = 0)</span>
+<span class="sd">        Column index in which the wavelength is stored</span>
+<span class="sd">    wavelength_unit: float, optional(default = u.angstrom)</span>
+<span class="sd">        Dictates units used for calculating wavelength.</span>
+<span class="sd">    flux_column: int, optional(default = 1)</span>
+<span class="sd">        Column index in which the flux is stored</span>
+<span class="sd">    flux_unit: str, optional(default = u.Unit(&#39;erg / (Angstrom cm2 s)&#39;)</span>
+<span class="sd">        Dictates units used for flux</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    luminosity.value: float</span>
+<span class="sd">        Returned luminosity value of star.</span>
+<span class="sd">    wavelength.min()</span>
+<span class="sd">        Minimum value of wavelength of light</span>
+<span class="sd">    wavelength.max()</span>
+<span class="sd">        Maximum value of wavelength of light</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">#BAD STYLE change to parse quantity</span>
     <span class="n">distance</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 
@@ -307,6 +348,21 @@
 
 
 <div class="viewcode-block" id="create_synpp_yaml"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.create_synpp_yaml">[docs]</a><span class="k">def</span> <span class="nf">create_synpp_yaml</span><span class="p">(</span><span class="n">radial1d_mdl</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">shell_no</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lines_db</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a yaml file that is readable from syn++</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    radial1d_mdl: Radial1DModel</span>
+<span class="sd">        Inputted object that will be read into YAML file</span>
+<span class="sd">    fname: str</span>
+<span class="sd">        File name for the synpp yaml</span>
+<span class="sd">    shell_no: int, optional(default = 0)</span>
+<span class="sd">        Number of shells</span>
+<span class="sd">    lines_db: file, optional(default = None)</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Currently only works with Si and a special setup&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -365,11 +421,22 @@
 
 <div class="viewcode-block" id="intensity_black_body"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.intensity_black_body">[docs]</a><span class="k">def</span> <span class="nf">intensity_black_body</span><span class="p">(</span><span class="n">nu</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculate the intensity of a black-body according to the following formula</span>
+<span class="sd">    Calculate the intensity of a black-body according to the following formula</span>
 
 <span class="sd">        .. math::</span>
 <span class="sd">            I(\\nu, T) = \\frac{2h\\nu^3}{c^2}\frac{1}{e^{h\\nu \\beta_\\textrm{rad}} - 1}</span>
 
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nu: float</span>
+<span class="sd">        Frequency of light</span>
+<span class="sd">    T: float</span>
+<span class="sd">        Temperature in kelvin</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Intensity: float</span>
+<span class="sd">        Returns the intensity of the black body</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">beta_rad</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_B_cgs</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
     <span class="n">coefficient</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">h_cgs</span> <span class="o">/</span> <span class="n">c_cgs</span> <span class="o">**</span> <span class="mi">2</span>
@@ -379,6 +446,22 @@
 
 
 <div class="viewcode-block" id="species_tuple_to_string"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.species_tuple_to_string">[docs]</a><span class="k">def</span> <span class="nf">species_tuple_to_string</span><span class="p">(</span><span class="n">species_tuple</span><span class="p">,</span> <span class="n">roman_numerals</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a species tuple to its corresponding string representation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    species_tuple: tuple</span>
+<span class="sd">        Tuple of 2 values indicated atomic number and number of electrons missing</span>
+
+<span class="sd">    roman_numerals: bool, optional(default = TRUE)</span>
+<span class="sd">        Indicates whether the returned ion number is in roman numerals</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    element_symbol, roman_ion_number: str</span>
+<span class="sd">        Returns corresponding string representation of given tuple</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">atomic_number</span><span class="p">,</span> <span class="n">ion_number</span> <span class="o">=</span> <span class="n">species_tuple</span>
     <span class="n">element_symbol</span> <span class="o">=</span> <span class="n">ATOMIC_NUMBER2SYMBOL</span><span class="p">[</span><span class="n">atomic_number</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">roman_numerals</span><span class="p">:</span>
@@ -389,6 +472,24 @@
 
 
 <div class="viewcode-block" id="species_string_to_tuple"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.species_string_to_tuple">[docs]</a><span class="k">def</span> <span class="nf">species_string_to_tuple</span><span class="p">(</span><span class="n">species_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a species string to its corresponding tuple representation</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    species_string: str</span>
+<span class="sd">        String containing species symbol (e.g. Si II, Fe III)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    atomic_number, ion_number: tuple</span>
+<span class="sd">        Returns tuple of length 2 indicating atomic number and ion number</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    MalformedSpeciesError</span>
+<span class="sd">        If the inputted string does not match the species format</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">element_symbol</span><span class="p">,</span> <span class="n">ion_number_string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^(\w+)\s*(\d+)&#39;</span><span class="p">,</span> <span class="n">species_string</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
@@ -416,6 +517,24 @@
 
 
 <div class="viewcode-block" id="parse_quantity"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.parse_quantity">[docs]</a><span class="k">def</span> <span class="nf">parse_quantity</span><span class="p">(</span><span class="n">quantity_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Changes a string into it&#39;s corresponding astropy.Quantity object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    quantity_string: str</span>
+<span class="sd">        String to be converted into astropy.Quantity</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    q: ~u.Quantity</span>
+<span class="sd">        Corresponding astropy.Quantity object for passed string</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    MalformedQuantitiyError</span>
+<span class="sd">        If string is not properly formatted for Astropy Quantity</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">quantity_string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">MalformedQuantityError</span><span class="p">(</span><span class="n">quantity_string</span><span class="p">)</span>
@@ -439,6 +558,19 @@
 
 
 <div class="viewcode-block" id="element_symbol2atomic_number"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.element_symbol2atomic_number">[docs]</a><span class="k">def</span> <span class="nf">element_symbol2atomic_number</span><span class="p">(</span><span class="n">element_string</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes an element symbol and returns its corresponding atomic number</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    element_string: str</span>
+<span class="sd">        Inputted element symbol</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        : int</span>
+<span class="sd">        Returned atomic number</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">reformatted_element_string</span> <span class="o">=</span> <span class="n">reformat_element_symbol</span><span class="p">(</span><span class="n">element_string</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">reformatted_element_string</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">SYMBOL2ATOMIC_NUMBER</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">MalformedElementSymbolError</span><span class="p">(</span><span class="n">element_string</span><span class="p">)</span>
@@ -447,22 +579,34 @@
 
 <div class="viewcode-block" id="atomic_number2element_symbol"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.atomic_number2element_symbol">[docs]</a><span class="k">def</span> <span class="nf">atomic_number2element_symbol</span><span class="p">(</span><span class="n">atomic_number</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Convert atomic number to string symbol</span>
+<span class="sd">    Convert atomic number to string</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atomic_number: int</span>
+<span class="sd">        Inputted atomic number</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        : str</span>
+<span class="sd">       Returned corresponding element symbol</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ATOMIC_NUMBER2SYMBOL</span><span class="p">[</span><span class="n">atomic_number</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="reformat_element_symbol"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.reformat_element_symbol">[docs]</a><span class="k">def</span> <span class="nf">reformat_element_symbol</span><span class="p">(</span><span class="n">element_string</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reformat the string so the first letter is uppercase and all subsequent letters lowercase</span>
+<span class="sd">    Reformat the string so the first letter is uppercase and all subsequent letters lowercase.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">        element_symbol: str</span>
+<span class="sd">    element_string: str</span>
+<span class="sd">        Inputted element symbol</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">        reformated element symbol</span>
+<span class="sd">        : str</span>
+<span class="sd">        Returned reformatted element symbol</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">element_string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">element_string</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
@@ -470,20 +614,26 @@
 
 <div class="viewcode-block" id="quantity_linspace"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.quantity_linspace">[docs]</a><span class="k">def</span> <span class="nf">quantity_linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculate the linspace for a quantity start and stop.</span>
-<span class="sd">    Other than that essentially the same input parameters as linspace</span>
+<span class="sd">    Essentially the same input parameters as linspace, but calculated for an astropy quantity start and stop.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    start: ~astropy.Quantity</span>
+<span class="sd">        Starting value of the sequence</span>
 <span class="sd">    stop: ~astropy.Quantity</span>
+<span class="sd">        End value of the sequence</span>
 <span class="sd">    num: ~int</span>
+<span class="sd">        Number of samples to generate</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        : ~astropy.Quantity</span>
+<span class="sd">        Returns num evenly spaced characters of type astropy.Quantity</span>
 
-
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If start and stop values have no unit attribute.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;unit&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">stop</span><span class="p">,</span> <span class="s1">&#39;unit&#39;</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Both start and stop need to be quantities with a &#39;</span>
@@ -493,6 +643,21 @@
 
 
 <div class="viewcode-block" id="convert_abundances_format"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.convert_abundances_format">[docs]</a><span class="k">def</span> <span class="nf">convert_abundances_format</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Changes format of file containing abundances into data frame</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fname: file, str</span>
+<span class="sd">        File or file name that contains abundance info</span>
+<span class="sd">    delimiter: str, optional(default = &#39;\s+&#39;)</span>
+<span class="sd">        Determines the separator for splitting file</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        : DataFrame</span>
+<span class="sd">        Corresponding data frame</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="c1">#Drop shell index column</span>
     <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>

@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2019/11/16 19:09 +00:00)
+### upcoming (2019/11/19 19:59 +00:00)
+- [#969](https://github.com/tardis-sn/tardis/pull/969) Fixes numpydoc for util (#969) (@kowal180)
+- [#985](https://github.com/tardis-sn/tardis/pull/985) Fix typo (#985) (@jreichenbach-msu)
 - [#983](https://github.com/tardis-sn/tardis/pull/983) Fix git clone rendering in installation (#983) (@jreichenbach-msu)
 - [#982](https://github.com/tardis-sn/tardis/pull/982) Pinned `numpy` to v1.15 (#982) (@epassaro)
 - [#978](https://github.com/tardis-sn/tardis/pull/978) Add further fix to quickstart link (#978) (@jreichenbach-msu)
