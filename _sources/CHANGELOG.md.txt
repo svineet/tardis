@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2019/11/19 20:02 +00:00)
+### upcoming (2019/11/20 16:18 +00:00)
+- [#967](https://github.com/tardis-sn/tardis/pull/967) log additional properties in hdf witeout when --with-vpacket-logging is present (#967) (@kaushik94)
 - [#969](https://github.com/tardis-sn/tardis/pull/969) Fixes numpydoc for util (#969) (@kowal180)
 - [#985](https://github.com/tardis-sn/tardis/pull/985) Fix typo (#985) (@jreichenbach-msu)
 - [#983](https://github.com/tardis-sn/tardis/pull/983) Fix git clone rendering in installation (#983) (@jreichenbach-msu)
