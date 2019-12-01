@@ -381,7 +381,7 @@ and/or applicable for pull requests. Otherwise, it triggers all of them:</p>
 is composed of steps of script.
 A task is a predefined script with a definitive purpose, such as downloading the secure file or installing a ssh-key.</p>
 <p>To download and add the ssh-key, prepare the scripts as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">task</span><span class="p">:</span> <span class="n">DownloadSecureFile</span><span class="nd">@1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">task</span><span class="p">:</span> <span class="n">DownloadSecureFile</span><span class="o">@</span><span class="mi">1</span>
   <span class="n">inputs</span><span class="p">:</span>
     <span class="n">secureFile</span><span class="p">:</span> <span class="s1">&#39;id_azure_rsa&#39;</span>
 </pre></div>

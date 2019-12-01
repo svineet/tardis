@@ -119,7 +119,10 @@
 <li class="toctree-l2"><a class="reference internal" href="git_workflow.html">General Workflow to add a new feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git_workflow.html#preparation-and-working-with-git">Preparation and Working with Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_workflow.html">Release</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Procedure to update the reference data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Procedure to update the reference data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="continuous_integration.html">Continuous Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer_faq.html">Developer FAQ</a></li>
 </ul>
@@ -225,34 +228,45 @@
 </style>
 <div class="section" id="procedure-to-update-the-reference-data">
 <h1>Procedure to update the reference data<a class="headerlink" href="#procedure-to-update-the-reference-data" title="Permalink to this headline">¶</a></h1>
-<p>We asume that you have added the necessary changes to TARDIS and have a
+<p>We assume that you have added the necessary changes to TARDIS and have a
 PR open.</p>
 <ol class="arabic">
-<li><dl class="simple">
-<dt>clone tardis-refdata (<cite>git clone tardis-refdata</cite>; you need to have git lfs installed) then make a new branch named</dt><dd><p>the same as your new tardis feature branch.</p>
+<li><p>Fork the tardis ref-data repository like described in <a class="reference internal" href="git_workflow.html#development-workflow"><span class="std std-ref">General Workflow to add a new feature</span></a>.</p></li>
+<li><dl>
+<dt>Clone tardis-refdata. Then make a new branch named the same as your new tardis feature branch. Make sure to set the upstream of the repository to <cite>https://github.com/tardis-sn/tardis-refdata.git</cite></dt><dd><ul class="simple">
+<li><p>You can check that you have the right upstream set using:</p></li>
+</ul>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git checkout upstream/pr/11
+</pre></div>
+</div>
 </dd>
 </dl>
 </li>
-<li><p>Generate new reference data (in your tardis directory and right branch) offline using</p>
+<li><p>Make sure to have sure to have git-lfs installed. If not already done, the process can be seen here: <span class="xref std std-ref">git_lfs_instructions</span></p></li>
+<li><dl>
+<dt>Open tardis-refdata directory. Fetch from upstream and then use git-lfs to pull ref-data files from github using:</dt><dd><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git lfs fetch upstream
+git lfs pull
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Open into tardis directory. Generate new reference data (in the correct branch) offline using:</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt; --generate-reference&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Rerun the tests and see if it does not fail using</p>
+<li><p>Rerun the tests to make sure it does not fail using:</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt;&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
+<li><p>Open and run the refdata comparer notebook provided in TARDIS-refdata to check if there are any unexpected changes in the updated reference data and the previous reference data.</p></li>
 <li><p>Switch to tardis-refdata. Commit the changed ref-data and open a PR on tardis-refdata</p></li>
-<li><dl class="simple">
-<dt>Make a copy of the refdata comparer notebook provided in TARDIS-refdata to check if there are</dt><dd><p>any unexpected changes in the updated reference data and the previous reference data</p>
-</dd>
-</dl>
-</li>
 <li><p>Switch back to the TARDIS directory. Open <cite>.travis.yml</cite></p></li>
 <li><p>Change the following lines</p>
 <blockquote>
@@ -277,6 +291,26 @@ PR open.</p>
 <li><p>Then merge your PR to TARDIS master</p></li>
 <li><p>Congratulations - you updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan)</p></li>
 </ol>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unable to generate reference data</dt><dd><ul>
+<li><p>If generating fails due to an inability to open chianti_He.h5, make sure that you have installed git-lfs and have pulled the files from github (See steps 3 and 4).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Error in running <cite>comparer = ReferenceComparer(ref2_hash=’upstream/pr/11’)</cite> on the comparer notebook: <cite>No such file or directory: ‘…/unit_test_data.h5’</cite></dt><dd><ul>
+<li><p>If notebook file is unable to find the file /unit_test_data.h5, make sure you have correctly set your upstream. To check this, use:</p></li>
+<li><p>If this fails, make sure that your upstream is set correctly to <cite>https://github.com/tardis-sn/tardis-refdata.git</cite> (See step 2).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </div>
 
 

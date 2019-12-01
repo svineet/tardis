@@ -191,12 +191,12 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">interpolate</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="kn">from</span> <span class="nn">tardis</span> <span class="k">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
-<span class="kn">from</span> <span class="nn">astropy.units</span> <span class="k">import</span> <span class="n">Quantity</span>
-<span class="kn">from</span> <span class="nn">tardis.io.atom_data.util</span> <span class="k">import</span> <span class="n">resolve_atom_data_fname</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+<span class="kn">from</span> <span class="nn">astropy.units</span> <span class="kn">import</span> <span class="n">Quantity</span>
+<span class="kn">from</span> <span class="nn">tardis.io.atom_data.util</span> <span class="kn">import</span> <span class="n">resolve_atom_data_fname</span>
 
 <div class="viewcode-block" id="AtomDataNotPreparedError"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomDataNotPreparedError">[docs]</a><span class="k">class</span> <span class="nc">AtomDataNotPreparedError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">pass</span></div>
@@ -374,7 +374,7 @@
 
         <span class="k">return</span> <span class="n">atom_data</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_data</span><span class="p">,</span> <span class="n">ionization_data</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_data</span><span class="p">,</span> <span class="n">ionization_data</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">macro_atom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">macro_atom_references</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">zeta_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collision_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">collision_data_temperatures</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">synpp_refs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -602,14 +602,14 @@
             <span class="p">)</span>
             <span class="k">raise</span> <span class="n">AtomDataMissingError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;&lt;Atomic Data UUID=</span><span class="si">{}</span><span class="s2"> MD5=</span><span class="si">{}</span><span class="s2"> Lines=</span><span class="si">{:d}</span><span class="s2"> Levels=</span><span class="si">{:d}</span><span class="s2">&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">uuid1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">md5</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">line_id</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">energy</span><span class="o">.</span><span class="n">count</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="NLTEData"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.NLTEData">[docs]</a><span class="k">class</span> <span class="nc">NLTEData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_data</span><span class="p">,</span> <span class="n">nlte_species</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_data</span><span class="p">,</span> <span class="n">nlte_species</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span> <span class="o">=</span> <span class="n">atom_data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">atom_data</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span> <span class="o">=</span> <span class="n">nlte_species</span>

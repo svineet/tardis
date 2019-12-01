@@ -189,8 +189,8 @@
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="kn">from</span> <span class="nn">tardis</span> <span class="k">import</span> <span class="n">constants</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -202,7 +202,7 @@
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">last_line_interaction_in_id</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">last_line_interaction_out_id</span><span class="p">,</span>
                    <span class="n">model</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">last_line_interaction_shell_id</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">output_nu</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">atomic_data</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_line_interaction_in_id</span><span class="p">,</span> <span class="n">last_line_interaction_out_id</span><span class="p">,</span> <span class="n">last_line_interaction_shell_id</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_line_interaction_in_id</span><span class="p">,</span> <span class="n">last_line_interaction_out_id</span><span class="p">,</span> <span class="n">last_line_interaction_shell_id</span><span class="p">,</span>
                  <span class="n">output_nu</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">packet_filter_mode</span><span class="o">=</span><span class="s1">&#39;packet_nu&#39;</span><span class="p">):</span>
         <span class="c1"># mask out packets which did not perform a line interaction</span>
         <span class="c1"># TODO mask out packets which do not escape to observer?</span>
@@ -343,7 +343,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf5_fname</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hdf5_fname</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hdf5_fname</span> <span class="o">=</span> <span class="n">hdf5_fname</span>
         <span class="k">if</span> <span class="n">iterations</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">iterations</span> <span class="o">=</span> <span class="p">[]</span>

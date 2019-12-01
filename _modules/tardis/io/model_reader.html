@@ -188,16 +188,16 @@
 
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">recfromtxt</span><span class="p">,</span> <span class="n">genfromtxt</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">recfromtxt</span><span class="p">,</span> <span class="n">genfromtxt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="kn">from</span> <span class="nn">pyne</span> <span class="k">import</span> <span class="n">nucname</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">pyne</span> <span class="kn">import</span> <span class="n">nucname</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="c1"># Adding logging support</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="k">import</span> <span class="n">parse_quantity</span>
+<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="kn">import</span> <span class="n">parse_quantity</span>
 
 
 <div class="viewcode-block" id="ConfigurationError"><a class="viewcode-back" href="../../../api/tardis.io.model_reader.html#tardis.io.model_reader.ConfigurationError">[docs]</a><span class="k">class</span> <span class="nc">ConfigurationError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>

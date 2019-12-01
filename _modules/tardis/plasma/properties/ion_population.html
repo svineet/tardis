@@ -192,11 +192,11 @@
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
 
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
 
-<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="k">import</span> <span class="n">ProcessingPlasmaProperty</span>
-<span class="kn">from</span> <span class="nn">tardis.plasma.properties.continuum_processes</span> <span class="k">import</span> <span class="n">get_ion_multi_index</span>
-<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="k">import</span> <span class="n">PlasmaIonizationError</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="kn">import</span> <span class="n">ProcessingPlasmaProperty</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.continuum_processes</span> <span class="kn">import</span> <span class="n">get_ion_multi_index</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="kn">import</span> <span class="n">PlasmaIonizationError</span>
 
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
@@ -334,7 +334,7 @@
     <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;delta&#39;</span><span class="p">,)</span>
     <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">delta&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">departure_coefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">departure_coefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">chi_0_species</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">delta_treatment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">RadiationFieldCorrection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">departure_coefficient</span> <span class="o">=</span> <span class="n">departure_coefficient</span>
@@ -396,7 +396,7 @@
     <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ion_number_density&#39;</span><span class="p">,</span> <span class="s1">&#39;electron_densities&#39;</span><span class="p">)</span>
     <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;N_{i,j}&#39;</span><span class="p">,</span><span class="s1">&#39;n_</span><span class="si">{e}</span><span class="s1">&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">IonNumberDensity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span> <span class="o">=</span> <span class="n">ion_zero_threshold</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span> <span class="o">=</span> <span class="kc">None</span>
@@ -491,7 +491,7 @@
                <span class="s1">&#39;helium_population_updated&#39;</span><span class="p">)</span>
     <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;N_{i,j}&#39;</span><span class="p">,</span><span class="s1">&#39;n_</span><span class="si">{e}</span><span class="s1">&#39;</span><span class="p">,)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">IonNumberDensityHeNLTE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span> <span class="o">=</span> <span class="n">ion_zero_threshold</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span> <span class="o">=</span> <span class="kc">None</span>

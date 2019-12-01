@@ -187,11 +187,11 @@
 <span></span><span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg.linalg</span> <span class="k">import</span> <span class="n">LinAlgError</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg.linalg</span> <span class="kn">import</span> <span class="n">LinAlgError</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="k">import</span> <span class="n">ProcessingPlasmaProperty</span>
-<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="k">import</span> <span class="n">PlasmaConfigError</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="kn">import</span> <span class="n">ProcessingPlasmaProperty</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="kn">import</span> <span class="n">PlasmaConfigError</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -324,7 +324,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">LevelBoltzmannFactorNLTEGeneral</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Selects appropriate &#39;calculate&#39; function based on NLTE config</span>
 <span class="sd">        options selected.</span>

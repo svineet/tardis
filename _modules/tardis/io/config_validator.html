@@ -186,10 +186,10 @@
   <h1>Source code for tardis.io.config_validator</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">from</span> <span class="nn">copy</span> <span class="k">import</span> <span class="n">deepcopy</span>
-<span class="kn">from</span> <span class="nn">jsonschema</span> <span class="k">import</span> <span class="n">Draft4Validator</span><span class="p">,</span> <span class="n">RefResolver</span><span class="p">,</span> <span class="n">validators</span>
-<span class="kn">from</span> <span class="nn">astropy.units.quantity</span> <span class="k">import</span> <span class="n">Quantity</span>
-<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="k">import</span> <span class="n">YAMLLoader</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">jsonschema</span> <span class="kn">import</span> <span class="n">Draft4Validator</span><span class="p">,</span> <span class="n">RefResolver</span><span class="p">,</span> <span class="n">validators</span>
+<span class="kn">from</span> <span class="nn">astropy.units.quantity</span> <span class="kn">import</span> <span class="n">Quantity</span>
+<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">YAMLLoader</span>
 
 <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
 <span class="n">schema_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s1">&#39;schemas&#39;</span><span class="p">)</span>

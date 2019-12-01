@@ -187,18 +187,18 @@
 <span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
 <span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">from</span> <span class="nn">tardis</span> <span class="k">import</span> <span class="n">constants</span>
-<span class="kn">from</span> <span class="nn">astropy</span> <span class="k">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
-<span class="kn">from</span> <span class="nn">pyne</span> <span class="k">import</span> <span class="n">nucname</span>
+<span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">pyne</span> <span class="kn">import</span> <span class="n">nucname</span>
 
 <span class="kn">import</span> <span class="nn">tardis</span>
-<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="k">import</span> <span class="n">get_internal_data_path</span>
+<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">get_internal_data_path</span>
 
 <span class="n">k_B_cgs</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">k_B</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span>
 <span class="n">c_cgs</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span>
@@ -213,28 +213,28 @@
 
 <div class="viewcode-block" id="MalformedSpeciesError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedSpeciesError">[docs]</a><span class="k">class</span> <span class="nc">MalformedSpeciesError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Expecting a species notation (e.g. &quot;Si 2&quot;, &quot;Si II&quot;, &quot;Fe IV&quot;) - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span></div>
 
 
 <div class="viewcode-block" id="MalformedElementSymbolError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedElementSymbolError">[docs]</a><span class="k">class</span> <span class="nc">MalformedElementSymbolError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Expecting an atomic symbol (e.g. Fe) - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span></div>
 
 
 <div class="viewcode-block" id="MalformedQuantityError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedQuantityError">[docs]</a><span class="k">class</span> <span class="nc">MalformedQuantityError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_quantity_string</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_quantity_string</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span> <span class="o">=</span> <span class="n">malformed_quantity_string</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;Expecting a quantity string(e.g. &quot;5 km/s&quot;) for keyword - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span></div>
 
 

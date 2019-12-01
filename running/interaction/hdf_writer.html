@@ -435,8 +435,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1">#Instantiating Object</span>
 <span class="n">property1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0e14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2e14</span><span class="p">,</span> <span class="mf">27.5</span><span class="p">])</span>
@@ -469,7 +469,7 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#Read HDF file</span>
 <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;test.hdf&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
     <span class="c1">#print data[&#39;/test/mock_setup/property1&#39;]</span>
 </pre></div>
 </div>
@@ -526,7 +526,7 @@ File path: test.hdf
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#Read HDF file</span>
 <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;nested_test.hdf&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -582,7 +582,7 @@ File path: nested_test.hdf
 <span></span><span class="n">obj3</span> <span class="o">=</span> <span class="n">DemoClass</span><span class="p">(</span><span class="s1">&#39;random_string&#39;</span><span class="p">)</span>
 <span class="n">obj3</span><span class="o">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="s1">&#39;demo_class.hdf&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;demo_class.hdf&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>

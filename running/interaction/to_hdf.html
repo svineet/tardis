@@ -631,9 +631,9 @@ map directly to c-types [inferred_type-&gt;mixed,key-&gt;values] [items-&gt;None
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;/tmp/full_example.hdf&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">data</span>
+<span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -710,7 +710,7 @@ File path: /tmp/full_example.hdf
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">print</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;/simulation/model/homologous_density/density_0&#39;</span><span class="p">]</span>
+<span></span><span class="nb">print</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;/simulation/model/homologous_density/density_0&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -750,7 +750,7 @@ dtype: float64
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">print</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;/simulation/model/scalars&#39;</span><span class="p">][</span><span class="s1">&#39;t_inner&#39;</span><span class="p">]</span>
+<span></span><span class="nb">print</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;/simulation/model/scalars&#39;</span><span class="p">][</span><span class="s1">&#39;t_inner&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -784,7 +784,7 @@ dtype: float64
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span>
 <span class="k">with</span> <span class="n">pandas</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;/tmp/plasma_output.hdf&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -849,7 +849,7 @@ File path: /tmp/plasma_output.hdf
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span>
 <span class="k">with</span> <span class="n">pandas</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;/tmp/plasma_input_output.hdf&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -894,7 +894,7 @@ File path: /tmp/plasma_input_output.hdf
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span>
 <span class="k">with</span> <span class="n">pandas</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s1">&#39;/tmp/runner_output.hdf&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">data</span>
+    <span class="nb">print</span> <span class="n">data</span>
 </pre></div>
 </div>
 </div>
