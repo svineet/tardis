@@ -245,8 +245,7 @@
             <span class="n">phis</span><span class="p">[</span><span class="n">start_id</span> <span class="o">-</span> <span class="n">i</span><span class="p">:</span><span class="n">end_id</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_phis</span>
 
         <span class="n">broadcast_ionization_energy</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">ionization_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
-                <span class="n">partition_function</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+            <span class="n">ionization_data</span><span class="p">[</span><span class="n">partition_function</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
         <span class="n">phi_index</span> <span class="o">=</span> <span class="n">broadcast_ionization_energy</span><span class="o">.</span><span class="n">index</span>
         <span class="n">broadcast_ionization_energy</span> <span class="o">=</span> <span class="n">broadcast_ionization_energy</span><span class="o">.</span><span class="n">values</span>
 

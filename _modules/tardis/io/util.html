@@ -312,7 +312,7 @@
 
 <div class="viewcode-block" id="yaml_load_file"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.yaml_load_file">[docs]</a><span class="k">def</span> <span class="nf">yaml_load_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">Loader</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">loader</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">loader</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="yaml_load_config_file"><a class="viewcode-back" href="../../../api/tardis.io.util.html#tardis.io.util.yaml_load_config_file">[docs]</a><span class="k">def</span> <span class="nf">yaml_load_config_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>

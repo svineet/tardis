@@ -206,42 +206,8 @@
 <span class="n">m_e_cgs</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">m_e</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span>
 <span class="n">e_charge_gauss</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">e</span><span class="o">.</span><span class="n">gauss</span><span class="o">.</span><span class="n">value</span>
 
-
-<div class="viewcode-block" id="MalformedError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedError">[docs]</a><span class="k">class</span> <span class="nc">MalformedError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span></div>
-
-
-<div class="viewcode-block" id="MalformedSpeciesError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedSpeciesError">[docs]</a><span class="k">class</span> <span class="nc">MalformedSpeciesError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Expecting a species notation (e.g. &quot;Si 2&quot;, &quot;Si II&quot;, &quot;Fe IV&quot;) - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span></div>
-
-
-<div class="viewcode-block" id="MalformedElementSymbolError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedElementSymbolError">[docs]</a><span class="k">class</span> <span class="nc">MalformedElementSymbolError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Expecting an atomic symbol (e.g. Fe) - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span></div>
-
-
-<div class="viewcode-block" id="MalformedQuantityError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedQuantityError">[docs]</a><span class="k">class</span> <span class="nc">MalformedQuantityError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_quantity_string</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span> <span class="o">=</span> <span class="n">malformed_quantity_string</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;Expecting a quantity string(e.g. &quot;5 km/s&quot;) for keyword - supplied </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span></div>
-
-
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">tardis_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">tardis</span><span class="o">.</span><span class="n">__path__</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-
 
 <span class="n">ATOMIC_SYMBOLS_DATA</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">get_internal_data_path</span><span class="p">(</span><span class="s1">&#39;atomic_symbols.dat&#39;</span><span class="p">),</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                                   <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;atomic_number&#39;</span><span class="p">,</span> <span class="s1">&#39;symbol&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;atomic_number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
@@ -256,6 +222,40 @@
     <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;CM&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;CD&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;XC&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;XL&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;IX&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;IV&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">)</span>
 <span class="p">))</span>
+
+<div class="viewcode-block" id="MalformedError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedError">[docs]</a><span class="k">class</span> <span class="nc">MalformedError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="MalformedSpeciesError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedSpeciesError">[docs]</a><span class="k">class</span> <span class="nc">MalformedSpeciesError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Expecting a species notation (e.g. &quot;Si 2&quot;, &quot;Si II&quot;, &quot;Fe IV&quot;) &#39;</span>
+                <span class="s1">&#39;- supplied </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="MalformedElementSymbolError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedElementSymbolError">[docs]</a><span class="k">class</span> <span class="nc">MalformedElementSymbolError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_element_symbol</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span> <span class="o">=</span> <span class="n">malformed_element_symbol</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Expecting an atomic symbol (e.g. Fe) - supplied </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">malformed_element_symbol</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MalformedQuantityError"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.MalformedQuantityError">[docs]</a><span class="k">class</span> <span class="nc">MalformedQuantityError</span><span class="p">(</span><span class="n">MalformedError</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">malformed_quantity_string</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span> <span class="o">=</span> <span class="n">malformed_quantity_string</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;Expecting a quantity string(e.g. &quot;5 km/s&quot;) for keyword &#39;</span>
+                <span class="s1">&#39;- supplied </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">malformed_quantity_string</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="int_to_roman"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.int_to_roman">[docs]</a><span class="k">def</span> <span class="nf">int_to_roman</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -296,7 +296,8 @@
     <span class="n">NUMERALS_SET</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">NUMERAL_MAP</span><span class="p">))[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">roman_string</span> <span class="o">=</span> <span class="n">roman_string</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">roman_string</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span> <span class="o">-</span> <span class="n">NUMERALS_SET</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> does not seem to be a roman numeral&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">roman_string</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> does not seem to be a roman numeral&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">roman_string</span><span class="p">))</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">integer</span><span class="p">,</span> <span class="n">numeral</span> <span class="ow">in</span> <span class="n">NUMERAL_MAP</span><span class="p">:</span>
         <span class="k">while</span> <span class="n">roman_string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeral</span><span class="p">)]</span> <span class="o">==</span> <span class="n">numeral</span><span class="p">:</span>
@@ -307,8 +308,10 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="calculate_luminosity"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.calculate_luminosity">[docs]</a><span class="k">def</span> <span class="nf">calculate_luminosity</span><span class="p">(</span><span class="n">spec_fname</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">wavelength_column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">wavelength_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">,</span> <span class="n">flux_column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                         <span class="n">flux_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="p">)):</span>
+<div class="viewcode-block" id="calculate_luminosity"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.calculate_luminosity">[docs]</a><span class="k">def</span> <span class="nf">calculate_luminosity</span><span class="p">(</span>
+        <span class="n">spec_fname</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">wavelength_column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">wavelength_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">,</span> <span class="n">flux_column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">flux_unit</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculates luminosity of star.</span>
 
@@ -366,7 +369,8 @@
     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Currently only works with Si and a special setup&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s1">&#39;The current atom dataset does not contain the necesarry reference files (please contact the authors)&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;The current atom dataset does not contain the &#39;</span>
+            <span class="s1">&#39;necesarry reference files (please contact the authors)&#39;</span><span class="p">)</span>
 
     <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="p">[</span><span class="s1">&#39;ref_log_tau&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">99.0</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
@@ -377,24 +381,29 @@
             <span class="k">pass</span>
 
 
-    <span class="n">relevant_synpp_refs</span> <span class="o">=</span> <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="p">[</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="p">[</span><span class="s1">&#39;ref_log_tau&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+    <span class="n">relevant_synpp_refs</span> <span class="o">=</span> <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="p">[</span>
+        <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">synpp_refs</span><span class="p">[</span><span class="s1">&#39;ref_log_tau&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">50</span><span class="p">]</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">synpp_default_yaml_fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
-        <span class="n">yaml_reference</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+        <span class="n">yaml_reference</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">CLoader</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">lines_db</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;opacity&#39;</span><span class="p">][</span><span class="s1">&#39;line_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines_db</span><span class="p">,</span> <span class="s1">&#39;lines&#39;</span><span class="p">)</span>
         <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;opacity&#39;</span><span class="p">][</span><span class="s1">&#39;line_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines_db</span><span class="p">,</span> <span class="s1">&#39;refs.dat&#39;</span><span class="p">)</span>
 
-    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="s1">&#39;min_wl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">spectrum</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="s1">&#39;max_wl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">spectrum</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="s1">&#39;min_wl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+        <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">spectrum</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="s1">&#39;max_wl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+        <span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">runner</span><span class="o">.</span><span class="n">spectrum</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;angstrom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 
 
     <span class="c1">#raise Exception(&quot;there&#39;s a problem here with units what units does synpp expect?&quot;)</span>
-    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;opacity&#39;</span><span class="p">][</span><span class="s1">&#39;v_ref&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">tardis_config</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">v_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;km/s&#39;</span><span class="p">)</span> <span class="o">/</span>
-                                               <span class="p">(</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;grid&#39;</span><span class="p">][</span><span class="s1">&#39;v_outer_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">tardis_config</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">v_outer</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;km/s&#39;</span><span class="p">)</span> <span class="o">/</span>
-                                                  <span class="p">(</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;opacity&#39;</span><span class="p">][</span><span class="s1">&#39;v_ref&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">tardis_config</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">v_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;km/s&#39;</span><span class="p">)</span> <span class="o">/</span>
+         <span class="p">(</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;grid&#39;</span><span class="p">][</span><span class="s1">&#39;v_outer_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">radial1d_mdl</span><span class="o">.</span><span class="n">tardis_config</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">v_outer</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;km/s&#39;</span><span class="p">)</span> <span class="o">/</span>
+         <span class="p">(</span><span class="mf">1000.</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c1">#pdb.set_trace()</span>
 
@@ -415,6 +424,7 @@
         <span class="n">yaml_setup</span><span class="p">[</span><span class="s1">&#39;v_min&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;opacity&#39;</span><span class="p">][</span><span class="s1">&#39;v_ref&#39;</span><span class="p">])</span>
         <span class="n">yaml_setup</span><span class="p">[</span><span class="s1">&#39;v_max&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yaml_reference</span><span class="p">[</span><span class="s1">&#39;grid&#39;</span><span class="p">][</span><span class="s1">&#39;v_outer_max&#39;</span><span class="p">])</span>
         <span class="n">yaml_setup</span><span class="p">[</span><span class="s1">&#39;aux&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">1e200</span><span class="p">)</span>
+
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">yaml_reference</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">explicit_start</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
@@ -423,8 +433,9 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the intensity of a black-body according to the following formula</span>
 
-<span class="sd">        .. math::</span>
-<span class="sd">            I(\\nu, T) = \\frac{2h\\nu^3}{c^2}\frac{1}{e^{h\\nu \\beta_\\textrm{rad}} - 1}</span>
+<span class="sd">    .. math::</span>
+<span class="sd">        I(\\nu, T) = \\frac{2h\\nu^3}{c^2}\frac{1}</span>
+<span class="sd">        {e^{h\\nu \\beta_\\textrm{rad}} - 1}</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -452,7 +463,8 @@
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    species_tuple: tuple</span>
-<span class="sd">        Tuple of 2 values indicated atomic number and number of electrons missing</span>
+<span class="sd">        Tuple of 2 values indicated atomic number and number of</span>
+<span class="sd">        electrons missing</span>
 
 <span class="sd">    roman_numerals: bool, optional(default = TRUE)</span>
 <span class="sd">        Indicates whether the returned ion number is in roman numerals</span>
@@ -492,13 +504,15 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">element_symbol</span><span class="p">,</span> <span class="n">ion_number_string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^(\w+)\s*(\d+)&#39;</span><span class="p">,</span> <span class="n">species_string</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+        <span class="n">element_symbol</span><span class="p">,</span> <span class="n">ion_number_string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(\w+)\s*(\d+)&#39;</span><span class="p">,</span>
+                                                     <span class="n">species_string</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">element_symbol</span><span class="p">,</span> <span class="n">ion_number_string</span> <span class="o">=</span> <span class="n">species_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">MalformedSpeciesError</span><span class="p">(</span><span class="s1">&#39;Species string &quot;</span><span class="si">{0}</span><span class="s1">&quot; is not of format &lt;element_symbol&gt;&lt;number&gt; &#39;</span>
-                                        <span class="s1">&#39;(e.g. Fe 2, Fe2, ..)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">species_string</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">MalformedSpeciesError</span><span class="p">(</span>
+                <span class="s1">&#39;Species string &quot;</span><span class="si">{0}</span><span class="s1">&quot; is not of format &lt;element_symbol&gt;&lt;number&gt;&#39;</span>
+                <span class="s1">&#39; (e.g. Fe 2, Fe2, ..)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">species_string</span><span class="p">))</span>
 
     <span class="n">atomic_number</span> <span class="o">=</span> <span class="n">element_symbol2atomic_number</span><span class="p">(</span><span class="n">element_symbol</span><span class="p">)</span>
 
@@ -508,10 +522,13 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">ion_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ion_number_string</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">MalformedSpeciesError</span><span class="p">(</span><span class="s2">&quot;Given ion number (&#39;</span><span class="si">{}</span><span class="s2">&#39;) could not be parsed &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ion_number_string</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">MalformedSpeciesError</span><span class="p">(</span>
+                <span class="s2">&quot;Given ion number (&#39;</span><span class="si">{}</span><span class="s2">&#39;) could not be parsed&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">ion_number_string</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">ion_number</span> <span class="o">&gt;</span> <span class="n">atomic_number</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Species given does not exist: ion number &gt; atomic number&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s1">&#39;Species given does not exist: ion number &gt; atomic number&#39;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">atomic_number</span><span class="p">,</span> <span class="n">ion_number</span> <span class="o">-</span> <span class="mi">1</span></div>
 
@@ -596,7 +613,8 @@
 
 <div class="viewcode-block" id="reformat_element_symbol"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.reformat_element_symbol">[docs]</a><span class="k">def</span> <span class="nf">reformat_element_symbol</span><span class="p">(</span><span class="n">element_string</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reformat the string so the first letter is uppercase and all subsequent letters lowercase.</span>
+<span class="sd">    Reformat the string so the first letter is uppercase and all subsequent</span>
+<span class="sd">     letters lowercase.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -614,7 +632,8 @@
 
 <div class="viewcode-block" id="quantity_linspace"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.quantity_linspace">[docs]</a><span class="k">def</span> <span class="nf">quantity_linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Essentially the same input parameters as linspace, but calculated for an astropy quantity start and stop.</span>
+<span class="sd">    Essentially the same input parameters as linspace, but</span>
+<span class="sd">    calculated for an astropy quantity start and stop.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -639,10 +658,11 @@
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Both start and stop need to be quantities with a &#39;</span>
                          <span class="s1">&#39;unit attribute&#39;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stop</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">*</span> <span class="n">start</span><span class="o">.</span><span class="n">unit</span></div>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">stop</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="o">*</span> <span class="n">start</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="convert_abundances_format"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.convert_abundances_format">[docs]</a><span class="k">def</span> <span class="nf">convert_abundances_format</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="convert_abundances_format"><a class="viewcode-back" href="../../../api/tardis.util.base.html#tardis.util.base.convert_abundances_format">[docs]</a><span class="k">def</span> <span class="nf">convert_abundances_format</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Changes format of file containing abundances into data frame</span>
 
@@ -650,7 +670,7 @@
 <span class="sd">    ----------</span>
 <span class="sd">    fname: file, str</span>
 <span class="sd">        File or file name that contains abundance info</span>
-<span class="sd">    delimiter: str, optional(default = &#39;\s+&#39;)</span>
+<span class="sd">    delimiter: str, optional(default = &#39;\\s+&#39;)</span>
 <span class="sd">        Determines the separator for splitting file</span>
 
 <span class="sd">    Returns</span>
@@ -659,9 +679,9 @@
 <span class="sd">        Corresponding data frame</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-    <span class="c1">#Drop shell index column</span>
+    <span class="c1"># Drop shell index column</span>
     <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1">#Assign header row</span>
+    <span class="c1"># Assign header row</span>
     <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">nucname</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
     <span class="k">return</span> <span class="n">df</span></div>

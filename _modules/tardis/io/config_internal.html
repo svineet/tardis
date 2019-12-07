@@ -201,7 +201,8 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">config_fpath</span><span class="p">):</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Configuration File </span><span class="si">{0}</span><span class="s2"> does not exist - creating new one from default&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">config_fpath</span><span class="p">))</span>
         <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">DEFAULT_CONFIG_PATH</span><span class="p">,</span> <span class="n">config_fpath</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">config_fpath</span><span class="p">))</span></div>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_fpath</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_fh</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">config_fh</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">CLoader</span><span class="p">)</span></div>
 
 
 

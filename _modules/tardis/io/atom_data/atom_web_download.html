@@ -204,7 +204,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">atomic_repo_fname</span> <span class="o">=</span> <span class="n">get_internal_data_path</span><span class="p">(</span><span class="s1">&#39;atomic_data_repo.yml&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">atomic_repo_fname</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">atomic_repo_fname</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">CLoader</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="download_atom_data"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.atom_web_download.html#tardis.io.atom_data.atom_web_download.download_atom_data">[docs]</a><span class="k">def</span> <span class="nf">download_atom_data</span><span class="p">(</span><span class="n">atomic_data_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>

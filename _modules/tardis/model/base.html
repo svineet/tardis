@@ -411,16 +411,8 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="c1">#        if self.v_boundary_inner in self.raw_velocity:</span>
-<span class="c1">#            v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
-<span class="c1">#        if self.v_boundary_outer in self.raw_velocity:</span>
-<span class="c1">#            v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span>
@@ -442,29 +434,11 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="c1">#        if self.v_boundary_inner in self.raw_velocity:</span>
-<span class="c1">#            v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
-<span class="c1">#        if self.v_boundary_outer in self.raw_velocity:</span>
-<span class="c1">#            v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
-
         <span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">homologous_density</span><span class="o">.</span><span class="n">calculate_density_at_time_of_simulation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">density</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">abundance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="c1">#        if self.v_boundary_inner in self.raw_velocity:</span>
-<span class="c1">#            v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
-<span class="c1">#        if self.v_boundary_outer in self.raw_velocity:</span>
-<span class="c1">#            v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
-<span class="c1">#        else:</span>
-<span class="c1">#            v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
-
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_isotope_abundance</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_isotope_abundance</span><span class="o">.</span><span class="n">decay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_abundance</span><span class="p">)</span>
         <span class="n">abundance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>

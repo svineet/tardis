@@ -402,12 +402,13 @@
 <code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">intensity_black_body</code><span class="sig-paren">(</span><em class="sig-param">nu</em>, <em class="sig-param">T</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#intensity_black_body"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.intensity_black_body" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>Calculate the intensity of a black-body according to the following formula</p>
-<blockquote>
-<div><div class="math notranslate nohighlight">
+<div class="math notranslate nohighlight">
 \[I(\nu, T) = \frac{2h\nu^3}{c^2}\]</div>
 </div></blockquote>
-</div></blockquote>
-<p>rac{1}{e^{hnu beta_textrm{rad}} - 1}</p>
+<dl class="simple">
+<dt>rac{1}</dt><dd><p>{e^{hnu beta_textrm{rad}} - 1}</p>
+</dd>
+</dl>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -459,7 +460,8 @@
 <dl class="function">
 <dt id="tardis.util.base.quantity_linspace">
 <code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">quantity_linspace</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">stop</em>, <em class="sig-param">num</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#quantity_linspace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.quantity_linspace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Essentially the same input parameters as linspace, but calculated for an astropy quantity start and stop.</p>
+<dd><p>Essentially the same input parameters as linspace, but
+calculated for an astropy quantity start and stop.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -489,7 +491,10 @@
 <dl class="function">
 <dt id="tardis.util.base.reformat_element_symbol">
 <code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">reformat_element_symbol</code><span class="sig-paren">(</span><em class="sig-param">element_string</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#reformat_element_symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.reformat_element_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reformat the string so the first letter is uppercase and all subsequent letters lowercase.</p>
+<dd><dl class="simple">
+<dt>Reformat the string so the first letter is uppercase and all subsequent</dt><dd><p>letters lowercase.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -559,7 +564,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>species_tuple: tuple</strong></dt><dd><p>Tuple of 2 values indicated atomic number and number of electrons missing</p>
+<dt><strong>species_tuple: tuple</strong></dt><dd><p>Tuple of 2 values indicated atomic number and number of
+electrons missing</p>
 </dd>
 <dt><strong>roman_numerals: bool, optional(default = TRUE)</strong></dt><dd><p>Indicates whether the returned ion number is in roman numerals</p>
 </dd>
