@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tardis.base &mdash; TARDIS v</title>
+  <title>tardis.base &mdash; TARDIS v3.0.dev3369</title>
   
 
   
@@ -30,6 +30,7 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -64,6 +65,10 @@
 
           
             
+            
+              <div class="version">
+                3.0.dev3369
+              </div>
             
           
 
@@ -186,7 +191,8 @@
   <h1>Source code for tardis.base</h1><div class="highlight"><pre>
 <span></span><span class="c1"># functions that are important for the general usage of TARDIS</span>
 
-<div class="viewcode-block" id="run_tardis"><a class="viewcode-back" href="../../api/tardis.base.html#tardis.base.run_tardis">[docs]</a><span class="k">def</span> <span class="nf">run_tardis</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">atom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">simulation_callbacks</span><span class="o">=</span><span class="p">[]):</span>
+<div class="viewcode-block" id="run_tardis"><a class="viewcode-back" href="../../api/tardis.base.html#tardis.base.run_tardis">[docs]</a><span class="k">def</span> <span class="nf">run_tardis</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">atom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">packet_source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">simulation_callbacks</span><span class="o">=</span><span class="p">[]):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is one of the core functions to run TARDIS from a given</span>
 <span class="sd">    config object.</span>
@@ -220,7 +226,9 @@
     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
         <span class="n">tardis_config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="o">.</span><span class="n">from_config_dict</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
-    <span class="n">simulation</span> <span class="o">=</span> <span class="n">Simulation</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">tardis_config</span><span class="p">,</span> <span class="n">atom_data</span><span class="o">=</span><span class="n">atom_data</span><span class="p">)</span>
+    <span class="n">simulation</span> <span class="o">=</span> <span class="n">Simulation</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">tardis_config</span><span class="p">,</span>
+                                        <span class="n">packet_source</span><span class="o">=</span><span class="n">packet_source</span><span class="p">,</span>
+                                        <span class="n">atom_data</span><span class="o">=</span><span class="n">atom_data</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="n">simulation_callbacks</span><span class="p">:</span>
         <span class="n">simulation</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="n">cb</span><span class="p">)</span>
 

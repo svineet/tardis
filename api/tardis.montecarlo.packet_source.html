@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tardis.montecarlo.packet_source module &mdash; TARDIS v</title>
+  <title>tardis.montecarlo.packet_source module &mdash; TARDIS v3.0.dev3369</title>
   
 
   
@@ -30,6 +30,7 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -66,6 +67,10 @@
 
           
             
+            
+              <div class="version">
+                3.0.dev3369
+              </div>
             
           
 
@@ -239,63 +244,94 @@
 <div class="section" id="module-tardis.montecarlo.packet_source">
 <span id="tardis-montecarlo-packet-source-module"></span><h1>tardis.montecarlo.packet_source module<a class="headerlink" href="#module-tardis.montecarlo.packet_source" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource">
-<em class="property">class </em><code class="sig-prename descclassname">tardis.montecarlo.packet_source.</code><code class="sig-name descname">BlackBodySimpleSource</code><span class="sig-paren">(</span><em class="sig-param">seed</em>, <em class="sig-param">l_samples=1000</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Simple packet source that generates packets for the Montecarlo part.
-This uses the algorithm described in  Bjorkman &amp; Wood 2001 (page 4) which
-references Carter &amp; Cashwell 1975:</p>
-<p>First, generate a uniform random number, <span class="math notranslate nohighlight">\(\xi_0\)</span>, in
-the range 0 to 1, and determine the minimum value of $l$,
-$l_{rm min}$, that satisfies the condition
-%
-begin{equation}
-sum_{i=1}^{l} i^{-4} ge {{pi^4}over{90}} m_0 ; .
-end{equation}
-%
-Next obtain four additional uniform random numbers (in the range 0 to 1),
-$xi_1$, $xi_2$, $xi_3$, and $xi_4$.  Finally, the packet
-frequency is given by
-%
-begin{equation}
-x = -ln{(xi_1xi_2xi_3xi_4)}/l_{rm min}; .
-end{equation}</p>
+<dt id="tardis.montecarlo.packet_source.BasePacketSource">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.montecarlo.packet_source.</code><code class="sig-name descname">BasePacketSource</code><span class="sig-paren">(</span><em class="sig-param">seed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
+<dl class="method">
+<dt id="tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus">
+<em class="property">static </em><code class="sig-name descname">create_blackbody_packet_nus</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">no_of_packets</em>, <em class="sig-param">l_samples=1000</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_blackbody_packet_nus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create packet <span class="math notranslate nohighlight">\(\nu\)</span> distributed using the algorithm described in 
+Bjorkman &amp; Wood 2001 (page 4) which references 
+Carter &amp; Cashwell 1975:</p>
+<p>First, generate a uniform random number, <span class="math notranslate nohighlight">\(\xi_0 \in [0, 1]\)</span> and
+determine the minimum value of 
+<span class="math notranslate nohighlight">\(l, l_{\rm min}\)</span>, that satisfies the condition</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{l} i^{-4} \ge {{\pi^4}\over{90}} m_0 \; .\]</div>
+<p>Next obtain four additional uniform random numbers (in the range 0 
+to 1) <span class="math notranslate nohighlight">\(\xi_1, \xi_2, \xi_3, {\rm and } \xi_4\)</span>.</p>
+<p>Finally, the packet frequency is given by</p>
+<div class="math notranslate nohighlight">
+\[x = -\ln{(\xi_1\xi_2\xi_3\xi_4)}/l_{\rm min}\; .\]</div>
 <p>where <span class="math notranslate nohighlight">\(x=h\nu/kT\)</span></p>
-<dl class="method">
-<dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_energies">
-<code class="sig-name descname">create_packet_energies</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packet_energies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_energies" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_mus">
-<code class="sig-name descname">create_packet_mus</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packet_mus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_mus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create
-:param no_of_packets:
-:return:</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_nus">
-<code class="sig-name descname">create_packet_nus</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">T</em>, <em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packet_nus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_nus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creating &lt;no_of_packets&gt; packets with a blackbody distribution
-of temperature &lt;T&gt;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>T</strong><span class="classifier">~float</span></dt><dd><p>temperature</p>
+<dt><strong>T</strong><span class="classifier">float</span></dt><dd><p>temperature</p>
 </dd>
-<dt><strong>no_of_packets: ~int</strong></dt><dd></dd>
+<dt><strong>no_of_packets: int</strong></dt><dd></dd>
+<dt><strong>l_samples: int</strong></dt><dd><p>number of l_samples needed in the algorithm</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>: ~numpy.ndarray</dt><dd><p>array of frequencies</p>
+<dt>: numpy.ndarray</dt><dd><p>array of frequencies</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="method">
+<dt id="tardis.montecarlo.packet_source.BasePacketSource.create_packets">
+<em class="property">abstract </em><code class="sig-name descname">create_packets</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">seed=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_packets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_packets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tardis.montecarlo.packet_source.BasePacketSource.create_uniform_packet_energies">
+<em class="property">static </em><code class="sig-name descname">create_uniform_packet_energies</code><span class="sig-paren">(</span><em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_uniform_packet_energies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_uniform_packet_energies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniformly distribute energy in arbitrary units where the ensemble of 
+packets has energy of 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>no_of_packets</strong><span class="classifier">int</span></dt><dd><p>number of packets</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>: numpy.ndarray</dt><dd><p>energies for packets</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tardis.montecarlo.packet_source.BasePacketSource.create_zero_limb_darkening_packet_mus">
+<em class="property">static </em><code class="sig-name descname">create_zero_limb_darkening_packet_mus</code><span class="sig-paren">(</span><em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BasePacketSource.create_zero_limb_darkening_packet_mus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BasePacketSource.create_zero_limb_darkening_packet_mus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create zero-limb-darkening packet <span class="math notranslate nohighlight">\(\mu\)</span> distributed
+according to <span class="math notranslate nohighlight">\(\mu=\sqrt{z}, z \isin [0, 1]\)</span></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>no_of_packets</strong><span class="classifier">int</span></dt><dd><p>number of packets to be created</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.montecarlo.packet_source.</code><code class="sig-name descname">BlackBodySimpleSource</code><span class="sig-paren">(</span><em class="sig-param">seed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tardis.montecarlo.packet_source.BasePacketSource" title="tardis.montecarlo.packet_source.BasePacketSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.montecarlo.packet_source.BasePacketSource</span></code></a></p>
+<p>Simple packet source that generates Blackbody packets for the Montecarlo 
+part.</p>
 <dl class="method">
 <dt id="tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">
 <code class="sig-name descname">create_packets</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">T</em>, <em class="sig-param">no_of_packets</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/montecarlo/packet_source.html#BlackBodySimpleSource.create_packets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets" title="Permalink to this definition">¶</a></dt>

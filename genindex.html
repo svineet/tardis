@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; TARDIS v</title>
+  <title>Index &mdash; TARDIS v3.0.dev3369</title>
   
 
   
@@ -31,6 +31,7 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -65,6 +66,10 @@
 
           
             
+            
+              <div class="version">
+                3.0.dev3369
+              </div>
             
           
 
@@ -251,6 +256,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/tardis.plasma.properties.base.html#tardis.plasma.properties.base.BaseAtomicDataProperty">BaseAtomicDataProperty (class in tardis.plasma.properties.base)</a>
 </li>
+      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource">BasePacketSource (class in tardis.montecarlo.packet_source)</a>
+</li>
       <li><a href="api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma">BasePlasma (class in tardis.plasma.base)</a>
 </li>
       <li><a href="api/tardis.plasma.properties.base.html#tardis.plasma.properties.base.BasePlasmaProperty">BasePlasmaProperty (class in tardis.plasma.properties.base)</a>
@@ -381,15 +388,19 @@
 </li>
       <li><a href="api/tardis.io.util.html#tardis.io.util.HDFWriterMixin.convert_to_snake_case">convert_to_snake_case() (tardis.io.util.HDFWriterMixin static method)</a>
 </li>
-      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_energies">create_packet_energies() (tardis.montecarlo.packet_source.BlackBodySimpleSource method)</a>
+      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus">create_blackbody_packet_nus() (tardis.montecarlo.packet_source.BasePacketSource static method)</a>
 </li>
-      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_mus">create_packet_mus() (tardis.montecarlo.packet_source.BlackBodySimpleSource method)</a>
+      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_packets">create_packets() (tardis.montecarlo.packet_source.BasePacketSource method)</a>
+
+      <ul>
+        <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">(tardis.montecarlo.packet_source.BlackBodySimpleSource method)</a>
 </li>
-      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packet_nus">create_packet_nus() (tardis.montecarlo.packet_source.BlackBodySimpleSource method)</a>
-</li>
-      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">create_packets() (tardis.montecarlo.packet_source.BlackBodySimpleSource method)</a>
-</li>
+      </ul></li>
       <li><a href="api/tardis.util.base.html#tardis.util.base.create_synpp_yaml">create_synpp_yaml() (in module tardis.util.base)</a>
+</li>
+      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_uniform_packet_energies">create_uniform_packet_energies() (tardis.montecarlo.packet_source.BasePacketSource static method)</a>
+</li>
+      <li><a href="api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_zero_limb_darkening_packet_mus">create_zero_limb_darkening_packet_mus() (tardis.montecarlo.packet_source.BasePacketSource static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -501,12 +512,14 @@
 </li>
       <li><a href="api/tardis.io.config_internal.html#tardis.io.config_internal.get_data_dir">get_data_dir() (in module tardis.io.config_internal)</a>
 </li>
-      <li><a href="api/tardis.io.config_internal.html#tardis.io.config_internal.get_internal_configuration">get_internal_configuration() (in module tardis.io.config_internal)</a>
+      <li><a href="api/tardis.version.html#tardis.version.get_git_devstr">get_git_devstr() (in module tardis.version)</a>
 </li>
-      <li><a href="api/tardis.io.util.html#tardis.io.util.get_internal_data_path">get_internal_data_path() (in module tardis.io.util)</a>
+      <li><a href="api/tardis.io.config_internal.html#tardis.io.config_internal.get_internal_configuration">get_internal_configuration() (in module tardis.io.config_internal)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/tardis.io.util.html#tardis.io.util.get_internal_data_path">get_internal_data_path() (in module tardis.io.util)</a>
+</li>
       <li><a href="api/tardis.analysis.html#tardis.analysis.TARDISHistory.get_last_line_interaction">get_last_line_interaction() (tardis.analysis.TARDISHistory method)</a>
 </li>
       <li><a href="api/tardis.plasma.properties.base.html#tardis.plasma.properties.base.BasePlasmaProperty.get_latex_label">get_latex_label() (tardis.plasma.properties.base.BasePlasmaProperty method)</a>
@@ -1055,6 +1068,8 @@
 </li>
       <li><a href="api/tardis.constants.html#module-tardis.constants">tardis.constants (module)</a>
 </li>
+      <li><a href="api/tardis.cython_version.html#module-tardis.cython_version">tardis.cython_version (module)</a>
+</li>
       <li><a href="api/tardis.gui.html#module-tardis.gui">tardis.gui (module)</a>
 </li>
       <li><a href="api/tardis.io.html#module-tardis.io">tardis.io (module)</a>
@@ -1133,6 +1148,8 @@
 </li>
       <li><a href="api/tardis.util.colored_logger.html#module-tardis.util.colored_logger">tardis.util.colored_logger (module)</a>
 </li>
+      <li><a href="api/tardis.version.html#module-tardis.version">tardis.version (module)</a>
+</li>
       <li><a href="api/tardis.analysis.html#tardis.analysis.TARDISHistory">TARDISHistory (class in tardis.analysis)</a>
 </li>
       <li><a href="api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum">TARDISSpectrum (class in tardis.montecarlo.spectrum)</a>
@@ -1181,6 +1198,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/tardis.version.html#tardis.version.update_git_devstr">update_git_devstr() (in module tardis.version)</a>
+</li>
       <li><a href="api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensityHeNLTE.update_he_population">update_he_population() (tardis.plasma.properties.ion_population.IonNumberDensityHeNLTE method)</a>
 </li>
       <li><a href="api/tardis.analysis.html#tardis.analysis.LastLineInteraction.update_last_interaction_filter">update_last_interaction_filter() (tardis.analysis.LastLineInteraction method)</a>

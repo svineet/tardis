@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>General Workflow to add a new feature &mdash; TARDIS v</title>
+  <title>General Workflow to add a new feature &mdash; TARDIS v3.0.dev3369</title>
   
 
   
@@ -30,6 +30,7 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -66,6 +67,10 @@
 
           
             
+            
+              <div class="version">
+                3.0.dev3369
+              </div>
             
           
 
@@ -404,16 +409,16 @@ branch” (<a class="reference external" href="http://mail.scipy.org/pipermail/i
 <li><p>If you can possibly avoid it, don’t merge the trunk or any other branches into
 your feature branch while you are working.</p></li>
 <li><p>If you do find yourself merging from the trunk, consider
-<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.1.1)"><span>Rebasing on trunk</span></a></p></li>
+<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.1.2)"><span>Rebasing on trunk</span></a></p></li>
 <li><p>Ask on the <a class="reference external" href="https://groups.google.com/forum/#!forum/tardis-sn-dev">tardis-sn-dev mailing list</a> if you get stuck.</p></li>
 <li><p>Once your code is nearing completion, run the test suite to ensure
 you have not accidentally caused regressions, and add new tests to ensure
 your contribution behaves correctly (see <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/testing.html#testing-guidelines" title="(in NumPy v1.17)"><span>Testing Guidelines</span></a>).</p></li>
 <li><p>Issue a pull request on github!</p></li>
 <li><p>As the code is converging to a final state, ensure your
-documentation follows the guidelines (see <a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v3.2.3)"><span>Writing Documentation</span></a>).</p></li>
+documentation follows the guidelines (see <a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.0)"><span>Writing Documentation</span></a>).</p></li>
 <li><p>Once your code is ready to be accepted, please add an entry to the changelog
-(see <a class="reference external" href="http://docs.astropy.org/en/stable/development/workflow/maintainer_workflow.html#changelog-format" title="(in Astropy v3.2.3)"><span>Updating and Maintaining the Changelog</span></a>).  If you’re sure where to put this, please at
+(see <a class="reference external" href="http://docs.astropy.org/en/stable/development/workflow/maintainer_workflow.html#changelog-format" title="(in Astropy v4.0)"><span>Updating and Maintaining the Changelog</span></a>).  If you’re sure where to put this, please at
 least suggest a brief (one or two sentence) description of your change so
 that another developer can add it to the changelog.</p></li>
 </ul>
@@ -499,7 +504,7 @@ builds and looks correct:</p>
 </div>
 <p>The last line should just state <code class="docutils literal notranslate"><span class="pre">build</span> <span class="pre">succeeded</span></code>, and should not mention
 any warnings.  (For more details, see the Astropy
-<a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v3.2.3)"><span>Writing Documentation</span></a> we follow.)</p>
+<a class="reference external" href="http://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.0)"><span>Writing Documentation</span></a> we follow.)</p>
 </li>
 <li><p>See which files have changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-status.html">git status</a>).
 You’ll see a listing like this one:</p>

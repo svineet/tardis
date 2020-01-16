@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2019/12/07 12:59 +00:00)
+### upcoming (2020/01/16 19:14 +00:00)
+- [#1003](https://github.com/tardis-sn/tardis/pull/1003) Custom source packets (#1003) (@marxwillia)
 - [#994](https://github.com/tardis-sn/tardis/pull/994) Large cleanup operation (#994) (@wkerzendorf)
 - [#992](https://github.com/tardis-sn/tardis/pull/992) Changes made to update_refdata documentation (#992) (@kowal180)
 - [#967](https://github.com/tardis-sn/tardis/pull/967) log additional properties in hdf witeout when --with-vpacket-logging is present (#967) (@kaushik94)
