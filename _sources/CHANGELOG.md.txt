@@ -1,9 +1,10 @@
 ## Change Log
 
-### upcoming (2020/01/21 19:28 +00:00)
-- [#1007](https://github.com/tardis-sn/tardis/pull/1007) Fix for vboundary tests (#1007) (@epassaro)
+### upcoming (2020/01/21 23:22 +00:00)
+- [#1009](https://github.com/tardis-sn/tardis/pull/1009) Fix for packet source unit test (#1009) (@epassaro)
 
-### 3.0.dev1 (2020/01/20 19:31 +00:00)
+### 3.0.dev1 (2020/01/21 19:24 +00:00)
+- [#1007](https://github.com/tardis-sn/tardis/pull/1007) Fix for vboundary tests (#1007) (@epassaro)
 - [#995](https://github.com/tardis-sn/tardis/pull/995) Checking failing tests on Azure (#995) (@kaushik94)
 - [#1005](https://github.com/tardis-sn/tardis/pull/1005) Add YML file for release version (#1005) (@epassaro)
 - [#1004](https://github.com/tardis-sn/tardis/pull/1004) Fixed csvy abundance indexing bug (#1004) (@marxwillia)
