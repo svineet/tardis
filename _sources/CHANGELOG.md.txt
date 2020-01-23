@@ -1,5 +1,8 @@
 ## Change Log
 
+### upcoming (2020/01/23 16:24 +00:00)
+- [#1008](https://github.com/tardis-sn/tardis/pull/1008) Improvements for the update_reference section [docs] (#1008) (@epassaro)
+
 ### 3.0.dev1 (2020/01/23 12:27 +00:00)
 - [#1011](https://github.com/tardis-sn/tardis/pull/1011) Gui fix (#1011) (@marxwillia)
 - [#1009](https://github.com/tardis-sn/tardis/pull/1009) Fix for packet source unit test (#1009) (@epassaro)

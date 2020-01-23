@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Procedure to update the reference data &mdash; TARDIS v3.0.dev3375</title>
+  <title>Procedure to update the reference data &mdash; TARDIS v3.0.dev3376</title>
   
 
   
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                3.0.dev3375
+                3.0.dev3376
               </div>
             
           
@@ -233,58 +233,63 @@
 </style>
 <div class="section" id="procedure-to-update-the-reference-data">
 <h1>Procedure to update the reference data<a class="headerlink" href="#procedure-to-update-the-reference-data" title="Permalink to this headline">¶</a></h1>
-<p>We assume that you have added the necessary changes to TARDIS and have a
-PR open.</p>
+<p>We assume that you have added the necessary changes to TARDIS and have an open pull request.</p>
 <ol class="arabic">
-<li><p>Fork the tardis ref-data repository like described in <a class="reference internal" href="git_workflow.html#development-workflow"><span class="std std-ref">General Workflow to add a new feature</span></a>.</p></li>
-<li><dl>
-<dt>Clone tardis-refdata. Then make a new branch named the same as your new tardis feature branch. Make sure to set the upstream of the repository to <cite>https://github.com/tardis-sn/tardis-refdata.git</cite></dt><dd><ul class="simple">
-<li><p>You can check that you have the right upstream set using:</p></li>
-</ul>
-<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git checkout upstream/pr/11
+<li><p>Fork the <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> repository like described in <a class="reference internal" href="git_workflow.html#development-workflow"><span class="std std-ref">General Workflow to add a new feature</span></a>.</p></li>
+<li><p>Clone <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> to your computer. Then make a new branch named the same as your new TARDIS feature branch. Make sure to have correctly set up the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote as explained in <a class="reference internal" href="git_workflow.html#reviewing-and-helping-with-pr"><span class="std std-ref">Reviewing and helping others with Pull Requests</span></a>.</p></li>
+<li><p>Activate your <code class="docutils literal notranslate"><span class="pre">tardis</span></code> conda environment.</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>conda activate tardis
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><p>Make sure to have sure to have git-lfs installed. If not already done, the process can be seen here: <span class="xref std std-ref">git_lfs_instructions</span></p></li>
-<li><dl>
-<dt>Open tardis-refdata directory. Fetch from upstream and then use git-lfs to pull ref-data files from github using:</dt><dd><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git lfs fetch upstream
+<li><p>Navigate to your <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> directory and type:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git lfs install
+git lfs fetch upstream
 git lfs pull
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><p>Open into tardis directory. Generate new reference data (in the correct branch) offline using:</p>
+<li><p>Go to your <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory. Make sure you are working on the correct branch and generate new reference data using:</p>
 <blockquote>
-<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt; --generate-reference&quot;
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo on the right branch&gt; --generate-reference&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Rerun the tests to make sure it does not fail using:</p>
+<li><p>Re-run the tests to make sure it does not fail using:</p>
 <blockquote>
-<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo/with the right branch&gt;&quot;
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo on the right branch&gt;&quot;
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Open and run the refdata comparer notebook provided in TARDIS-refdata to check if there are any unexpected changes in the updated reference data and the previous reference data.</p></li>
-<li><p>Switch to tardis-refdata. Commit the changed ref-data and open a PR on tardis-refdata</p></li>
-<li><p>Switch back to the TARDIS directory. Open <cite>.travis.yml</cite></p></li>
-<li><p>Change the following lines</p>
+<li><p>Go back to your <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> folder, and run a Jupyter Notebook session inside the <code class="docutils literal notranslate"><span class="pre">notebook</span></code> folder.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">ref_data_compare.ipynb</span></code> file notebook and look for the cell with the following code:</p>
 <blockquote>
-<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin pull/&lt;your TARDIS-refdata PR number; not the TARDIS PR number&gt;/head:&lt;some descriptive name&gt;; fi
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>comparer = ReferenceComparer(ref2_hash=&#39;upstream/pr/24&#39;)
+</pre></div>
+</div>
+</div></blockquote>
+<p>Replace ‘24’ for the number of the last merged pull request showed <a class="reference external" href="https://github.com/tardis-sn/tardis-refdata/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Aclosed">here</a>.</p>
+</li>
+<li><p>Run all cells and check if there are any unexpected changes in the updated reference data respect the previous one.</p></li>
+<li><p>Commit the changes made to the reference data and open a PR on <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code>.</p></li>
+<li><p>Switch back to the <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory. Open the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> file and change the following lines:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin pull/&lt;your tardis-refdata PR number; not the TARDIS PR number&gt;/head:&lt;some descriptive name&gt;; fi
 - if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout &lt;some descriptive name&gt;; fi```
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Commit the <cite>.travis.yml</cite> to your Pull request</p></li>
-<li><p>Make sure that your TARDIS PR now passes on TRAVIS.</p></li>
-<li><p>Then merge the PR on tardis-refdata.</p></li>
-<li><p>Then change <cite>.travis.yml</cite> to</p>
+<li><p>Commit the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> to your pull request.</p></li>
+<li><p>Make sure that your TARDIS pull request now passes all tests on Travis-CI.</p></li>
+<li><p>Ask for review for your PR on <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> and wait for merge.</p></li>
+<li><p>Then change the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> in <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory to:</p>
 <blockquote>
 <div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin; fi
 - if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout origin/master; fi```
@@ -292,24 +297,22 @@ git lfs pull
 </div>
 </div></blockquote>
 </li>
-<li><p>Then make sure that your TARDIS PR passes again.</p></li>
-<li><p>Then merge your PR to TARDIS master</p></li>
-<li><p>Congratulations - you updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan)</p></li>
+<li><p>Ensure TARDIS pull request passes Travis-CI again and ping someone to merge your PR to the TARDIS master branch.</p></li>
 </ol>
+<p>Congratulations! You have updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan)</p>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>Unable to generate reference data</dt><dd><ul>
-<li><p>If generating fails due to an inability to open chianti_He.h5, make sure that you have installed git-lfs and have pulled the files from github (See steps 3 and 4).</p></li>
+<li><p>If generating fails due to an inability to open <code class="docutils literal notranslate"><span class="pre">chianti_He.h5</span></code>, make sure that you have activated your <cite>tardis</cite> conda environment, and <code class="docutils literal notranslate"><span class="pre">git-lfs</span></code> is installed. Fetch and pull the files from GitHub as explained in step 4.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Error in running <cite>comparer = ReferenceComparer(ref2_hash=’upstream/pr/11’)</cite> on the comparer notebook: <cite>No such file or directory: ‘…/unit_test_data.h5’</cite></dt><dd><ul>
-<li><p>If notebook file is unable to find the file /unit_test_data.h5, make sure you have correctly set your upstream. To check this, use:</p></li>
-<li><p>If this fails, make sure that your upstream is set correctly to <cite>https://github.com/tardis-sn/tardis-refdata.git</cite> (See step 2).</p></li>
+<dt>Error when running <code class="docutils literal notranslate"><span class="pre">comparer</span> <span class="pre">=</span> <span class="pre">ReferenceComparer(ref2_hash='upstream/pr/XX')</span></code> on the comparer notebook: <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory:</span> <span class="pre">'.../unit_test_data.h5'</span></code></dt><dd><ul>
+<li><p>If notebook file is unable to find the file <code class="docutils literal notranslate"><span class="pre">unit_test_data.h5</span></code>, make sure you have correctly set your upstream as explained in <a class="reference internal" href="git_workflow.html#reviewing-and-helping-with-pr"><span class="std std-ref">Reviewing and helping others with Pull Requests</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
