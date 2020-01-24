@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/01/24 05:42 +00:00)
+### upcoming (2020/01/24 22:29 +00:00)
+- [#1013](https://github.com/tardis-sn/tardis/pull/1013) Fixed typo (#1013) (@epassaro)
 - [#1006](https://github.com/tardis-sn/tardis/pull/1006) Trying to get the right version number for automatic release (#1006) (@epassaro)
 
 ### 3.0.dev1 (2020/01/23 16:20 +00:00)
