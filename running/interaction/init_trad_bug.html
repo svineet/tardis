@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Initial_t_rad Bug &mdash; TARDIS v3.0.dev3379</title>
+  <title>Initial_t_rad Bug &mdash; TARDIS v3.0.dev3381</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                3.0.dev3379
+                3.0.dev3381
               </div>
             
           
@@ -257,8 +257,8 @@ div.nboutput.container div.prompt pre {
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
     min-width: 5ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
     text-align: right;
     flex: 0;
 }
@@ -282,7 +282,6 @@ div.nboutput.container div.prompt pre {
 /* input/output area */
 div.nbinput.container div.input_area,
 div.nboutput.container div.output_area {
-    padding: 0.4em;
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
@@ -355,6 +354,27 @@ div.nboutput.container div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
 
 /* Some additional styling taken form the Jupyter notebook CSS */
 div.rendered_html table {
@@ -1224,8 +1244,8 @@ https://pandas.pydata.org/pandas-docs/stable/indexing.html#deprecate-loc-reindex
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Debugging">
-<h1>Debugging<a class="headerlink" href="#Debugging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h1>Debugging<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Debugging-No-initial_t_radiative-run-to-compare-with-Yes-initial_t_radiative-run">
 <h2>Debugging No initial_t_radiative run to compare with Yes initial_t_radiative run<a class="headerlink" href="#Debugging-No-initial_t_radiative-run-to-compare-with-Yes-initial_t_radiative-run" title="Permalink to this headline">¶</a></h2>
 <p>We place two breakpoints:</p>
@@ -1318,8 +1338,8 @@ ipdb&gt; exit
 <p>break 2. tardis/simulation/base:436 –&gt; Stops after the Radial1DModel has been built from the config file, but before the plasma has been initialized.</p>
 </div>
 </div>
-<div class="section" id="IMPORTANT:">
-<h1>IMPORTANT:<a class="headerlink" href="#IMPORTANT:" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h1>IMPORTANT:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
 <p>We check the model.t_radiative property INSIDE the assemble_plasma function. Notice that it has len(model.t_radiative) = 6 which is NOT EQUAL to model.no_of_shells = 5</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
