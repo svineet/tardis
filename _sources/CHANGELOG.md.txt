@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/01/30 05:15 +00:00)
+### upcoming (2020/02/02 15:54 +00:00)
+- [#1020](https://github.com/tardis-sn/tardis/pull/1020) Update .mailmap (#1020) (@livnehra)
 - [#1018](https://github.com/tardis-sn/tardis/pull/1018) Updated .mailmap (#1018) (@epassaro)
 - [#1010](https://github.com/tardis-sn/tardis/pull/1010) Pipeline for comparing reference data (#1010) (@epassaro)
 - [#1016](https://github.com/tardis-sn/tardis/pull/1016) Removed GH Action for release versions (#1016) (@epassaro)
