@@ -1,6 +1,10 @@
 ## Change Log
 
-### upcoming (2020/02/02 15:54 +00:00)
+### upcoming (2020/02/02 22:00 +00:00)
+- [#1021](https://github.com/tardis-sn/tardis/pull/1021) Set cron job, disable CI and PR (#1021) (@epassaro)
+
+### 3.0.dev3383 (2020/02/02 19:01 +00:00)
+- [#1015](https://github.com/tardis-sn/tardis/pull/1015) Set up release TARDIS version with Azure Pipelines (#1015) (@epassaro)
 - [#1020](https://github.com/tardis-sn/tardis/pull/1020) Update .mailmap (#1020) (@livnehra)
 - [#1018](https://github.com/tardis-sn/tardis/pull/1018) Updated .mailmap (#1018) (@epassaro)
 - [#1010](https://github.com/tardis-sn/tardis/pull/1010) Pipeline for comparing reference data (#1010) (@epassaro)
