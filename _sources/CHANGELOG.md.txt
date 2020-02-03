@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2020/02/02 22:00 +00:00)
+### 3.0.dev3384 (2020/02/02 21:56 +00:00)
 - [#1021](https://github.com/tardis-sn/tardis/pull/1021) Set cron job, disable CI and PR (#1021) (@epassaro)
 
 ### 3.0.dev3383 (2020/02/02 19:01 +00:00)
