@@ -1,5 +1,8 @@
 ## Change Log
 
+### upcoming (2020/02/03 20:45 +00:00)
+- [#1022](https://github.com/tardis-sn/tardis/pull/1022) added Alice's orcid (#1022) (@harpolea)
+
 ### 3.0.dev3384 (2020/02/02 21:56 +00:00)
 - [#1021](https://github.com/tardis-sn/tardis/pull/1021) Set cron job, disable CI and PR (#1021) (@epassaro)
 
