@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/02/05 16:51 +00:00)
+### upcoming (2020/02/07 15:05 +00:00)
+- [#1027](https://github.com/tardis-sn/tardis/pull/1027) Added Mark Magee (#1027) (@MarkMageeAstro)
 - [#1024](https://github.com/tardis-sn/tardis/pull/1024) Add epassaro orcid (#1024) (@epassaro)
 - [#1022](https://github.com/tardis-sn/tardis/pull/1022) added Alice's orcid (#1022) (@harpolea)
 
