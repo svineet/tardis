@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Atomic Data Format Description &mdash; TARDIS v3.0.dev3396</title>
+  <title>Atomic Data Format Description &mdash; TARDIS v3.0.dev3397</title>
   
 
   
@@ -23,14 +23,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-        <script type="text/javascript" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                3.0.dev3396
+                3.0.dev3397
               </div>
             
           
@@ -402,7 +402,7 @@ that include mass, ionization, levels and lines data. The atom data that ships w
 </table>
 <p>The next three datasets are only contained in the full dataset available upon request from the authors.</p>
 <p>The factor correcting for photo-ionization from excited levels (needed in <a class="reference internal" href="../physics/plasma/nebular_plasma.html#calc-zeta-label"><span class="std std-ref">Calculating Zeta</span></a>) is stored in the dataset <code class="docutils literal notranslate"><span class="pre">zeta_data</span></code>.
-The data is stored in a special way as one large <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> where the first two columns are Atomic Number and Ion
+The data is stored in a special way as one large <a class="reference external" href="https://numpy.org/doc/1.18/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> where the first two columns are Atomic Number and Ion
 Number. All further columns are the <span class="math notranslate nohighlight">\(\zeta-\textrm{factors}\)</span> for different temperatures. The temperatures are stored
 in the attribute <code class="docutils literal notranslate"><span class="pre">t_rads</span></code>.</p>
 <table class="docutils align-default">
