@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/02/12 18:17 +00:00)
+### upcoming (2020/02/12 19:43 +00:00)
+- [#1025](https://github.com/tardis-sn/tardis/pull/1025) Add `compilers` to environment YAML file (#1025) (@epassaro)
 - [#1026](https://github.com/tardis-sn/tardis/pull/1026) Minor changes (#1026) (@epassaro)
 
 ### 3.0.dev3396 (2020/02/07 15:00 +00:00)
