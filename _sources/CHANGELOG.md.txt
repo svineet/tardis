@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/02/13 01:30 +00:00)
+### upcoming (2020/02/13 02:29 +00:00)
+- [#1036](https://github.com/tardis-sn/tardis/pull/1036) Update zenodo.json (#1036) (@epassaro)
 - [#1035](https://github.com/tardis-sn/tardis/pull/1035) Update .mailmap (#1035) (@epassaro)
 - [#1034](https://github.com/tardis-sn/tardis/pull/1034) Update .mailmap (#1034) (@epassaro)
 - [#1032](https://github.com/tardis-sn/tardis/pull/1032) Add Mark Magee to .mailmap (#1032) (@epassaro)
