@@ -1,6 +1,6 @@
 ## Change Log
 
-### upcoming (2020/02/16 18:29 +00:00)
+### v3.0.dev3403 (2020/02/19 15:55 +00:00)
 - [#1031](https://github.com/tardis-sn/tardis/pull/1031) Create Zenodo JSON file (#1031) (@epassaro)
 - [#1036](https://github.com/tardis-sn/tardis/pull/1036) Update zenodo.json (#1036) (@epassaro)
 - [#1035](https://github.com/tardis-sn/tardis/pull/1035) Update .mailmap (#1035) (@epassaro)
