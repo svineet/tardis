@@ -1,6 +1,7 @@
 ## Change Log
 
-### upcoming (2020/02/24 16:34 +00:00)
+### upcoming (2020/02/24 16:58 +00:00)
+- [#1040](https://github.com/tardis-sn/tardis/pull/1040) Re-activate release job (#1040) (@epassaro)
 - [#1039](https://github.com/tardis-sn/tardis/pull/1039) Update .mailmap (#1039) (@epassaro)
 
 ### v3.0.dev3403 (2020/02/19 15:55 +00:00)
