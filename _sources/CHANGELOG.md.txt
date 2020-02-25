@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2020/02/24 16:58 +00:00)
+### upcoming (2020/02/25 04:06 +00:00)
+- [#1046](https://github.com/tardis-sn/tardis/pull/1046) Updated zenodo.json (#1046) (@epassaro)
+- [#1045](https://github.com/tardis-sn/tardis/pull/1045) Fix file paths at `diff` step in release pipeline (#1045) (@epassaro)
 - [#1040](https://github.com/tardis-sn/tardis/pull/1040) Re-activate release job (#1040) (@epassaro)
 - [#1039](https://github.com/tardis-sn/tardis/pull/1039) Update .mailmap (#1039) (@epassaro)
 
