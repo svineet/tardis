@@ -1,5 +1,8 @@
 ## Change Log
 
+### upcoming (2020/02/25 15:05 +00:00)
+- [#1048](https://github.com/tardis-sn/tardis/pull/1048) Re-activate TARDIS tests (#1048) (@epassaro)
+
 ### v3.0.dev3409 (2020/02/25 04:02 +00:00)
 - [#1046](https://github.com/tardis-sn/tardis/pull/1046) Updated zenodo.json (#1046) (@epassaro)
 - [#1045](https://github.com/tardis-sn/tardis/pull/1045) Fix file paths at `diff` step in release pipeline (#1045) (@epassaro)
